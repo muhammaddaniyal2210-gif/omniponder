@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 import { Inter_Tight, Newsreader } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
