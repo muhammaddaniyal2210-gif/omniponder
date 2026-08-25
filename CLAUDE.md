@@ -87,8 +87,11 @@ error states.
 
 ## Content
 
-Long-form **10–15 minute deep-dives** — substantially longer than a blog post
-and written to be complete in one sitting. Subjects:
+**6–9 minute reads** — roughly **1,300–2,000 words**, sized for a daily cadence
+and written to be complete in one sitting. Reading time is derived, not
+declared: `lib/markdown.ts` divides the body by 220 words per minute, so the
+figure shown on the page follows the prose. Do not pad to reach a number, and
+do not cut an argument short to stay under one. Subjects:
 
 - **Human nature** — why people behave as they do.
 - **Science** — what was recently learned, and what it overturns.
