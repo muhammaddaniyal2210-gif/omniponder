@@ -37,8 +37,7 @@ const hasAuthorPhoto = existsSync(join(process.cwd(), 'public', 'images', 'autho
 
 /*
  * Held as plain strings so the copy stays character-exact — no JSX entity
- * substitution, no reflow drift when the file is reformatted. The word joiners
- * around the em dash stop it from wrapping to the start of a line.
+ * substitution, no reflow drift when the file is reformatted.
  */
 const mission = [
   'Most media is built for reaction. Omniponder is built for understanding.',
@@ -46,21 +45,46 @@ const mission = [
   'No noise, no filler. Just one rigorous piece, every single day, built to give you absolute clarity.',
 ]
 
+/*
+ * A line may legally break *before* an em dash (UAX #14), stranding the dash at
+ * the start of the next line. A zero-width word joiner forbids that break while
+ * leaving the visible copy byte-for-byte unchanged; breaking after the dash is
+ * still permitted.
+ */
+const WORD_JOINER = '\u2060'
+
+function protectEmDashes(text: string) {
+  return text.replaceAll('\u2014', WORD_JOINER + '\u2014')
+}
+
 export default function AboutPage() {
   return (
     <div>
-      {/* Title */}
-      <section className="border-rule mx-auto max-w-6xl border-b px-6 pt-16 pb-12 sm:px-10 sm:pt-20 sm:pb-14">
-        <h1 className="text-ink font-serif text-[2rem] leading-tight font-medium tracking-[-0.02em] sm:text-[2.5rem]">
-          About Omniponder
+      {/* Masthead statement */}
+      <section className="border-rule mx-auto max-w-6xl border-b px-6 pt-16 pb-14 sm:px-10 sm:pt-20 sm:pb-16">
+        <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          About the Publication
+        </p>
+
+        <h1 className="text-ink mt-8 max-w-3xl font-serif text-[1.75rem] leading-[1.22] font-medium tracking-[-0.018em] text-balance sm:text-[2.125rem] lg:text-[2.5rem]">
+          An independent daily study of the forces that shape the world.
         </h1>
+
+        <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty sm:text-xl">
+          Written and edited by Muhammad Daniyal. Published every morning, for readers
+          who would rather understand a thing than keep up with it.
+        </p>
       </section>
 
       {/* Mission */}
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-24">
-        <div className="prose prose-neutral prose-omniponder max-w-2xl">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          Editorial Mission
+        </h2>
+
+        <div className="prose prose-neutral prose-omniponder mt-10 max-w-2xl">
           {mission.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+            <p key={paragraph.slice(0, 32)}>{protectEmDashes(paragraph)}</p>
           ))}
         </div>
       </section>
