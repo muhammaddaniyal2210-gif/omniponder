@@ -1,4 +1,4 @@
-import { FacebookIcon, LinkedInIcon, XIcon } from '@/components/BrandIcons'
+import { LinkedInIcon, XIcon } from '@/components/BrandIcons'
 
 type SocialLinksProps = {
   /** `sm` (18px) for the footer rail, `md` (20px) for the author block. */
@@ -9,12 +9,12 @@ type SocialLinksProps = {
 }
 
 const accounts = [
-  // TODO: Add actual URL
-  { name: 'X', href: '#', Icon: XIcon },
-  // TODO: Add actual URL
-  { name: 'LinkedIn', href: '#', Icon: LinkedInIcon },
-  // TODO: Add actual URL
-  { name: 'Facebook', href: '#', Icon: FacebookIcon },
+  { name: 'X', href: 'https://x.com/RedactLocal', Icon: XIcon },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/muhammad-daniyal-3139a23b2/',
+    Icon: LinkedInIcon,
+  },
 ]
 
 const sizes = {
