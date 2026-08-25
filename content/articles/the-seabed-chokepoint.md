@@ -2,7 +2,8 @@
 title: "The New Naval Blockades: How Ocean Governance is Weaponizing Global Trade"
 excerpt: "Naval dominance is no longer just about surface fleets. The future of international trade policies rests on the invisible infrastructure of the ocean floor."
 date: "2026-08-25"
-tags: ["Geopolitics", "Maritime Security", "Global Systems"]
+topic: "Geopolitics"
+tags: ["Maritime Security", "Ocean Governance", "Naval Blockade", "Submarine Cables", "UNCLOS", "Global Trade", "Geopolitics"]
 ---
 
 A blockade used to be an announcement. A state declared it, stationed ships, and accepted that it had committed an act of war. The legal architecture built around that assumption — codified through the nineteenth century and refined after it — presumed a blockade was visible, attributable, and enforced by hulls.

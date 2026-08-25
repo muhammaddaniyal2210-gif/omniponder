@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter_Tight, Newsreader } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import JsonLd from '@/components/JsonLd'
+import { organizationSchema, websiteSchema } from '@/lib/structured-data'
 import { siteConfig, siteUrl } from '@/lib/site'
 import './globals.css'
 
@@ -40,6 +42,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name }],
   alternates: {
     canonical: siteUrl,
+    types: {
+      'application/rss+xml': [{ url: '/feed.xml', title: `${siteConfig.name} — daily` }],
+    },
   },
   openGraph: {
     title: siteConfig.title,
@@ -68,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${newsreader.variable} ${interTight.variable}`}>
       <body className="bg-paper text-ink-soft flex min-h-screen flex-col antialiased">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

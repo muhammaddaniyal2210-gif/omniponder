@@ -15,6 +15,7 @@ export type ArticleMeta = {
   excerpt: string
   topic: string
   tags: string[]
+  wordCount: number
   readingTime: number
 }
 
@@ -26,8 +27,11 @@ type Frontmatter = Partial<Record<'title' | 'date' | 'excerpt' | 'topic' | 'tags
 
 const WORDS_PER_MINUTE = 220
 
-function estimateReadingTime(body: string) {
-  const words = body.trim().split(/\s+/).filter(Boolean).length
+function countWords(body: string) {
+  return body.trim().split(/\s+/).filter(Boolean).length
+}
+
+function estimateReadingTime(words: number) {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE))
 }
 
@@ -45,6 +49,7 @@ function asTags(value: unknown): string[] {
 
 function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
   const tags = asTags(data.tags)
+  const wordCount = countWords(body)
 
   return {
     slug,
@@ -56,7 +61,8 @@ function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
     // a tags-only frontmatter never falls through to "General".
     topic: asString(data.topic, tags[0] ?? 'General'),
     tags,
-    readingTime: estimateReadingTime(body),
+    wordCount,
+    readingTime: estimateReadingTime(wordCount),
   }
 }
 

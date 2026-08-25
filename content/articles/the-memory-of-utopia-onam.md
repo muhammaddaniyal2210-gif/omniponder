@@ -2,7 +2,8 @@
 title: "The Memory of Utopia: The Economic and Philosophical Roots of Onam"
 excerpt: "Beyond the floral carpets and harvest feasts, Kerala's greatest festival is a profound reflection on agrarian surplus, the mechanics of the monsoon, and the enduring human myth of an egalitarian state."
 date: "2026-08-25"
-tags: ["Onam", "Kerala History", "Economic History", "Philosophy"]
+topic: "Economic History"
+tags: ["Onam", "King Mahabali", "Onam Sadya", "Kerala History", "Economic History", "Indian Ocean Trade", "Political Philosophy"]
 ---
 
 For a few weeks each year, Kerala's commercial landscape becomes unmistakable. Gold retailers extend their hours. Appliance chains run their deepest discounts of the calendar. Onam is now the single largest consumption event in the state's economy, and the marketing around it is relentless enough to obscure what is actually being commemorated.

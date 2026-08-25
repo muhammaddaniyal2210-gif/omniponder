@@ -22,7 +22,7 @@ export const siteConfig = {
   author: 'Muhammad Daniyal',
   title: 'Omniponder | Daily Education',
   description:
-    'Exploring science, philosophy, human nature, and global trends daily.',
+    'One rigorous piece every day on how the world actually works — global systems, economic history, science, and philosophy.',
   url: siteUrl,
 } as const
 

@@ -4,7 +4,9 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, CalendarDays, Clock } from 'lucide-react'
 import AdPlaceholder from '@/components/AdPlaceholder'
 import ReadingProgress from '@/components/ReadingProgress'
+import JsonLd from '@/components/JsonLd'
 import ShareButtons from '@/components/ShareButtons'
+import { articleSchema, breadcrumbSchema } from '@/lib/structured-data'
 import { formatDate, getArticleBySlug, getArticleSlugs } from '@/lib/markdown'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
@@ -29,6 +31,7 @@ export async function generateMetadata(props: PageProps<'/article/[slug]'>): Pro
     title: article.title,
     description: article.excerpt,
     authors: [{ name: siteConfig.author }],
+    keywords: article.tags,
     alternates: { canonical: url },
     openGraph: {
       title: article.title,
@@ -40,6 +43,7 @@ export async function generateMetadata(props: PageProps<'/article/[slug]'>): Pro
       publishedTime: article.date,
       modifiedTime: article.date,
       section: article.topic,
+      tags: article.tags,
       authors: [siteConfig.author],
     },
     twitter: {
@@ -62,6 +66,7 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
 
   return (
     <>
+      <JsonLd data={[articleSchema(article), breadcrumbSchema(article)]} />
       <ReadingProgress targetId={ARTICLE_BODY_ID} />
 
       <div className="mx-auto max-w-[42rem] px-6 py-12 sm:py-16">
@@ -119,7 +124,25 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
           />
         </article>
 
-        <div className="border-rule mt-20 border-t pt-10">
+        {article.tags.length > 0 && (
+          <div className="border-rule mt-16 border-t pt-8">
+            <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+              Filed under
+            </h2>
+            <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-2">
+              {article.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="border-rule text-ink-muted border px-3 py-1.5 text-[0.6875rem] tracking-[0.12em] uppercase"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="border-rule mt-12 border-t pt-10">
           <ShareButtons url={url} title={article.title} />
         </div>
 

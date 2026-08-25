@@ -99,9 +99,52 @@ Each piece makes one argument and follows it through. House voice is calm,
 precise, and unhurried; it explains rather than asserts, and it never sells.
 No listicles, no hot takes, no engagement bait, no padding to hit a length.
 
-Articles are Markdown files in `content/articles/` with frontmatter:
-`title`, `date` (`YYYY-MM-DD`), `excerpt`, `topic`. The newest date is
-automatically the homepage's "Today's Read" — publishing is adding a file.
+### Publishing contract
+
+Articles are Markdown files in `content/articles/`. The newest date becomes the
+homepage's "Today's Read" — publishing is adding a file. Ties on date break on
+slug, so two pieces sharing a date resolve deterministically.
+
+```yaml
+title:   "Headline — front-load the keyword phrase; aim under 60 chars"
+excerpt: "The meta description. 150–160 characters, complete sentence, carries the hook."
+date:    "YYYY-MM-DD"
+topic:   "Economic History"        # the DISCIPLINE — drives archive grouping
+tags:    ["Onam", "King Mahabali"] # 5–8 entities — drives keywords, article:tag, JSON-LD
+```
+
+`topic` and `tags` do different jobs. **`topic` is the discipline** and must
+stay in the small, stable set the archive groups by (Geopolitics, Economic
+History, Science, Philosophy, Human Nature, Global Systems). **`tags` are search
+entities** — specific proper nouns and phrases people actually type. Never let
+a one-off subject become a topic. If `topic` is omitted it falls back to the
+first tag, which is a convenience, not the intended path.
+
+### SEO requirements
+
+These are wired up already; the point is not to break them.
+
+- Every route sets its own title, description, canonical, OG, and Twitter card.
+  Absolute URLs come from `lib/site.ts` — never hardcode an origin.
+- Article pages emit `Article` + `BreadcrumbList` JSON-LD from
+  `lib/structured-data.ts`; the root layout emits `Organization` + `WebSite`.
+  **Structured data must never contradict what the page visibly says** — that
+  is a manual-action risk, not an optimisation.
+- `app/sitemap.ts`, `app/robots.ts`, and `app/feed.xml` are generated from the
+  article list. New articles appear in all three with no extra work.
+- One `<h1>` per page; heading order must not skip levels. Work the target
+  entities into `##`/`###` naturally.
+- Every image needs real alt text. Markdown images have **no build-time
+  existence check** — a missing file ships a broken image.
+
+### House style
+
+One argument per piece, followed to a conclusion, uncertainties stated. Calm,
+precise, unhurried; explains rather than asserts; never sells. No listicles, no
+hot takes, no padding to hit a length.
+
+**Banned:** "delve", "tapestry", "testament", "in conclusion", "vibrant",
+"navigate the complexities", "in today's fast-paced world".
 
 ## Architecture
 
