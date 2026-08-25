@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import NewsletterForm from '@/components/newsletter-form'
+import SocialLinks from '@/components/SocialLinks'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const description =
@@ -142,6 +143,17 @@ export default function AboutPage() {
                 human nature, philosophy, and shifting global trends into one clear,
                 authoritative daily read.
               </p>
+            </div>
+
+            <div className="border-rule mt-10 border-t pt-7">
+              <h4 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                Connect
+              </h4>
+              <SocialLinks
+                size="md"
+                label="Muhammad Daniyal social accounts"
+                className="mt-4"
+              />
             </div>
           </div>
         </div>

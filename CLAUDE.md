@@ -112,7 +112,8 @@ automatically the homepage's "Today's Read" — publishing is adding a file.
 - Content reads go through `lib/markdown.ts`. Absolute URLs and origin
   resolution go through `lib/site.ts` — never hardcode an origin.
 - **lucide-react v1 has no brand icons.** Twitter/LinkedIn/Facebook marks are
-  inlined SVG paths in `components/ShareButtons.tsx`.
+  inlined SVG paths in `components/BrandIcons.tsx` — the single source for both
+  `ShareButtons` and `SocialLinks`. Never re-inline them elsewhere.
 
 ## Non-negotiables
 

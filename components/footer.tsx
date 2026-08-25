@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SocialLinks from '@/components/SocialLinks'
 
 const linkClass =
   'text-[0.6875rem] font-medium tracking-[0.18em] text-ink-muted uppercase transition-colors hover:text-ink'
@@ -23,14 +24,18 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav aria-label="Footer" className="flex flex-col items-start gap-4 md:items-end">
-            <Link href="/archive" className={linkClass}>
-              Archive
-            </Link>
-            <Link href="/about" className={linkClass}>
-              About
-            </Link>
-          </nav>
+          <div className="flex flex-col items-start gap-7 md:items-end">
+            <nav aria-label="Footer" className="flex flex-col items-start gap-4 md:items-end">
+              <Link href="/archive" className={linkClass}>
+                Archive
+              </Link>
+              <Link href="/about" className={linkClass}>
+                About
+              </Link>
+            </nav>
+
+            <SocialLinks label="Omniponder social accounts" />
+          </div>
         </div>
 
         <p className="text-ink-faint py-8 text-[0.6875rem] tracking-[0.16em] uppercase">
