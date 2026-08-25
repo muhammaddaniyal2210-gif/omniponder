@@ -1,7 +1,5 @@
 # Image assets
 
-Files the site expects. Both degrade differently, so read the notes.
-
 ## author-profile.jpg — About page portrait
 
 Drop the editor's portrait here as **`author-profile.jpg`**.
@@ -13,13 +11,24 @@ Add the file and redeploy; the photo appears automatically.
 Recommended: square or 4:5 portrait, at least 800px on the short edge, colour,
 plain background.
 
-## indian-ocean-shipping.jpg — flagship article figure
+## seabed-infrastructure.jpg — flagship article figure
 
-Referenced from `content/articles/the-indian-ocean-pivot.md`, directly below the
-introduction.
+Referenced from `content/articles/the-seabed-chokepoint.md`, directly below the
+introduction. **Present and rendering.**
 
-**This one does NOT degrade gracefully.** Markdown images are rendered as-is,
-with no build-time existence check, so until the file is added the article shows
-a broken-image icon with its alt text. Add it before promoting the article.
+This is a hand-authored vector infographic, not a generated photograph. The
+source is committed alongside it as `seabed-infrastructure.svg` — edit the SVG
+and re-export rather than retouching the JPEG:
 
-Recommended: 16:9 landscape, at least 1600px wide.
+```
+qlmanage -t -s 1600 -o . seabed-infrastructure.svg
+sips -c 900 1600 seabed-infrastructure.svg.png --out cropped.png
+sips -s format jpeg -s formatOptions 92 cropped.png --out seabed-infrastructure.jpg
+```
+
+The SVG uses a 1600x1600 canvas with the 16:9 composition letterboxed at
+`translate(0,350)`, because `qlmanage` fits to height; the centred 900px crop
+recovers the artwork exactly.
+
+Note: markdown images get no build-time existence check. If this file is ever
+removed, the article renders a broken image — unlike the About portrait.

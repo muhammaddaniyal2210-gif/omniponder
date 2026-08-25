@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e2740"/>
+      <stop offset="45%" stop-color="#08192b"/>
+      <stop offset="100%" stop-color="#040d17"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12314d"/>
+      <stop offset="100%" stop-color="#0e2740"/>
+    </linearGradient>
+    <linearGradient id="bed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1622"/>
+      <stop offset="100%" stop-color="#02070d"/>
+    </linearGradient>
+    <linearGradient id="zone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c0392b" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#c0392b" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .lbl { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; letter-spacing: 3.2px; fill: #b9c9d8; }
+    .lbl-dim { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: 2.4px; fill: #6f8398; }
+    .lbl-gold { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; letter-spacing: 3.2px; fill: #d9a441; }
+    .lbl-red { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; letter-spacing: 3px; fill: #e0705f; }
+    .tiny { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 2px; fill: #5d7085; }
+    .lead { stroke: #4a5f73; stroke-width: 1; }
+  </style>
+
+  <rect width="1600" height="1600" fill="#040d17"/>
+  <g transform="translate(0,350)">
+
+
+  <rect width="1600" height="900" fill="url(#water)"/>
+  <rect width="1600" height="200" fill="url(#sky)"/>
+
+  <!-- chart grid -->
+  <g stroke="#7fa8cc" stroke-opacity="0.055" stroke-width="1">
+    <path d="M0 60H1600M0 140H1600M0 220H1600M0 300H1600M0 380H1600M0 460H1600M0 540H1600M0 620H1600M0 700H1600M0 780H1600M0 860H1600"/>
+    <path d="M80 0V900M160 0V900M240 0V900M320 0V900M400 0V900M480 0V900M560 0V900M640 0V900M720 0V900M800 0V900M880 0V900M960 0V900M1040 0V900M1120 0V900M1200 0V900M1280 0V900M1360 0V900M1440 0V900M1520 0V900"/>
+  </g>
+  <g stroke="#7fa8cc" stroke-opacity="0.12" stroke-width="1">
+    <path d="M0 200H1600"/>
+  </g>
+
+  <!-- depth ticks -->
+  <g class="tiny">
+    <text x="24" y="305">0 M</text>
+    <text x="24" y="465">2 000 M</text>
+    <text x="24" y="625">4 000 M</text>
+  </g>
+
+  <!-- EEZ boundary -->
+  <g>
+    <path d="M470 200V760" stroke="#4ea3c9" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="7 9"/>
+    <text class="lbl" x="60" y="252">EXCLUSIVE ECONOMIC ZONE (EEZ)</text>
+    <path class="lead" d="M60 266H452"/>
+    <text class="tiny" x="60" y="288">COASTAL RESOURCE RIGHTS — NO POLICE POWER OVER FOREIGN HULLS</text>
+  </g>
+
+  <!-- transit restriction zone -->
+  <g>
+    <rect x="700" y="200" width="230" height="560" fill="url(#zone)"/>
+    <path d="M700 200V760M930 200V760" stroke="#c0392b" stroke-opacity="0.75" stroke-width="1.5" stroke-dasharray="6 7"/>
+    <text class="lbl-red" x="815" y="248" text-anchor="middle">TRANSIT RESTRICTION ZONE</text>
+    <text class="tiny" x="815" y="272" text-anchor="middle" fill="#a86055">WAR-RISK REPRICED — ROUTE CLOSES COMMERCIALLY</text>
+  </g>
+
+  <!-- container vessel on the surface -->
+  <g transform="translate(300,200)">
+    <path d="M-96 0 L104 0 L88 30 L-78 30 Z" fill="#14293d" stroke="#5d7f9e" stroke-width="1.4"/>
+    <rect x="-72" y="-30" width="150" height="30" fill="#101f30"/>
+    <g fill="#1d364b" stroke="#43607a" stroke-width="1">
+      <rect x="-72" y="-14" width="26" height="14"/><rect x="-44" y="-14" width="26" height="14"/>
+      <rect x="-16" y="-14" width="26" height="14"/><rect x="12" y="-14" width="26" height="14"/>
+      <rect x="40" y="-14" width="26" height="14"/>
+      <rect x="-58" y="-28" width="26" height="14"/><rect x="-30" y="-28" width="26" height="14"/>
+      <rect x="-2" y="-28" width="26" height="14"/><rect x="26" y="-28" width="26" height="14"/>
+    </g>
+    <rect x="72" y="-34" width="26" height="34" fill="#22374b" stroke="#5d7f9e" stroke-width="1"/>
+    <path d="M-150 30 Q -60 38 30 30 T 210 30" stroke="#4ea3c9" stroke-opacity="0.35" stroke-width="1.4" fill="none"/>
+  </g>
+  <text class="lbl-dim" x="300" y="150" text-anchor="middle">COMMERCIAL TRANSIT</text>
+  <path class="lead" d="M300 158V162"/>
+
+  <!-- seabed -->
+  <path d="M0 700 Q 260 664 470 700 T 900 742 Q 1180 772 1600 706 L1600 900 L0 900 Z" fill="url(#bed)" stroke="#2c4257" stroke-width="1.5"/>
+
+  <!-- subsea cables and pipelines, circuitry-like -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M0 716 Q 260 682 470 716 T 900 758 Q 1180 788 1600 722" stroke="#d9a441" stroke-opacity="0.18" stroke-width="7"/>
+    <path d="M0 716 Q 260 682 470 716 T 900 758 Q 1180 788 1600 722" stroke="#d9a441" stroke-width="2.2"/>
+    <path d="M0 736 Q 300 704 560 742 T 1080 782 Q 1330 796 1600 748" stroke="#4ea3c9" stroke-opacity="0.16" stroke-width="7"/>
+    <path d="M0 736 Q 300 704 560 742 T 1080 782 Q 1330 796 1600 748" stroke="#4ea3c9" stroke-width="1.8"/>
+    <path d="M0 756 Q 340 730 640 766 T 1180 800 Q 1400 810 1600 776" stroke="#d9a441" stroke-opacity="0.55" stroke-width="1.3" stroke-dasharray="14 8"/>
+  </g>
+
+  <!-- junction node -->
+  <g transform="translate(1060,779)">
+    <circle r="26" fill="none" stroke="#d9a441" stroke-opacity="0.30" stroke-width="1"/>
+    <circle r="15" fill="none" stroke="#d9a441" stroke-opacity="0.6" stroke-width="1.2"/>
+    <circle r="5.5" fill="#d9a441"/>
+    <path d="M0 -26V-46" stroke="#d9a441" stroke-opacity="0.5" stroke-width="1"/>
+  </g>
+
+  <!-- submarine near the junction -->
+  <g transform="translate(1215,690)">
+    <ellipse cx="0" cy="0" rx="92" ry="16" fill="#39434c" stroke="#657280" stroke-width="1.2"/>
+    <path d="M-10 -16 L26 -16 L18 -40 L2 -40 Z" fill="#39434c" stroke="#657280" stroke-width="1.2"/>
+    <path d="M-92 0 L-116 -12 M-92 0 L-116 12" stroke="#657280" stroke-width="1.4"/>
+  </g>
+  <path class="lead" d="M1150 704 Q 1110 748 1086 772" fill="none" stroke-dasharray="3 5"/>
+  <text class="lbl-red" x="1268" y="640" text-anchor="middle">ASSET VULNERABILITY</text>
+  <text class="tiny" x="1268" y="662" text-anchor="middle" fill="#a86055">DENIABLE — ATTRIBUTION LAGS RESPONSE</text>
+
+  <!-- cable label -->
+  <text class="lbl-gold" x="60" y="838">SUBSEA CABLES &amp; PIPELINES</text>
+  <path class="lead" d="M60 850H430"/>
+  <text class="tiny" x="60" y="872">~99% OF INTERCONTINENTAL DATA — FLAG-STATE JURISDICTION ONLY</text>
+
+  <!-- plate -->
+  <g>
+    <path d="M1180 60H1540" stroke="#4a5f73" stroke-width="1"/>
+    <text class="tiny" x="1540" y="50" text-anchor="end">OMNIPONDER — FIG. 01</text>
+    <text class="tiny" x="1540" y="84" text-anchor="end">SEABED INFRASTRUCTURE &amp; TRANSIT CONTROL</text>
+  </g>
+  </g>
+</svg>
