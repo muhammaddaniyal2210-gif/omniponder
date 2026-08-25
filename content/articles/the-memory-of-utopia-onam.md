@@ -63,7 +63,7 @@ The philosophy would be inert without machinery. Onam's customs function as that
 
 The **Onam Sadya** is a vegetarian feast of twenty-odd preparations served in a fixed sequence on a banana leaf. Its significant feature is not the menu but the seating: participants eat on the floor, in rows, from identical leaves, receiving identical items in identical order. In a society historically organised around elaborate rules of ritual distance and commensality — who may eat with whom, and from what — a shared leaf is not a culinary convention. It is a temporary enactment of the equality the myth describes.
 
-![Traditional Onam celebration in Kerala](/images/onam-celebration.jpg) *Caption: The cultural synthesis of the monsoon surplus, manifesting in the traditional Onam Sadya.*
+![Illustration of a traditional Onam Sadya laid on a banana leaf: rice and sambar at the centre, with the accompanying preparations arranged along the leaf in their fixed serving order](/images/onam-celebration.jpg) *Caption: The cultural synthesis of the monsoon surplus, manifesting in the traditional Onam Sadya.*
 
 The distributive customs are more concrete still. **Onakkodi**, the gift of new clothes, moved from landholders to tenants, from employers to workers, from senior kin to junior. Provisions were advanced. Debts were, by custom, settled or deferred at Onam. The festival sat at precisely the calendar point where the harvest had landed and surplus existed to move.
 

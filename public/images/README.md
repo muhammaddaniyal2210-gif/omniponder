@@ -32,3 +32,24 @@ recovers the artwork exactly.
 
 Note: markdown images get no build-time existence check. If this file is ever
 removed, the article renders a broken image — unlike the About portrait.
+
+## onam-celebration.jpg — Onam article figure
+
+Referenced from `content/articles/the-memory-of-utopia-onam.md`, in the section
+on the Sadya. **Present and rendering.**
+
+This is a hand-authored vector illustration of an Onam Sadya, not a photograph.
+Source committed alongside as `onam-celebration.svg`; edit the SVG and re-export
+rather than retouching the JPEG:
+
+```
+qlmanage -t -s 1600 -o . onam-celebration.svg
+sips -c 900 1600 onam-celebration.svg.png --out crop.png
+sips -s format jpeg -s formatOptions 92 crop.png --out onam-celebration.jpg
+```
+
+Same 1600x1600 letterbox trick as the seabed figure: the composition sits at
+`translate(0,350)` because `qlmanage` fits to height.
+
+Replace it freely with a properly licensed photograph — the alt text and caption
+should then be updated to describe the photograph instead.
