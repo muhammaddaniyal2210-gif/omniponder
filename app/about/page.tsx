@@ -52,25 +52,21 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hook */}
-      <section className="mx-auto max-w-4xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-20">
-        <p className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
-          The manifesto
-        </p>
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:px-10 sm:pt-24 sm:pb-24">
+        <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">The Manifesto</p>
 
-        <h1 className="mt-8 max-w-3xl text-[2.5rem] leading-[1.05] font-semibold tracking-tight text-balance text-zinc-900 sm:text-6xl lg:text-7xl">
+        <h1 className="text-ink mt-10 max-w-4xl font-serif text-[2.75rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:text-7xl lg:text-[5.5rem]">
           We believe a strong mind is built one idea at a time.
         </h1>
       </section>
 
-      <div className="border-t border-zinc-200" />
+      <div className="border-t border-rule" />
 
       {/* Mission */}
-      <section className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
-        <h2 className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
-          Our mission
-        </h2>
+      <section className="mx-auto max-w-2xl px-6 py-20 sm:py-24">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">Our Mission</h2>
 
-        <div className="prose prose-zinc prose-omniponder prose-lg mt-8 max-w-none font-serif prose-headings:font-sans prose-headings:tracking-tight">
+        <div className="prose prose-neutral prose-omniponder mt-10 max-w-none">
           <p>
             The modern world does not suffer from a shortage of information. It suffers
             from the opposite. We are handed more words before breakfast than our
@@ -97,24 +93,22 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2">
+        <ul className="border-rule bg-rule mt-16 grid gap-px border sm:grid-cols-2">
           {disciplines.map(({ icon: Icon, name, blurb }) => (
-            <li key={name} className="bg-white p-6">
-              <Icon className="h-5 w-5 text-zinc-400" aria-hidden="true" />
-              <h3 className="mt-4 font-semibold tracking-tight text-zinc-900">{name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-pretty text-zinc-600">{blurb}</p>
+            <li key={name} className="bg-paper p-8">
+              <Icon className="h-5 w-5 text-ink-faint" aria-hidden="true" />
+              <h3 className="text-ink mt-5 font-serif text-xl font-medium tracking-[-0.015em]">{name}</h3>
+              <p className="text-ink-muted mt-2.5 text-sm leading-relaxed text-pretty">{blurb}</p>
             </li>
           ))}
         </ul>
       </section>
 
-      <div className="border-t border-zinc-200" />
+      <div className="border-t border-rule" />
 
       {/* Founder & Editor */}
-      <section className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
-        <h2 className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
-          Founder &amp; Editor
-        </h2>
+      <section className="mx-auto max-w-2xl px-6 py-20 sm:py-24">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">Founder &amp; Editor</h2>
 
         <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
           {/*
@@ -123,20 +117,20 @@ export default function AboutPage() {
           */}
           <div
             aria-hidden="true"
-            className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-2xl font-semibold tracking-tight text-zinc-400 select-none"
+            className="border-rule bg-paper-deep text-ink-faint flex h-32 w-32 shrink-0 items-center justify-center border font-serif text-3xl select-none"
           >
             MD
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold tracking-tight text-zinc-900">
+            <h3 className="text-ink font-serif text-3xl font-medium tracking-[-0.02em]">
               Muhammad Daniyal
             </h3>
-            <p className="mt-1 text-sm tracking-wide text-zinc-500">
+            <p className="text-ink-faint mt-2 text-[0.625rem] tracking-[0.2em] uppercase">
               Founder &amp; Editor, Omniponder
             </p>
 
-            <div className="prose prose-zinc prose-omniponder mt-6 max-w-none font-serif prose-p:leading-relaxed">
+            <div className="prose prose-neutral prose-omniponder mt-7 max-w-none">
               <p>
                 Muhammad Daniyal is an International Relations graduate, researcher, and
                 writer specializing in global systems, maritime politics, and energy
@@ -157,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* Conversion anchor */}
-      <section className="mx-auto max-w-4xl px-6 pt-8 pb-24">
+      <section className="mx-auto max-w-6xl px-6 pt-8 pb-28 sm:px-10">
         <NewsletterForm
           variant="feature"
           heading="Start building, one idea at a time"

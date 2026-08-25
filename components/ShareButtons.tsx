@@ -41,7 +41,7 @@ function FacebookIcon({ className }: BrandIconProps) {
 }
 
 const buttonClass =
-  'inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none'
+  'inline-flex h-11 w-11 items-center justify-center border border-rule text-ink-muted transition-colors hover:border-ink hover:bg-ink hover:text-paper focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink'
 
 export default function ShareButtons({ url, title }: ShareButtonsProps) {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle')
@@ -92,8 +92,8 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
-      <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
+    <div className="flex flex-wrap items-center justify-between gap-5">
+      <span className="text-ink-faint inline-flex items-center gap-2 text-[0.625rem] tracking-[0.2em] uppercase">
         <Share2 className="h-4 w-4" aria-hidden="true" />
         Share this piece
       </span>

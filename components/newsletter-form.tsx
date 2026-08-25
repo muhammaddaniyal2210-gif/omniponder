@@ -7,7 +7,7 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 
 type NewsletterFormProps = {
   /**
-   * `panel` — recessed zinc-50 card, for mid-page placement.
+   * `panel` — recessed ivory panel, for mid-page placement.
    * `feature` — inverted anchor block, for the end of a page where it is the
    * primary call to action.
    */
@@ -69,28 +69,28 @@ export default function NewsletterForm({
       aria-labelledby="newsletter-heading"
       className={
         inverted
-          ? 'rounded-2xl bg-zinc-900 px-6 py-14 sm:px-12 sm:py-16'
-          : 'rounded-2xl border border-zinc-200 bg-zinc-50 px-6 py-12 sm:px-10'
+          ? 'bg-ink px-6 py-16 sm:px-14 sm:py-20'
+          : 'border-rule border-y px-6 py-16 sm:px-10'
       }
     >
       <div className="mx-auto max-w-xl text-center">
         <Mail
-          className={`mx-auto h-6 w-6 ${inverted ? 'text-zinc-500' : 'text-zinc-400'}`}
+          className={`mx-auto h-6 w-6 ${inverted ? 'text-ink-muted' : 'text-ink-faint'}`}
           aria-hidden="true"
         />
 
         <h2
           id="newsletter-heading"
-          className={`mt-5 font-semibold tracking-tight text-balance ${
-            inverted ? 'text-3xl text-white sm:text-4xl' : 'text-2xl text-zinc-900'
+          className={`mt-6 font-serif font-medium tracking-[-0.02em] text-balance ${
+            inverted ? 'text-paper text-4xl sm:text-5xl' : 'text-ink text-3xl sm:text-4xl'
           }`}
         >
           {heading}
         </h2>
 
         <p
-          className={`mx-auto mt-4 max-w-md leading-relaxed text-pretty ${
-            inverted ? 'text-zinc-300' : 'text-base text-zinc-600'
+          className={`mx-auto mt-5 max-w-md font-serif text-lg leading-relaxed text-pretty ${
+            inverted ? 'text-rule-strong' : 'text-ink-muted'
           }`}
         >
           {blurb}
@@ -114,20 +114,20 @@ export default function NewsletterForm({
             placeholder="you@example.com"
             disabled={status === 'loading'}
             aria-describedby={message ? 'newsletter-status' : undefined}
-            className={`w-full flex-1 rounded-lg px-4 py-3.5 focus:outline-none disabled:opacity-60 ${
+            className={`w-full flex-1 px-4 py-3.5 focus:outline-none disabled:opacity-60 ${
               inverted
-                ? 'border border-zinc-700 bg-zinc-800 text-white placeholder:text-zinc-500 focus:border-white focus:ring-2 focus:ring-white/20'
-                : 'border border-zinc-300 bg-white text-zinc-900 placeholder:text-zinc-400 focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10'
+                ? 'border border-rule-strong bg-ink text-paper placeholder:text-ink-muted focus:border-white focus:ring-2 focus:ring-white/20'
+                : 'border border-rule-strong bg-paper text-ink placeholder:text-ink-faint focus:border-ink focus:ring-2 focus:ring-ink/10'
             }`}
           />
 
           <button
             type="submit"
             disabled={status === 'loading' || status === 'success'}
-            className={`inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 ${
+            className={`inline-flex items-center justify-center gap-2 px-7 py-3.5 font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 ${
               inverted
-                ? 'bg-white text-zinc-900 hover:bg-zinc-200 focus:ring-white focus:ring-offset-zinc-900'
-                : 'bg-zinc-900 text-white hover:bg-zinc-700 focus:ring-zinc-900'
+                ? 'bg-paper text-ink hover:bg-rule focus:ring-white focus:ring-offset-ink'
+                : 'bg-ink text-paper hover:bg-ink-soft focus:ring-ink'
             }`}
           >
             {status === 'loading' && (
@@ -151,14 +151,14 @@ export default function NewsletterForm({
                 ? 'text-red-400'
                 : 'text-red-600'
               : inverted
-                ? 'text-zinc-300'
-                : 'text-zinc-600'
+                ? 'text-rule-strong'
+                : 'text-ink-muted'
           }`}
         >
           {message}
         </p>
 
-        <p className={`mt-1 text-xs ${inverted ? 'text-zinc-500' : 'text-zinc-400'}`}>
+        <p className={`mt-1 text-xs ${inverted ? 'text-ink-muted' : 'text-ink-faint'}`}>
           Free forever. Unsubscribe in one click.
         </p>
       </div>

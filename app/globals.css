@@ -1,14 +1,56 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-source-serif), ui-serif, Georgia, Cambria, serif;
+/*
+  Tailwind v4 keeps its configuration here rather than in a JS/TS config file.
+  These tokens ARE the design system — edit them, not the utilities.
+
+  Palette: deep charcoal on ivory. Warm neutrals throughout; no blue-cast grays.
+  Every text token below clears WCAG AA (4.5:1) against --color-paper.
+*/
+@theme {
+  /* Surfaces */
+  --color-paper: #fbfaf7; /* ivory page ground */
+  --color-paper-deep: #f3f0e9; /* recessed panels, featured wells */
+
+  /* Ink — 17.3:1 / 11.2:1 / 5.8:1 / 4.5:1 against paper */
+  --color-ink: #171614; /* headlines, primary text */
+  --color-ink-soft: #3a3833; /* long-form body prose */
+  --color-ink-muted: #66625a; /* metadata, secondary copy */
+  --color-ink-faint: #77736a; /* eyebrows, labels, captions */
+
+  /* Hairlines — the newspaper column rules */
+  --color-rule: #e2ded4;
+  --color-rule-strong: #c8c2b4;
+
+  /* Type: Newsreader carries an optical-size axis, so display sizes pick up
+     higher-contrast forms automatically. Inter Tight is the sharp counterpoint. */
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, serif;
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+
+  /* Sharp edges are a brand rule. Neutralise Tailwind's rounding scale so a
+     stray `rounded-lg` cannot reintroduce softness. */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  /* No drop shadows anywhere in the system. */
+  --shadow-2xs: none;
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
 }
 
 /*
-  Omniponder is deliberately light-only: the reading surface is paper.
-  A dark variant would be a design decision, not a default.
+  Light-only by design: the reading surface is paper, not a themeable chrome.
 */
 html {
   color-scheme: light;
@@ -16,48 +58,153 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: var(--color-zinc-800);
+  background-color: var(--color-paper);
+  color: var(--color-ink-soft);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
 }
 
 ::selection {
-  background-color: var(--color-zinc-900);
-  color: #ffffff;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
 }
 
-/* Article typography: serif body, tighter measure, restrained accents. */
+/* Editorial numerals: metadata columns should align. */
+time,
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Long-form reading surface ─────────────────────────────────────────────
+   Serif body at a generous measure and leading. Headings stay serif too, so
+   the article reads as one typographic voice; sans is reserved for chrome.  */
 .prose-omniponder {
-  --tw-prose-body: var(--color-zinc-700);
-  --tw-prose-headings: var(--color-zinc-900);
-  --tw-prose-lead: var(--color-zinc-600);
-  --tw-prose-links: var(--color-zinc-900);
-  --tw-prose-bold: var(--color-zinc-900);
-  --tw-prose-counters: var(--color-zinc-400);
-  --tw-prose-bullets: var(--color-zinc-300);
-  --tw-prose-hr: var(--color-zinc-200);
-  --tw-prose-quotes: var(--color-zinc-800);
-  --tw-prose-quote-borders: var(--color-zinc-900);
-  --tw-prose-captions: var(--color-zinc-500);
-  --tw-prose-code: var(--color-zinc-900);
-  --tw-prose-pre-bg: var(--color-zinc-900);
-  --tw-prose-th-borders: var(--color-zinc-300);
-  --tw-prose-td-borders: var(--color-zinc-200);
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink-muted);
+  --tw-prose-links: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-ink-faint);
+  --tw-prose-bullets: var(--color-rule-strong);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-ink);
+  --tw-prose-captions: var(--color-ink-faint);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-ink);
+  --tw-prose-th-borders: var(--color-rule-strong);
+  --tw-prose-td-borders: var(--color-rule);
+
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  line-height: 1.78;
+  letter-spacing: 0.001em;
 }
 
-.prose-omniponder :where(h2, h3, h4) {
-  font-family: var(--font-sans);
-  letter-spacing: -0.015em;
+.prose-omniponder :where(p) {
+  margin-block: 1.55em;
+  text-wrap: pretty;
 }
 
-.prose-omniponder blockquote {
-  font-style: normal;
+.prose-omniponder :where(h2) {
+  font-family: var(--font-serif);
   font-weight: 500;
+  font-size: 1.9em;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+  margin-top: 2.6em;
+  margin-bottom: 0.7em;
 }
 
-.prose-omniponder blockquote p:first-of-type::before,
-.prose-omniponder blockquote p:last-of-type::after {
+.prose-omniponder :where(h3) {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.32em;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+  margin-top: 2.1em;
+  margin-bottom: 0.55em;
+}
+
+/* A rule above each major section, the way a print feature separates decks. */
+.prose-omniponder :where(h2)::before {
   content: "";
+  display: block;
+  width: 3.5rem;
+  border-top: 1px solid var(--color-rule-strong);
+  margin-bottom: 1.1em;
+}
+
+.prose-omniponder :where(ul, ol) {
+  margin-block: 1.6em;
+  padding-inline-start: 1.4em;
+}
+
+.prose-omniponder :where(li) {
+  margin-block: 0.65em;
+  padding-inline-start: 0.35em;
+}
+
+/* Pull-quotes: no curly quotes, no italics — weight and space do the work. */
+.prose-omniponder :where(blockquote) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.24em;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: var(--color-ink);
+  border-inline-start: 1px solid var(--color-ink);
+  padding-inline-start: 1.75rem;
+  margin-block: 2.4em;
+}
+
+.prose-omniponder :where(blockquote p) {
+  margin-block: 0;
+  text-wrap: pretty;
+}
+
+.prose-omniponder :where(blockquote p):first-of-type::before,
+.prose-omniponder :where(blockquote p):last-of-type::after {
+  content: "";
+}
+
+.prose-omniponder :where(strong) {
+  font-weight: 650;
+}
+
+.prose-omniponder :where(a) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--color-rule-strong);
+  transition: text-decoration-color 150ms ease;
+}
+
+.prose-omniponder :where(a):hover {
+  text-decoration-color: var(--color-ink);
+}
+
+.prose-omniponder :where(table) {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.prose-omniponder :where(hr) {
+  margin-block: 3.5em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

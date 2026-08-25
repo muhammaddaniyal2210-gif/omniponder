@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
 const navLinkClass =
-  'text-sm tracking-wide text-zinc-500 transition-colors hover:text-zinc-900 focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-4 focus-visible:outline-none'
+  'text-[0.6875rem] font-medium tracking-[0.18em] text-ink-muted uppercase transition-colors hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-ink'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/90 backdrop-blur-sm">
+    <header className="border-rule bg-paper/92 sticky top-0 z-40 border-b backdrop-blur-sm">
       {/*
-        Three equal columns keep the wordmark optically centred regardless of
-        how wide the flanking nav links are.
+        Three equal columns hold the wordmark optically centred no matter how
+        wide the flanking links run — the masthead rule of a printed front page.
       */}
-      <div className="mx-auto grid h-20 max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6">
+      <div className="mx-auto grid h-[4.5rem] max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-6 px-6 sm:h-24 sm:px-10">
         <nav aria-label="Sections" className="justify-self-start">
           <Link href="/archive" className={navLinkClass}>
             Archive
@@ -20,7 +20,7 @@ export default function Header() {
         <Link
           href="/"
           aria-label="Omniponder — home"
-          className="justify-self-center text-xl font-black tracking-tight text-zinc-900 transition-opacity hover:opacity-70 focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-4 focus-visible:outline-none sm:text-2xl"
+          className="text-ink focus-visible:outline-ink justify-self-center font-serif text-[1.6rem] leading-none font-medium tracking-[-0.02em] transition-opacity hover:opacity-60 focus-visible:outline-1 focus-visible:outline-offset-4 sm:text-[2.1rem]"
         >
           Omniponder
         </Link>

@@ -27,41 +27,59 @@ nothing else is asked to.
   try solving it with size, weight, leading, or space. Usually that works.
 - **Generous whitespace.** Whitespace is structure, not leftover. Sections
   breathe (`py-16`+); nothing is packed. When in doubt, add space.
-- **High contrast, true white.** `#ffffff` backgrounds — never off-white, never
-  a tint. Text is near-black on white.
+- **High contrast on ivory.** The ground is warm off-white (`#fbfaf7`), not
+  pure `#ffffff` — paper, not screen. Text is deep charcoal, at 17:1.
 - **Restraint.** No gradients, no drop shadows, no decorative colour, no
   animated flourishes. Motion is limited to subtle state transitions.
 
 ### Colour
 
-**Zinc is the neutral. Do not introduce slate, gray, or neutral.** Zinc reads
-truly neutral against `#ffffff`; slate carries a blue cast that fights it.
+The palette is **deep charcoal on ivory**. Warm neutrals only — **do not
+introduce zinc, slate, gray, or neutral scales**; they carry a cool cast that
+fights the paper ground. Use the semantic tokens, never raw Tailwind colours.
 
-| Role | Token |
-| --- | --- |
-| Page background | `bg-white` (true `#ffffff`) |
-| Primary text / headings | `text-zinc-900` |
-| Body prose | `text-zinc-700` |
-| Secondary / metadata | `text-zinc-500` |
-| Labels, eyebrows | `text-zinc-400` |
-| Hairlines, rules | `border-zinc-200` |
-| Recessed panels | `bg-zinc-50` |
-| Inverted surfaces | `bg-zinc-900` + `text-white` |
+| Role | Token | Hex |
+| --- | --- | --- |
+| Page ground | `bg-paper` | `#fbfaf7` |
+| Recessed panel | `bg-paper-deep` | `#f3f0e9` |
+| Headlines, primary text | `text-ink` | `#171614` |
+| Long-form body prose | `text-ink-soft` | `#3a3833` |
+| Metadata, secondary copy | `text-ink-muted` | `#66625a` |
+| Eyebrows, labels, captions | `text-ink-faint` | `#77736a` |
+| Hairline rules | `border-rule` | `#e2ded4` |
+| Emphasised rules | `border-rule-strong` | `#c8c2b4` |
 
-Colour beyond zinc is reserved for genuine error states. There is no accent
-colour, and adding one requires a deliberate brand decision — not a component's
-convenience.
+Every text token clears WCAG AA (4.5:1) against `bg-paper`. If you add one,
+verify the ratio before using it — `text-ink-faint` is already at the limit.
+
+There is no accent colour. Colour beyond this scale is reserved for genuine
+error states.
+
+### Form
+
+- **Sharp edges, always.** The radius scale is zeroed in `@theme`, so a stray
+  `rounded-lg` is inert — but do not write one.
+- **No shadows.** The shadow scale is zeroed too. Depth comes from rules and
+  space, never from blur.
+- **Hairlines do the separating.** 1px `border-rule` between sections, in the
+  manner of newspaper column rules. Prefer a rule over a filled panel.
+- **Whitespace is bounded.** Generous space *inside* ruled sections; never a
+  large unbounded void between two rules.
 
 ### Type
 
-- **UI, headings, navigation:** Inter (`font-sans`), tight tracking on display
-  sizes (`tracking-tight`).
-- **Article and long-form body:** Source Serif 4 (`font-serif`). Serif is the
-  reading surface; sans is the furniture around it.
-- Headlines are set `text-balance`; body paragraphs and standfirsts
-  `text-pretty`.
-- Article measure stays near 65–75 characters (`max-w-2xl`). Never widen the
-  reading column to fill a screen.
+- **Serif — Newsreader (`font-serif`)**: all editorial content. Article body,
+  headlines, standfirsts, pull-quotes, the masthead wordmark. It carries an
+  optical-size axis, so display sizes sharpen automatically.
+- **Sans — Inter Tight (`font-sans`)**: chrome only. Navigation, metadata,
+  bylines, eyebrows, buttons, labels. Set small, uppercase, with wide tracking
+  (`tracking-[0.18em]`–`tracking-[0.2em]`).
+- That split *is* the contrast in the design. Do not set body copy in sans or
+  navigation in serif.
+- Display headlines take negative tracking (`-0.02em` to `-0.03em`) and
+  `text-balance`; body copy takes `text-pretty`.
+- Article measure stays near 65–75 characters (`max-w-[42rem]`). Never widen
+  the reading column to fill a screen.
 
 ## Content
 
@@ -87,7 +105,8 @@ automatically the homepage's "Today's Read" — publishing is adding a file.
   Use the generated `PageProps<'/route'>` helpers rather than hand-written prop
   types.
 - **Tailwind v4**: configuration lives in `app/globals.css` (`@theme`,
-  `@plugin`). There is no `tailwind.config.js` — do not create one.
+  `@plugin`) — the design tokens above ARE that config. There is no
+  `tailwind.config.js`/`.ts` and creating one will not be picked up.
 - Server Components by default. Add `'use client'` only for genuine
   interactivity (form state, scroll listeners, clipboard).
 - Content reads go through `lib/markdown.ts`. Absolute URLs and origin

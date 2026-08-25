@@ -1,19 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter, Source_Serif_4 } from 'next/font/google'
+import { Inter_Tight, Newsreader } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { siteConfig, siteUrl } from '@/lib/site'
 import './globals.css'
 
-const inter = Inter({
+// Newsreader carries an optical-size axis (6–72), so display settings pick up
+// higher-contrast letterforms while body copy stays open and readable.
+const newsreader = Newsreader({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-newsreader',
   display: 'swap',
+  style: ['normal', 'italic'],
 })
 
-const sourceSerif = Source_Serif_4({
+const interTight = Inter_Tight({
   subsets: ['latin'],
-  variable: '--font-source-serif',
+  variable: '--font-inter-tight',
   display: 'swap',
 })
 
@@ -63,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
-      <body className="flex min-h-screen flex-col bg-white text-zinc-800 antialiased">
+    <html lang="en" className={`${newsreader.variable} ${interTight.variable}`}>
+      <body className="bg-paper text-ink-soft flex min-h-screen flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

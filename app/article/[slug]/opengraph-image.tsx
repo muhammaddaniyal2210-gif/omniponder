@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import { formatDate, getArticleBySlug, getArticleSlugs } from '@/lib/markdown'
 import { siteConfig } from '@/lib/site'
 
@@ -10,6 +12,17 @@ export async function generateStaticParams() {
   const slugs = await getArticleSlugs()
   return slugs.map((slug) => ({ slug }))
 }
+
+const [serif, sans] = await Promise.all([
+  readFile(join(process.cwd(), 'assets/Newsreader-Medium.ttf')),
+  readFile(join(process.cwd(), 'assets/InterTight-Medium.ttf')),
+])
+
+const PAPER = '#fbfaf7'
+const INK = '#171614'
+const MUTED = '#66625a'
+const FAINT = '#77736a'
+const RULE = '#e2ded4'
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -27,30 +40,30 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#ffffff',
+          background: PAPER,
           padding: 80,
+          fontFamily: 'Newsreader',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 28,
-            color: '#a1a1aa',
-            letterSpacing: 6,
-            textTransform: 'uppercase',
+            fontFamily: 'InterTight',
+            fontSize: 24,
+            color: FAINT,
+            letterSpacing: 7,
           }}
         >
-          {topic}
+          {topic.toUpperCase()}
         </div>
 
         <div
           style={{
             display: 'flex',
-            fontSize: title.length > 46 ? 68 : 84,
-            fontWeight: 700,
-            color: '#18181b',
-            letterSpacing: -2,
-            lineHeight: 1.12,
+            fontSize: title.length > 46 ? 72 : 88,
+            color: INK,
+            letterSpacing: -2.5,
+            lineHeight: 1.1,
           }}
         >
           {title}
@@ -61,26 +74,37 @@ export default async function Image({ params }: { params: Promise<{ slug: string
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            fontSize: 28,
-            color: '#71717a',
-            borderTop: '2px solid #e4e4e7',
+            borderTop: `1px solid ${RULE}`,
             paddingTop: 32,
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', fontWeight: 700, color: '#18181b' }}>
-              {siteConfig.name}
-            </div>
-            <div style={{ display: 'flex', fontSize: 24, marginTop: 6 }}>
-              By {siteConfig.author}
+            <div style={{ display: 'flex', fontSize: 32, color: INK }}>{siteConfig.name}</div>
+            <div
+              style={{
+                display: 'flex',
+                fontFamily: 'InterTight',
+                fontSize: 19,
+                color: FAINT,
+                letterSpacing: 3,
+                marginTop: 8,
+              }}
+            >
+              BY {siteConfig.author.toUpperCase()}
             </div>
           </div>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', fontSize: 26, color: MUTED }}>
             {article ? `${formatDate(article.date)} · ${article.readingTime} min read` : ''}
           </div>
         </div>
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [
+        { name: 'Newsreader', data: serif, style: 'normal', weight: 500 },
+        { name: 'InterTight', data: sans, style: 'normal', weight: 500 },
+      ],
+    }
   )
 }

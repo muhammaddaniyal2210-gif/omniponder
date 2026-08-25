@@ -59,7 +59,7 @@ export default function ReadingProgress({ targetId }: ReadingProgressProps) {
       className="pointer-events-none fixed inset-x-0 top-0 z-50 h-0.5 bg-transparent"
     >
       <div
-        className="h-full origin-left bg-zinc-900"
+        className="h-full origin-left bg-ink"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>

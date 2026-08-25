@@ -1,116 +1,161 @@
 import Link from 'next/link'
-import { ArrowRight, CalendarDays, Clock } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AdPlaceholder from '@/components/AdPlaceholder'
 import NewsletterForm from '@/components/newsletter-form'
 import { formatDate, getAllArticles, getLatestArticle } from '@/lib/markdown'
 import { siteConfig } from '@/lib/site'
+
+const disciplines = [
+  ['Human nature', 'Why people do what they do'],
+  ['Science', 'What we learned, and what it overturns'],
+  ['Philosophy', 'Old questions, treated as live ones'],
+  ['Global systems', 'The slow forces shaping the decades ahead'],
+]
 
 export default async function HomePage() {
   const [latest, all] = await Promise.all([getLatestArticle(), getAllArticles()])
   const previously = all.filter((article) => article.slug !== latest?.slug)
 
   return (
-    <div className="mx-auto max-w-5xl px-6">
+    <div className="mx-auto max-w-6xl px-6 sm:px-10">
+      {/* Dateline — the strip under a newspaper masthead. */}
+      <div className="border-rule text-ink-faint flex items-center justify-between border-b py-4 text-[0.625rem] tracking-[0.2em] uppercase">
+        <span>Daily Edition</span>
+        <span className="hidden sm:inline">Science · Philosophy · Human Nature · Global Systems</span>
+        {latest && <time dateTime={latest.date}>{formatDate(latest.date)}</time>}
+      </div>
+
       {latest ? (
-        <section aria-labelledby="todays-read" className="pt-14 sm:pt-20">
-          <div className="rounded-2xl bg-zinc-50 p-8 sm:p-12 lg:p-16">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-zinc-900 px-3 py-1 text-[0.6875rem] font-semibold tracking-[0.14em] text-white uppercase">
-                Featured
-              </span>
-              <span id="todays-read" className="text-xs font-medium tracking-[0.2em] text-zinc-500 uppercase">
-                Today&rsquo;s Read
-              </span>
-              <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase sm:ml-auto">
-                {latest.topic}
-              </span>
-            </div>
+        <section aria-labelledby="todays-read" className="border-rule border-b">
+          {/* Asymmetric hero: story left, standing matter in a ruled rail right. */}
+          <div className="grid lg:grid-cols-12">
+            <div className="py-14 sm:py-20 lg:col-span-8 lg:pr-16">
+              <div className="flex items-center gap-4">
+                <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
+                  Featured
+                </span>
+                <span
+                  id="todays-read"
+                  className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
+                >
+                  Today&rsquo;s Read
+                </span>
+              </div>
 
-            <h1 className="mt-8 max-w-3xl text-4xl leading-[1.06] font-semibold tracking-tight text-balance text-zinc-900 sm:text-5xl lg:text-6xl">
-              <Link href={`/article/${latest.slug}`} className="transition-opacity hover:opacity-80">
-                {latest.title}
+              <h1 className="text-ink mt-8 font-serif text-[2.6rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance sm:text-6xl lg:text-[4.25rem]">
+                <Link
+                  href={`/article/${latest.slug}`}
+                  className="transition-opacity hover:opacity-70"
+                >
+                  {latest.title}
+                </Link>
+              </h1>
+
+              <p className="text-ink-muted mt-8 max-w-2xl font-serif text-xl leading-[1.65] text-pretty sm:text-[1.375rem]">
+                {latest.excerpt}
+              </p>
+
+              <Link
+                href={`/article/${latest.slug}`}
+                className="group border-ink text-ink hover:bg-ink hover:text-paper focus-visible:outline-ink mt-10 inline-flex items-center gap-3 border px-7 py-3.5 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-4"
+              >
+                Read the essay
+                <ArrowRight
+                  className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </Link>
-            </h1>
-
-            <p className="mt-6 max-w-2xl font-serif text-lg leading-relaxed text-pretty text-zinc-600 sm:text-xl">
-              {latest.excerpt}
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-500">
-              <span className="font-medium text-zinc-700">By {siteConfig.author}</span>
-              <span className="inline-flex items-center gap-1.5">
-                <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                <time dateTime={latest.date}>{formatDate(latest.date)}</time>
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-4 w-4" aria-hidden="true" />
-                {latest.readingTime} min read
-              </span>
             </div>
 
-            <Link
-              href={`/article/${latest.slug}`}
-              className="group mt-10 inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:outline-none"
-            >
-              Read today&rsquo;s piece
-              <ArrowRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
+            {/* Standing matter: the details a print edition sets in the margin. */}
+            <aside className="border-rule flex flex-col gap-8 border-t py-10 lg:col-span-4 lg:border-t-0 lg:border-l lg:py-20 lg:pl-16">
+              <dl className="space-y-5">
+                {[
+                  ['Subject', latest.topic],
+                  ['Written by', siteConfig.author],
+                  ['Published', formatDate(latest.date)],
+                  ['Length', `${latest.readingTime} minute read`],
+                ].map(([label, value]) => (
+                  <div key={label} className="border-rule border-b pb-5">
+                    <dt className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                      {label}
+                    </dt>
+                    <dd className="text-ink mt-2 font-serif text-lg">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div>
+                <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                  The Disciplines
+                </h2>
+                <ul className="mt-5 space-y-3.5">
+                  {disciplines.map(([name, blurb]) => (
+                    <li key={name} className="leading-snug">
+                      <span className="text-ink font-serif text-base">{name}</span>
+                      <span className="text-ink-faint block text-xs">{blurb}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
         </section>
       ) : (
-        <div className="py-24 text-center">
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
+        <div className="border-rule border-b py-32 text-center">
+          <h1 className="text-ink font-serif text-4xl font-medium tracking-tight">
             Nothing published yet
           </h1>
-          <p className="mt-3 text-zinc-600">
+          <p className="text-ink-muted mt-4 font-serif text-lg">
             Add a Markdown file to{' '}
-            <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-sm">content/articles</code> to
+            <code className="bg-paper-deep px-1.5 py-0.5 text-sm">content/articles</code> to
             publish the first edition.
           </p>
         </div>
       )}
 
-      <AdPlaceholder variant="leaderboard" className="mt-16" />
+      <AdPlaceholder variant="leaderboard" className="my-14" />
 
       {previously.length > 0 && (
-        <section aria-labelledby="previously-heading" className="mt-20 sm:mt-24">
-          <div className="flex items-baseline justify-between border-b border-zinc-200 pb-5">
+        <section aria-labelledby="previously-heading" className="border-rule border-t pt-10">
+          <div className="border-rule flex items-baseline justify-between border-b pb-5">
             <h2
               id="previously-heading"
-              className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase"
+              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
             >
-              Previously
+              From the Archive
             </h2>
             <Link
               href="/archive"
-              className="text-sm text-zinc-500 transition-colors hover:text-zinc-900"
+              className="text-ink-muted hover:text-ink text-[0.6875rem] tracking-[0.18em] uppercase transition-colors"
             >
-              All essays &rarr;
+              All essays
             </Link>
           </div>
 
-          <ul className="grid gap-x-10 gap-y-12 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Newspaper columns: vertical hairlines between, reset each row. */}
+          <ul className="grid gap-y-12 pt-12 sm:grid-cols-2 lg:grid-cols-3">
             {previously.map((article) => (
-              <li key={article.slug}>
+              <li
+                key={article.slug}
+                className="border-rule sm:[&:nth-child(2n+1)]:border-l-0 sm:[&:nth-child(2n+1)]:pl-0 lg:[&:nth-child(2n+1)]:border-l lg:[&:nth-child(2n+1)]:pl-10 lg:[&:nth-child(3n+1)]:border-l-0 lg:[&:nth-child(3n+1)]:pl-0 sm:border-l sm:pl-10"
+              >
                 <Link href={`/article/${article.slug}`} className="group flex h-full flex-col">
-                  <div className="flex items-baseline gap-2 text-xs tracking-wide text-zinc-400">
-                    <span className="font-medium text-zinc-500">{article.topic}</span>
-                    <span aria-hidden="true">&middot;</span>
+                  <div className="text-ink-faint flex items-baseline gap-2 text-[0.625rem] tracking-[0.18em] uppercase">
+                    <span>{article.topic}</span>
+                    <span aria-hidden="true">/</span>
                     <time dateTime={article.date}>{formatDate(article.date)}</time>
                   </div>
 
-                  <h3 className="mt-3 text-xl leading-snug font-semibold tracking-tight text-balance text-zinc-900 decoration-zinc-300 underline-offset-4 group-hover:underline">
+                  <h3 className="text-ink mt-4 font-serif text-2xl leading-[1.2] font-medium tracking-[-0.015em] text-balance transition-opacity group-hover:opacity-60">
                     {article.title}
                   </h3>
 
-                  <p className="mt-3 font-serif leading-relaxed text-pretty text-zinc-600">
+                  <p className="text-ink-muted mt-3 font-serif leading-relaxed text-pretty">
                     {article.excerpt}
                   </p>
 
-                  <span className="mt-auto pt-4 text-xs tabular-nums text-zinc-400">
+                  <span className="text-ink-faint mt-auto pt-5 text-[0.625rem] tracking-[0.18em] uppercase">
                     {article.readingTime} min read
                   </span>
                 </Link>
@@ -120,7 +165,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      <div className="py-20 sm:py-24">
+      <div className="mt-14">
         <NewsletterForm />
       </div>
     </div>

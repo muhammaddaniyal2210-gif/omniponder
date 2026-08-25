@@ -64,10 +64,10 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
     <>
       <ReadingProgress targetId={ARTICLE_BODY_ID} />
 
-      <div className="mx-auto max-w-2xl px-6 py-14 sm:py-20">
+      <div className="mx-auto max-w-[42rem] px-6 py-12 sm:py-16">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900"
+          className="group text-ink-muted hover:text-ink inline-flex items-center gap-2 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors"
         >
           <ArrowLeft
             className="h-4 w-4 transition-transform group-hover:-translate-x-0.5"
@@ -77,26 +77,26 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
         </Link>
 
         <article className="mt-10">
-          <header className="border-b border-zinc-200 pb-10">
-            <p className="text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
+          <header className="border-b border-rule pb-10">
+            <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
               {article.topic}
             </p>
 
-            <h1 className="mt-5 text-4xl leading-[1.1] font-semibold tracking-tight text-balance text-zinc-900 sm:text-5xl">
+            <h1 className="text-ink mt-7 font-serif text-[2.5rem] leading-[1.06] font-medium tracking-[-0.025em] text-balance sm:text-[3.25rem]">
               {article.title}
             </h1>
 
             {/* Byline sits directly under the headline, above the standfirst. */}
-            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-zinc-500">
-              <span className="font-medium text-zinc-900">By {siteConfig.author}</span>
-              <span aria-hidden="true" className="text-zinc-300">
+            <div className="text-ink-muted mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.6875rem] tracking-[0.14em] uppercase">
+              <span className="text-ink font-medium">By {siteConfig.author}</span>
+              <span aria-hidden="true" className="text-rule-strong">
                 &middot;
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
                 <time dateTime={article.date}>{formatDate(article.date)}</time>
               </span>
-              <span aria-hidden="true" className="text-zinc-300">
+              <span aria-hidden="true" className="text-rule-strong">
                 &middot;
               </span>
               <span className="inline-flex items-center gap-1.5">
@@ -106,7 +106,7 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
             </div>
 
             {article.excerpt && (
-              <p className="mt-8 border-l-2 border-zinc-900 pl-6 font-serif text-lg leading-relaxed text-pretty text-zinc-600">
+              <p className="text-ink-muted mt-10 font-serif text-[1.4rem] leading-[1.5] tracking-[-0.01em] text-pretty sm:text-[1.6rem]">
                 {article.excerpt}
               </p>
             )}
@@ -114,20 +114,20 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
 
           <div
             id={ARTICLE_BODY_ID}
-            className="prose prose-zinc prose-omniponder prose-lg mt-12 max-w-none font-serif prose-headings:font-sans prose-headings:tracking-tight prose-a:underline-offset-2 prose-blockquote:border-l-2 prose-blockquote:pl-6 prose-img:rounded-lg"
+            className="prose prose-neutral prose-omniponder mt-14 max-w-none"
             dangerouslySetInnerHTML={{ __html: article.contentHtml }}
           />
         </article>
 
-        <div className="mt-16 border-t border-zinc-200 pt-8">
+        <div className="border-rule mt-20 border-t pt-10">
           <ShareButtons url={url} title={article.title} />
         </div>
 
-        <AdPlaceholder variant="leaderboard" className="mt-14" />
+        <AdPlaceholder variant="leaderboard" className="mt-16" />
 
-        <div className="mt-14 text-sm">
-          <Link href="/archive" className="text-zinc-500 transition-colors hover:text-zinc-900">
-            Browse the archive &rarr;
+        <div className="border-rule mt-16 border-t pt-8 text-[0.6875rem] tracking-[0.18em] uppercase">
+          <Link href="/archive" className="text-ink-muted hover:text-ink transition-colors">
+            Browse the archive
           </Link>
         </div>
       </div>
