@@ -1,4 +1,5 @@
 import fs from 'fs/promises'
+import { existsSync } from 'node:fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
@@ -80,9 +81,48 @@ function byDateDesc(a: ArticleMeta, b: ArticleMeta) {
   return bt - at
 }
 
-async function markdownToHtml(markdown: string) {
+const publicDir = path.join(process.cwd(), 'public')
+
+/**
+ * Markdown images get no build-time existence check, so a placeholder that has
+ * not been sourced yet would ship as a broken image. The Dual-Image Protocol
+ * makes that the normal state of a fresh article, so instead of trusting the
+ * file to be there, swap any missing local image for a reserved frame at the
+ * same 16:9 aspect — no broken icon, and no layout shift when the real file
+ * lands. Missing paths are reported once per build.
+ */
+function reserveMissingImages(html: string, slug: string) {
+  const missing: string[] = []
+
+  const out = html.replace(
+    /<img src="(\/[^"]+)"(?: alt="([^"]*)")?[^>]*>/g,
+    (match, src: string, alt = '') => {
+      const decoded = decodeURIComponent(src)
+      if (existsSync(path.join(publicDir, decoded))) return match
+
+      missing.push(decoded)
+      const label = alt || 'Image'
+      return (
+        `<span class="figure-pending" role="img" aria-label="${label} — image pending">` +
+        `<span class="figure-pending-label">Image to follow</span>` +
+        `</span>`
+      )
+    }
+  )
+
+  if (missing.length > 0) {
+    console.warn(
+      `[omniponder] ${slug}: ${missing.length} image(s) not in public/ — ` +
+        `reserved frame rendered instead: ${missing.join(', ')}`
+    )
+  }
+
+  return out
+}
+
+async function markdownToHtml(markdown: string, slug: string) {
   const file = await remark().use(remarkGfm).use(remarkHtml, { sanitize: false }).process(markdown)
-  return String(file)
+  return reserveMissingImages(String(file), slug)
 }
 
 export async function getArticleSlugs(): Promise<string[]> {
@@ -110,7 +150,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   const { data, content } = matter(raw)
   return {
     ...toMeta(slug, data as Frontmatter, content),
-    contentHtml: await markdownToHtml(content),
+    contentHtml: await markdownToHtml(content, slug),
   }
 }
 

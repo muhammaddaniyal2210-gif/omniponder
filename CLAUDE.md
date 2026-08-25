@@ -120,6 +120,23 @@ entities** — specific proper nouns and phrases people actually type. Never let
 a one-off subject become a topic. If `topic` is omitted it falls back to the
 first tag, which is a convenience, not the intended path.
 
+### DUAL-IMAGE PROTOCOL
+
+Every new article generated must include exactly TWO visual elements:
+
+1. **Primary (Top):** A hand-coded, minimalist SVG infographic (map, data, or
+   conceptual diagram) placed directly below the intro.
+2. **Secondary (Mid-article):** A markdown image link pointing to a `.jpg`
+   placeholder (e.g. `/images/[topic-name]-photo.jpg`) placed deeper in the
+   article body. This placeholder is reserved for a highly relevant, beautiful
+   photograph that grounds the essay and engages the reader.
+
+The SVG is authored in-repo and ships working. The `.jpg` is sourced manually
+afterwards, so it is normally absent at publish time — `lib/markdown.ts` checks
+every local image at build time and renders a reserved frame for any file that
+is missing, rather than a broken image. The build log names them. Both images
+still need real, descriptive alt text.
+
 ### SEO requirements
 
 These are wired up already; the point is not to break them.

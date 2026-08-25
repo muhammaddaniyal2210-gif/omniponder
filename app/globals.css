@@ -195,6 +195,27 @@ time,
   line-height: 1.5;
 }
 
+/* Reserved frame for an image whose file is not in public/ yet. Holds the
+   same 16:9 box the photograph will occupy, so nothing shifts when it lands. */
+.prose-omniponder :where(.figure-pending) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--color-rule-strong);
+  background-color: var(--color-paper-deep);
+}
+
+.prose-omniponder :where(.figure-pending-label) {
+  font-family: var(--font-sans);
+  font-size: 0.5625rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  user-select: none;
+}
+
 /* Editorial figure: markdown renders `![alt](src) *caption*` as one paragraph.
    Preflight makes the image a block, so the italic that follows becomes the
    caption line beneath it — set it as chrome, not as body copy. */
