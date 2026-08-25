@@ -67,6 +67,10 @@ function byDateDesc(a: ArticleMeta, b: ArticleMeta) {
   if (Number.isNaN(at) && Number.isNaN(bt)) return a.slug.localeCompare(b.slug)
   if (Number.isNaN(at)) return 1
   if (Number.isNaN(bt)) return -1
+  // Two pieces sharing a date would otherwise fall back to directory order,
+  // making "Today's Read" depend on the filesystem. Break the tie on slug so
+  // the hero is deterministic across machines and builds.
+  if (at === bt) return a.slug.localeCompare(b.slug)
   return bt - at
 }
 

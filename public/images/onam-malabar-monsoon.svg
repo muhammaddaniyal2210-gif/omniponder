@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Map of the Malabar Coast showing Southwest Monsoon wind patterns">
+  <defs>
+    <marker id="gold-head" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#b8873f"/>
+    </marker>
+    <marker id="gold-head-sm" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#b8873f" fill-opacity="0.75"/>
+    </marker>
+  </defs>
+
+  <style>
+    .ttl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 21px; letter-spacing: 4.5px; fill: #171614; }
+    .lbl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; letter-spacing: 3.4px; fill: #171614; }
+    .gold { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; letter-spacing: 3.4px; fill: #b8873f; }
+    .dim  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 2.2px; fill: #77736a; }
+    .tick { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 1.8px; fill: #77736a; }
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <!-- graticule -->
+  <g stroke="#171614" stroke-opacity="0.055" stroke-width="1">
+    <path d="M0 100H1600M0 220H1600M0 340H1600M0 460H1600M0 580H1600M0 700H1600M0 820H1600"/>
+    <path d="M160 0V900M320 0V900M480 0V900M640 0V900M800 0V900M960 0V900M1120 0V900M1280 0V900M1440 0V900"/>
+  </g>
+
+  <!-- latitude ticks -->
+  <g class="tick">
+    <text x="34" y="225">14°N</text>
+    <text x="34" y="345">12°N</text>
+    <text x="34" y="465">10°N</text>
+    <text x="34" y="585">8°N</text>
+  </g>
+
+  <!-- landmass: peninsular south-west India -->
+  <path d="M1085 0
+           C 1050 70, 1030 130, 1012 196
+           C 994 262, 978 322, 962 386
+           C 948 444, 936 500, 922 556
+           C 908 612, 892 668, 872 720
+           C 856 762, 838 800, 820 838
+           L 900 900 L 1600 900 L 1600 0 Z"
+        fill="#171614" fill-opacity="0.05" stroke="none"/>
+
+  <!-- coastline -->
+  <path d="M1085 0
+           C 1050 70, 1030 130, 1012 196
+           C 994 262, 978 322, 962 386
+           C 948 444, 936 500, 922 556
+           C 908 612, 892 668, 872 720
+           C 856 762, 838 800, 820 838"
+        fill="none" stroke="#171614" stroke-width="2.4" stroke-linecap="round"/>
+
+  <!-- Western Ghats ridge, inland and parallel -->
+  <path d="M1196 40
+           C 1166 108, 1146 166, 1128 232
+           C 1110 298, 1094 358, 1078 422
+           C 1064 480, 1052 536, 1038 592
+           C 1024 648, 1008 700, 990 748"
+        fill="none" stroke="#171614" stroke-width="1.4" stroke-opacity="0.5" stroke-dasharray="2 9" stroke-linecap="round"/>
+
+  <!-- monsoon winds, south-west to north-east -->
+  <g fill="none" stroke="#b8873f" stroke-linecap="round">
+    <path d="M140 768 C 352 722, 566 664, 792 566" stroke-width="2.6" marker-end="url(#gold-head)"/>
+    <path d="M96 660 C 316 616, 520 552, 742 452" stroke-width="2.6" marker-end="url(#gold-head)"/>
+    <path d="M132 508 C 340 470, 520 412, 716 316" stroke-width="2.2" stroke-opacity="0.82" marker-end="url(#gold-head-sm)"/>
+    <path d="M188 360 C 380 328, 546 274, 726 182" stroke-width="1.9" stroke-opacity="0.62" marker-end="url(#gold-head-sm)"/>
+    <path d="M262 218 C 430 192, 580 148, 736 60" stroke-width="1.6" stroke-opacity="0.42" marker-end="url(#gold-head-sm)"/>
+  </g>
+
+  <!-- labels -->
+  <text class="gold" x="120" y="836">SOUTHWEST MONSOON</text>
+  <path d="M120 852H560" stroke="#b8873f" stroke-opacity="0.45" stroke-width="1"/>
+  <text class="dim" x="120" y="876">JUNE – SEPTEMBER · ~2 500–4 000 MM ANNUAL RAINFALL</text>
+
+  <text class="lbl" x="120" y="160">ARABIAN SEA</text>
+  <path d="M120 176H360" stroke="#171614" stroke-opacity="0.28" stroke-width="1"/>
+
+  <text class="lbl" x="1000" y="308" text-anchor="start">MALABAR COAST</text>
+  <path d="M1000 324H1290" stroke="#171614" stroke-opacity="0.28" stroke-width="1"/>
+  <text class="dim" x="1000" y="348">PEPPER · CARDAMOM · GINGER — TWO HARVESTS A YEAR</text>
+
+  <text class="lbl" x="1090" y="596" text-anchor="start">WESTERN GHATS</text>
+  <path d="M1090 612H1420" stroke="#171614" stroke-opacity="0.28" stroke-width="1"/>
+  <text class="dim" x="1090" y="636">OROGRAPHIC BARRIER — RAIN FALLS SEAWARD</text>
+
+  <!-- plate -->
+  <g>
+    <path d="M1100 62H1540" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+    <text class="ttl" x="1540" y="50" text-anchor="end">OMNIPONDER — FIG. 01</text>
+    <text class="dim" x="1540" y="88" text-anchor="end">MONSOON GEOGRAPHY OF THE AGRARIAN SURPLUS</text>
+  </g>
+</svg>
