@@ -18,8 +18,8 @@ export default function Footer() {
               Omniponder
             </Link>
             <p className="text-ink-muted mt-5 max-w-sm font-serif text-lg leading-relaxed text-pretty">
-              One long-form idea, every morning. Science, philosophy, human nature,
-              and the global systems shaping the decades ahead.
+              Daily research on international political economy, energy and maritime
+              systems, and strategic stability.
             </p>
           </div>
 

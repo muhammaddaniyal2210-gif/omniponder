@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import { Brain, Compass, Globe2, Microscope } from 'lucide-react'
+import Image from 'next/image'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import NewsletterForm from '@/components/newsletter-form'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const description =
-  'Omniponder curates the profound — science, philosophy, human nature, and global systems — into one comprehensive read each day.'
+  'Omniponder publishes daily research on international political economy, energy and maritime systems, and strategic stability — one rigorous analysis at a time.'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -25,112 +27,156 @@ export const metadata: Metadata = {
   },
 }
 
-const disciplines = [
+/*
+ * Drop a portrait at public/images/author-profile.jpg and it renders here.
+ * Checked at build time so the page never ships a broken image reference —
+ * until the file exists, the monogram below stands in at identical dimensions.
+ */
+const AUTHOR_PHOTO = '/images/author-profile.jpg'
+const hasAuthorPhoto = existsSync(join(process.cwd(), 'public', 'images', 'author-profile.jpg'))
+
+const coverage = [
   {
-    icon: Brain,
-    name: 'Human nature',
-    blurb: 'Cooperation, bias, memory, motivation — why people do what they do.',
+    name: 'International Political Economy',
+    blurb:
+      'How trade, capital, and industrial policy translate into leverage — and who holds it when the arrangement is tested.',
   },
   {
-    icon: Microscope,
-    name: 'Science',
-    blurb: 'What we have recently learned, and what it quietly overturns.',
+    name: 'Energy & Maritime Systems',
+    blurb:
+      'Chokepoints, sea lanes, and the transition from hydrocarbons to minerals: the physical infrastructure beneath the abstraction.',
   },
   {
-    icon: Compass,
-    name: 'Philosophy',
-    blurb: 'The old questions, treated as live ones rather than museum pieces.',
+    name: 'Strategic Stability',
+    blurb:
+      'Deterrence, escalation, and the cost-exchange ratios that decide whether a confrontation stays contained.',
   },
   {
-    icon: Globe2,
-    name: 'Global systems',
-    blurb: 'The slow forces — demographic, economic, ecological — shaping the decades ahead.',
+    name: 'Systemic Risk',
+    blurb:
+      'Demographic, ecological, and technological pressures that move slowly enough to ignore until they do not.',
   },
 ]
 
 export default function AboutPage() {
   return (
     <div>
-      {/* Hook */}
-      <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:px-10 sm:pt-24 sm:pb-24">
-        <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">The Manifesto</p>
+      {/* Masthead statement */}
+      <section className="border-rule mx-auto max-w-6xl border-b px-6 pt-16 pb-14 sm:px-10 sm:pt-20 sm:pb-16">
+        <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          About the Publication
+        </p>
 
-        <h1 className="text-ink mt-10 max-w-4xl font-serif text-[2.75rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:text-7xl lg:text-[5.5rem]">
-          We believe a strong mind is built one idea at a time.
+        <h1 className="text-ink mt-8 max-w-3xl font-serif text-[1.75rem] leading-[1.25] font-medium tracking-[-0.015em] text-balance sm:text-[2.125rem] lg:text-[2.5rem]">
+          Rigorous analysis on global systems, maritime chokepoints, and strategic
+          stability.
         </h1>
+
+        <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty">
+          Published daily from London and read by people who need the structure of a
+          problem, not the headline.
+        </p>
       </section>
 
-      <div className="border-t border-rule" />
-
       {/* Mission */}
-      <section className="mx-auto max-w-2xl px-6 py-20 sm:py-24">
-        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">Our Mission</h2>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-24">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          Editorial Mission
+        </h2>
 
-        <div className="prose prose-neutral prose-omniponder mt-10 max-w-none">
+        <div className="prose prose-neutral prose-omniponder mt-10 max-w-2xl">
           <p>
-            The modern world does not suffer from a shortage of information. It suffers
-            from the opposite. We are handed more words before breakfast than our
-            great-grandparents met in a month, and almost none of it is built to make us
-            think. It is built to make us click, react, and move on. The result is a
-            strange kind of poverty: endlessly informed, rarely educated.
+            Most coverage of international affairs reports what happened. Very little
+            of it explains the mechanism — the arrangement of incentives, capabilities,
+            and constraints that made the outcome likely, and that will shape the next
+            one. The gap is not a shortage of information. It is a shortage of analysis
+            willing to take the time.
           </p>
 
           <p>
-            Omniponder exists to answer that with the smallest possible correction. Each
-            day we publish one piece — a genuine ten- to fifteen-minute deep-dive into
-            science, philosophy, human nature, or the global systems quietly deciding the
-            next few decades. We curate the profound rather than the immediate, and we
-            follow a single argument all the way through instead of skimming a dozen.
-            One idea, examined properly, is worth more than a hundred half-encountered.
+            Omniponder exists to close that gap. Each day we publish a single
+            deep-dive: a sustained examination of one question in international
+            political economy, energy and maritime security, or strategic stability,
+            researched properly and argued to a conclusion. We are interested in the
+            structural forces that operate below the news cycle — how a processing
+            bottleneck becomes strategic leverage, why a cost-exchange ratio determines
+            whether a sea lane stays open, what a demographic curve set in motion
+            decades ago is about to deliver.
           </p>
 
           <p>
-            What accumulates is not trivia but awareness: the ability to recognise a
-            pattern you have met before, to spot a weak argument by its shape, to hold a
-            view you actually arrived at rather than absorbed. That is the quiet engine
-            of a strong mind, and it is built the only way anything durable is built —
-            one idea at a time, on an ordinary day, without spectacle.
+            The method is consistent: establish the mechanism, test it against
+            evidence, state plainly what remains uncertain. We do not manufacture
+            urgency, and we do not pretend to more confidence than the analysis
+            supports. What we offer is a clearer view of how the system actually works
+            — the foundation on which any serious judgment about what comes next has to
+            rest.
           </p>
         </div>
+      </section>
 
-        <ul className="border-rule bg-rule mt-16 grid gap-px border sm:grid-cols-2">
-          {disciplines.map(({ icon: Icon, name, blurb }) => (
-            <li key={name} className="bg-paper p-8">
-              <Icon className="h-5 w-5 text-ink-faint" aria-hidden="true" />
-              <h3 className="text-ink mt-5 font-serif text-xl font-medium tracking-[-0.015em]">{name}</h3>
-              <p className="text-ink-muted mt-2.5 text-sm leading-relaxed text-pretty">{blurb}</p>
+      {/* Areas of coverage */}
+      <section className="border-rule mx-auto max-w-6xl border-t px-6 py-20 sm:px-10 sm:py-24">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          Areas of Coverage
+        </h2>
+
+        <ul className="mt-12 grid gap-x-12 gap-y-12 sm:grid-cols-2">
+          {coverage.map(({ name, blurb }, index) => (
+            <li key={name} className="border-rule border-t pt-6">
+              <span className="text-ink-faint text-[0.625rem] tabular-nums">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="text-ink mt-3 font-serif text-2xl leading-tight font-medium tracking-[-0.015em]">
+                {name}
+              </h3>
+              <p className="text-ink-muted mt-3 font-serif leading-relaxed text-pretty">
+                {blurb}
+              </p>
             </li>
           ))}
         </ul>
       </section>
 
-      <div className="border-t border-rule" />
+      {/* Editor */}
+      <section className="border-rule mx-auto max-w-6xl border-t px-6 py-20 sm:px-10 sm:py-24">
+        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+          Founder &amp; Editor
+        </h2>
 
-      {/* Founder & Editor */}
-      <section className="mx-auto max-w-2xl px-6 py-20 sm:py-24">
-        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">Founder &amp; Editor</h2>
-
-        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-          {/*
-            Portrait placeholder. Replace with next/image once a photograph is
-            available; the fixed size keeps the row from reflowing when it lands.
-          */}
-          <div
-            aria-hidden="true"
-            className="border-rule bg-paper-deep text-ink-faint flex h-32 w-32 shrink-0 items-center justify-center border font-serif text-3xl select-none"
-          >
-            MD
-          </div>
+        <div className="mt-12 grid gap-10 md:grid-cols-[minmax(0,17rem)_1fr] md:gap-16">
+          {/* Borderless editorial frame — the image sits flush, no chrome. */}
+          <figure className="m-0">
+            <div className="bg-paper-deep relative aspect-4/5 w-full overflow-hidden">
+              {hasAuthorPhoto ? (
+                <Image
+                  src={AUTHOR_PHOTO}
+                  alt="Muhammad Daniyal, Founder and Editor of Omniponder"
+                  fill
+                  sizes="(min-width: 768px) 17rem, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="text-ink-faint flex h-full w-full items-center justify-center font-serif text-5xl select-none"
+                >
+                  MD
+                </div>
+              )}
+            </div>
+          </figure>
 
           <div>
-            <h3 className="text-ink font-serif text-3xl font-medium tracking-[-0.02em]">
+            <h3 className="text-ink font-serif text-3xl leading-tight font-medium tracking-[-0.02em] sm:text-4xl">
               Muhammad Daniyal
             </h3>
-            <p className="text-ink-faint mt-2 text-[0.625rem] tracking-[0.2em] uppercase">
-              Founder &amp; Editor, Omniponder
+            <p className="text-ink-faint mt-3 text-[0.625rem] tracking-[0.2em] uppercase">
+              Founder &amp; Editor
             </p>
 
-            <div className="prose prose-neutral prose-omniponder mt-7 max-w-none">
+            <div className="prose prose-neutral prose-omniponder mt-8 max-w-none">
               <p>
                 Muhammad Daniyal is an International Relations graduate, researcher, and
                 writer specializing in global systems, maritime politics, and energy
@@ -150,12 +196,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Conversion anchor */}
-      <section className="mx-auto max-w-6xl px-6 pt-8 pb-28 sm:px-10">
+      {/* Subscribe */}
+      <section className="mx-auto max-w-6xl px-6 pb-28 sm:px-10">
         <NewsletterForm
           variant="feature"
-          heading="Start building, one idea at a time"
-          blurb="Join readers who spend fifteen minutes a day on something worth understanding. One long-form piece, every morning."
+          heading="The daily brief"
+          blurb="One rigorous analysis each morning — on the systems, chokepoints, and structural pressures shaping the decade ahead."
         />
       </section>
     </div>

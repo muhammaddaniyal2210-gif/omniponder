@@ -51,7 +51,7 @@ export default function Image() {
             {siteConfig.name}
           </div>
           <div style={{ display: 'flex', marginTop: 20, fontSize: 40, color: '#3a3833' }}>
-            One long-form idea, every morning.
+            Daily analysis of global systems.
           </div>
         </div>
 

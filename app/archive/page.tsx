@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { formatDate, getAllArticles, groupByTopic } from '@/lib/markdown'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
-const description = 'The complete Omniponder index — every long-form piece, arranged by discipline.'
+const description = 'The complete Omniponder index — every published analysis, arranged by subject.'
 
 export const metadata: Metadata = {
   title: 'Archive',

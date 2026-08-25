@@ -17,9 +17,9 @@ type NewsletterFormProps = {
 }
 
 const copy = {
-  heading: 'One idea, every morning',
+  heading: 'The daily brief',
   blurb:
-    'A single long-form piece on science, philosophy, human nature, and global systems — delivered daily. No feed, no backlog, no noise.',
+    'One rigorous analysis each morning — on global systems, energy and maritime security, and the structural forces shaping the decade ahead.',
 }
 
 export default function NewsletterForm({
@@ -75,7 +75,7 @@ export default function NewsletterForm({
     >
       <div className="mx-auto max-w-xl text-center">
         <Mail
-          className={`mx-auto h-6 w-6 ${inverted ? 'text-ink-muted' : 'text-ink-faint'}`}
+          className={`mx-auto h-6 w-6 ${inverted ? 'text-paper-faint' : 'text-ink-faint'}`}
           aria-hidden="true"
         />
 
@@ -114,20 +114,20 @@ export default function NewsletterForm({
             placeholder="you@example.com"
             disabled={status === 'loading'}
             aria-describedby={message ? 'newsletter-status' : undefined}
-            className={`w-full flex-1 px-4 py-3.5 focus:outline-none disabled:opacity-60 ${
+            className={`w-full flex-1 border px-4 py-4 text-base focus:outline-none disabled:opacity-60 ${
               inverted
-                ? 'border border-rule-strong bg-ink text-paper placeholder:text-ink-muted focus:border-white focus:ring-2 focus:ring-white/20'
-                : 'border border-rule-strong bg-paper text-ink placeholder:text-ink-faint focus:border-ink focus:ring-2 focus:ring-ink/10'
+                ? 'border-ink-muted bg-ink text-paper placeholder:text-paper-faint focus:border-paper'
+                : 'border-rule-strong bg-paper text-ink placeholder:text-ink-faint focus:border-ink'
             }`}
           />
 
           <button
             type="submit"
             disabled={status === 'loading' || status === 'success'}
-            className={`inline-flex items-center justify-center gap-2 px-7 py-3.5 font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 ${
+            className={`inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-70 ${
               inverted
-                ? 'bg-paper text-ink hover:bg-rule focus:ring-white focus:ring-offset-ink'
-                : 'bg-ink text-paper hover:bg-ink-soft focus:ring-ink'
+                ? 'bg-paper text-ink hover:bg-rule focus-visible:outline-paper'
+                : 'bg-ink text-paper hover:bg-ink-soft focus-visible:outline-ink'
             }`}
           >
             {status === 'loading' && (
@@ -158,8 +158,12 @@ export default function NewsletterForm({
           {message}
         </p>
 
-        <p className={`mt-1 text-xs ${inverted ? 'text-ink-muted' : 'text-ink-faint'}`}>
-          Free forever. Unsubscribe in one click.
+        <p
+          className={`mt-2 text-[0.625rem] tracking-[0.16em] uppercase ${
+            inverted ? 'text-paper-faint' : 'text-ink-faint'
+          }`}
+        >
+          Free to read. Unsubscribe in one click.
         </p>
       </div>
     </section>
