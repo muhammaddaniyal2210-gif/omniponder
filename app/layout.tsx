@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from "@vercel/analytics/react"
 import { Inter_Tight, Newsreader } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -76,6 +77,7 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Header />
         <main className="flex-1">{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
