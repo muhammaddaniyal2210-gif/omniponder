@@ -14,6 +14,7 @@ export type ArticleMeta = {
   date: string
   excerpt: string
   topic: string
+  tags: string[]
   readingTime: number
 }
 
@@ -21,7 +22,7 @@ export type Article = ArticleMeta & {
   contentHtml: string
 }
 
-type Frontmatter = Partial<Record<'title' | 'date' | 'excerpt' | 'topic', unknown>>
+type Frontmatter = Partial<Record<'title' | 'date' | 'excerpt' | 'topic' | 'tags', unknown>>
 
 const WORDS_PER_MINUTE = 220
 
@@ -37,13 +38,24 @@ function asString(value: unknown, fallback = '') {
   return fallback
 }
 
+function asTags(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return value.filter((tag): tag is string => typeof tag === 'string' && tag.trim() !== '')
+}
+
 function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
+  const tags = asTags(data.tags)
+
   return {
     slug,
     title: asString(data.title, slug),
     date: asString(data.date),
     excerpt: asString(data.excerpt),
-    topic: asString(data.topic, 'General'),
+    // `topic` drives the homepage rail and the archive grouping. Posts may
+    // declare it explicitly; otherwise the first tag serves as the subject so
+    // a tags-only frontmatter never falls through to "General".
+    topic: asString(data.topic, tags[0] ?? 'General'),
+    tags,
     readingTime: estimateReadingTime(body),
   }
 }

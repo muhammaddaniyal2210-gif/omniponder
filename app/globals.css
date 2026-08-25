@@ -195,6 +195,26 @@ time,
   line-height: 1.5;
 }
 
+/* Editorial figure: markdown renders `![alt](src) *caption*` as one paragraph.
+   Preflight makes the image a block, so the italic that follows becomes the
+   caption line beneath it — set it as chrome, not as body copy. */
+.prose-omniponder :where(p > img) {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.prose-omniponder :where(p > img + em) {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+  color: var(--color-ink-faint);
+  text-wrap: pretty;
+}
+
 .prose-omniponder :where(hr) {
   margin-block: 3.5em;
 }
