@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import NewsletterForm from '@/components/newsletter-form'
+import ScrollCanvas from '@/components/ScrollCanvas'
 import SocialLinks from '@/components/SocialLinks'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
@@ -42,8 +43,11 @@ const hasAuthorPhoto = existsSync(join(process.cwd(), 'public', 'images', 'autho
  */
 const mission = [
   'Most media is built for reaction. Omniponder is built for understanding.',
+  'The forces that decide how you live are rarely the ones making the most sound. They are the invisible infrastructure of the world—the cables, corridors, treaties, balance sheets, and inherited assumptions that quietly set the boundaries of what is possible. Our work is to map that infrastructure, and to cut through the daily noise to deliver signal.',
   'Every single day, we publish one in-depth piece examining how the world actually works. We don’t chase breaking news headlines or superficial summaries. Instead, we look at the structural realities, historical patterns, and ideas shaping our societies—from major global events and historical precedents to science, philosophy, and human nature.',
+  'The method is subtraction. Everything that survives the edit has to earn its place: one argument, built from evidence, followed to its conclusion, with the uncertainties stated rather than smoothed over. We do not manufacture urgency, and we do not mistake confidence for rigour.',
   'No noise, no filler. Just one rigorous piece, every single day, built to give you absolute clarity.',
+  'Read it for a month and the change is difficult to miss. Fewer opinions held loudly. More things genuinely understood.',
 ]
 
 /*
@@ -61,32 +65,47 @@ function protectEmDashes(text: string) {
 export default function AboutPage() {
   return (
     <div>
-      {/* Masthead statement */}
-      <section className="border-rule mx-auto max-w-6xl border-b px-6 pt-16 pb-14 sm:px-10 sm:pt-20 sm:pb-16">
-        <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
-          About the Publication
-        </p>
+      {/*
+        Masthead and mission share one grid so the canvas rail has a long scroll
+        runway to react to, rather than leaving the page after one screen.
+      */}
+      <section className="mx-auto max-w-6xl px-6 sm:px-10">
+        <div className="md:grid md:grid-cols-[minmax(0,1fr)_15rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-20">
+          <div>
+            <div className="border-rule border-b pt-16 pb-14 sm:pt-20 sm:pb-16">
+              <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                About the Publication
+              </p>
 
-        <h1 className="text-ink mt-8 max-w-3xl font-serif text-[1.75rem] leading-[1.22] font-medium tracking-[-0.018em] text-balance sm:text-[2.125rem] lg:text-[2.5rem]">
-          An independent daily study of the forces that shape the world.
-        </h1>
+              <h1 className="text-ink mt-8 max-w-3xl font-serif text-[1.75rem] leading-[1.22] font-medium tracking-[-0.018em] text-balance sm:text-[2.125rem] lg:text-[2.5rem]">
+                An independent daily study of the forces that shape the world.
+              </h1>
 
-        <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty sm:text-xl">
-          Written and edited by Muhammad Daniyal. Published every morning, for readers
-          who would rather understand a thing than keep up with it.
-        </p>
-      </section>
+              <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty sm:text-xl">
+                Written and edited by Muhammad Daniyal. Published every morning, for
+                readers who would rather understand a thing than keep up with it.
+              </p>
+            </div>
 
-      {/* Mission */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-24">
-        <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
-          Editorial Mission
-        </h2>
+            <div className="py-20 sm:py-24">
+              <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                Editorial Mission
+              </h2>
 
-        <div className="prose prose-neutral prose-omniponder mt-10 max-w-2xl">
-          {mission.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{protectEmDashes(paragraph)}</p>
-          ))}
+              <div className="prose prose-neutral prose-omniponder mt-10 max-w-2xl">
+                {mission.map((paragraph) => (
+                  <p key={paragraph.slice(0, 32)}>{protectEmDashes(paragraph)}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative rail — withheld from phones, where it would only crowd. */}
+          <div className="hidden md:block">
+            <div className="sticky top-32">
+              <ScrollCanvas className="aspect-square w-full" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -96,23 +115,23 @@ export default function AboutPage() {
           Who Writes It
         </h2>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-[minmax(0,17rem)_1fr] md:gap-16">
+        <div className="mt-12 grid gap-10 md:grid-cols-[auto_1fr] md:items-start md:gap-16">
           {/* Borderless editorial frame — the image sits flush, no chrome. */}
           <figure className="m-0">
-            <div className="bg-paper-deep relative aspect-4/5 w-full overflow-hidden">
+            <div className="bg-paper-deep relative h-[120px] w-[120px] shrink-0 overflow-hidden rounded-full sm:h-[160px] sm:w-[160px] lg:h-[224px] lg:w-[224px]">
               {hasAuthorPhoto ? (
                 <Image
                   src={AUTHOR_PHOTO}
                   alt="Muhammad Daniyal, Founder and Editor of Omniponder"
                   fill
-                  sizes="(min-width: 768px) 17rem, 100vw"
+                  sizes="(min-width: 1024px) 224px, (min-width: 640px) 160px, 120px"
                   className="object-cover"
                   priority
                 />
               ) : (
                 <div
                   aria-hidden="true"
-                  className="text-ink-faint flex h-full w-full items-center justify-center font-serif text-5xl select-none"
+                  className="text-ink-faint flex h-full w-full items-center justify-center font-serif text-3xl select-none sm:text-4xl lg:text-5xl"
                 >
                   MD
                 </div>

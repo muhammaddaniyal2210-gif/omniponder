@@ -29,8 +29,12 @@ nothing else is asked to.
   breathe (`py-16`+); nothing is packed. When in doubt, add space.
 - **High contrast on ivory.** The ground is warm off-white (`#fbfaf7`), not
   pure `#ffffff` — paper, not screen. Text is deep charcoal, at 17:1.
-- **Restraint.** No gradients, no drop shadows, no decorative colour, no
-  animated flourishes. Motion is limited to subtle state transitions.
+- **Restraint.** No gradients, no drop shadows, no decorative colour. Motion is
+  limited to subtle state transitions, with one sanctioned exception: the
+  scroll-reactive lattice on the About page (`components/ScrollCanvas.tsx`).
+  It is monochrome, decorative-only (`aria-hidden`), withheld from phones,
+  paused when off-screen, and honours `prefers-reduced-motion`. Any further
+  motion needs the same justification.
 
 ### Colour
 

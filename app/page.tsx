@@ -27,78 +27,68 @@ export default async function HomePage() {
 
       {latest ? (
         <section aria-labelledby="todays-read" className="border-rule border-b">
-          {/* Asymmetric hero: story left, standing matter in a ruled rail right. */}
-          <div className="grid lg:grid-cols-12">
-            <div className="py-14 sm:py-20 lg:col-span-8 lg:pr-16">
-              <div className="flex items-center gap-4">
-                <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
-                  Featured
-                </span>
-                <span
-                  id="todays-read"
-                  className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
-                >
-                  Today&rsquo;s Read
-                </span>
-              </div>
-
-              <h1 className="text-ink mt-8 font-serif text-[2.6rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance sm:text-6xl lg:text-[4.25rem]">
-                <Link
-                  href={`/article/${latest.slug}`}
-                  className="transition-opacity hover:opacity-70"
-                >
-                  {latest.title}
-                </Link>
-              </h1>
-
-              <p className="text-ink-muted mt-8 max-w-2xl font-serif text-xl leading-[1.65] text-pretty sm:text-[1.375rem]">
-                {latest.excerpt}
-              </p>
-
-              <Link
-                href={`/article/${latest.slug}`}
-                className="group border-ink text-ink hover:bg-ink hover:text-paper focus-visible:outline-ink mt-10 inline-flex items-center gap-3 border px-7 py-3.5 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-4"
+          {/*
+            Full-measure hero. The metadata that used to sit in a narrow right
+            rail now runs as a horizontal band beneath the standfirst, so
+            nothing competes with the headline for width.
+          */}
+          <div className="py-14 sm:py-20">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+              <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
+                Featured
+              </span>
+              <span
+                id="todays-read"
+                className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
               >
-                Read the essay
-                <ArrowRight
-                  className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </Link>
+                Today&rsquo;s Read
+              </span>
+              <span className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase sm:ml-auto">
+                {latest.topic}
+              </span>
             </div>
 
-            {/* Standing matter: the details a print edition sets in the margin. */}
-            <aside className="border-rule flex flex-col gap-8 border-t py-10 lg:col-span-4 lg:border-t-0 lg:border-l lg:py-20 lg:pl-16">
-              <dl className="space-y-5">
-                {[
-                  ['Subject', latest.topic],
-                  ['Written by', siteConfig.author],
-                  ['Published', formatDate(latest.date)],
-                  ['Length', `${latest.readingTime} minute read`],
-                ].map(([label, value]) => (
-                  <div key={label} className="border-rule border-b pb-5">
-                    <dt className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
-                      {label}
-                    </dt>
-                    <dd className="text-ink mt-2 font-serif text-lg">{value}</dd>
-                  </div>
-                ))}
-              </dl>
+            <h1 className="text-ink mt-8 max-w-5xl font-serif text-[2.6rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance sm:text-6xl lg:text-[4.5rem]">
+              <Link
+                href={`/article/${latest.slug}`}
+                className="transition-opacity hover:opacity-70"
+              >
+                {latest.title}
+              </Link>
+            </h1>
 
-              <div>
-                <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
-                  The Disciplines
-                </h2>
-                <ul className="mt-5 space-y-3.5">
-                  {disciplines.map(([name, blurb]) => (
-                    <li key={name} className="leading-snug">
-                      <span className="text-ink font-serif text-base">{name}</span>
-                      <span className="text-ink-faint block text-xs">{blurb}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
+            <p className="text-ink-muted mt-8 max-w-3xl font-serif text-xl leading-[1.6] text-pretty sm:text-[1.4rem]">
+              {latest.excerpt}
+            </p>
+
+            <dl className="border-rule mt-12 grid grid-cols-2 gap-x-8 gap-y-8 border-t pt-8 sm:grid-cols-4">
+              {[
+                ['Subject', latest.topic],
+                ['Written by', siteConfig.author],
+                ['Published', formatDate(latest.date)],
+                ['Length', `${latest.readingTime} minute read`],
+              ].map(([label, value]) => (
+                <div key={label}>
+                  <dt className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+                    {label}
+                  </dt>
+                  <dd className="text-ink mt-2.5 font-serif text-base leading-snug text-pretty sm:text-lg">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <Link
+              href={`/article/${latest.slug}`}
+              className="group border-ink text-ink hover:bg-ink hover:text-paper focus-visible:outline-ink mt-12 inline-flex items-center gap-3 border px-7 py-3.5 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-4"
+            >
+              Read the essay
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
           </div>
         </section>
       ) : (
@@ -113,6 +103,26 @@ export default async function HomePage() {
           </p>
         </div>
       )}
+
+      {/* Disciplines, freed from the hero rail and given the full measure. */}
+      <section aria-labelledby="disciplines-heading" className="border-rule border-b py-14">
+        <h2
+          id="disciplines-heading"
+          className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
+        >
+          The Disciplines
+        </h2>
+        <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          {disciplines.map(([name, blurb]) => (
+            <li key={name}>
+              <span className="text-ink block font-serif text-xl leading-tight">{name}</span>
+              <span className="text-ink-faint mt-2 block text-sm leading-snug text-pretty">
+                {blurb}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <AdPlaceholder variant="leaderboard" className="my-14" />
 
