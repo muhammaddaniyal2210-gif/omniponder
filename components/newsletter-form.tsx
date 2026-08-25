@@ -17,9 +17,9 @@ type NewsletterFormProps = {
 }
 
 const copy = {
-  heading: 'The daily brief',
+  heading: 'One piece, every day',
   blurb:
-    'One rigorous analysis each morning — on global systems, energy and maritime security, and the structural forces shaping the decade ahead.',
+    'An in-depth look at how the world actually works — global events, history, science, philosophy, and human nature. Sent every morning.',
 }
 
 export default function NewsletterForm({
