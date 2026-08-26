@@ -7,7 +7,7 @@ const FORM_ID = '22284ce1-fca1-425e-a9f5-c8fd95f588e8'
 const LOADER_SRC = 'https://subscribe-forms.beehiiv.com/v3/loader.js'
 
 const copy = {
-  heading: 'One piece, every day',
+  heading: 'The Daily Dispatch',
   blurb:
     'An in-depth look at how the world actually works — global events, history, science, philosophy, and human nature. Sent every morning.',
 }
