@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Diagram of the spectrum of human authority over weapon systems and the decline of effective monitoring attention over time">
+  <style>
+    .ttl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 20px; letter-spacing: 4.2px; fill: #171614; }
+    .lbl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; letter-spacing: 3.2px; fill: #171614; }
+    .gold { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; letter-spacing: 3.2px; fill: #b8873f; }
+    .dim  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 2.1px; fill: #77736a; }
+    .tick { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 1.7px; fill: #77736a; }
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <!-- graticule -->
+  <g stroke="#171614" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+
+  <!-- ─────────── PANEL 1: spectrum of authority ─────────── -->
+  <text class="ttl" x="96" y="96">SPECTRUM OF HUMAN AUTHORITY</text>
+  <path d="M96 118H700" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- axis -->
+  <path d="M120 264H1480" stroke="#171614" stroke-width="2"/>
+  <g stroke="#171614" stroke-width="2">
+    <path d="M120 264V250"/><path d="M573 264V250"/><path d="M1026 264V250"/><path d="M1480 264V250"/>
+  </g>
+
+  <!-- zone bands -->
+  <rect x="120" y="196" width="453" height="54" fill="#171614" fill-opacity="0.055"/>
+  <rect x="573" y="196" width="453" height="54" fill="#b8873f" fill-opacity="0.14"/>
+  <rect x="1026" y="196" width="454" height="54" fill="#171614" fill-opacity="0.03"/>
+
+  <text class="lbl" x="150" y="230">HUMAN-OPERATED</text>
+  <text class="gold" x="603" y="230">HUMAN-SUPERVISED</text>
+  <text class="lbl" x="1056" y="230">AUTONOMOUS</text>
+
+  <text class="dim" x="150" y="300">Operator flies and decides</text>
+  <text class="dim" x="603" y="300">Machine acts, human monitors</text>
+  <text class="dim" x="1056" y="300">System acts within set bounds</text>
+
+  <!-- VENOM marker -->
+  <g>
+    <circle cx="720" cy="264" r="9" fill="#b8873f"/>
+    <circle cx="720" cy="264" r="19" fill="none" stroke="#b8873f" stroke-opacity="0.45" stroke-width="1.4"/>
+    <path d="M720 245V166" stroke="#b8873f" stroke-opacity="0.6" stroke-width="1.4"/>
+    <text class="gold" x="720" y="152" text-anchor="middle">VENOM · F-16 · JULY 2026</text>
+    <text class="dim" x="720" y="176" text-anchor="middle" fill="#a07a3c">RETROFIT KIT ON AN OPERATIONAL AIRFRAME</text>
+  </g>
+
+  <!-- direction of travel -->
+  <path d="M840 330 H 1180" stroke="#b8873f" stroke-width="2" stroke-dasharray="8 7"/>
+  <path d="M1180 330 L1164 322 L1164 338 Z" fill="#b8873f"/>
+  <text class="dim" x="840" y="356" fill="#a07a3c">NEXT PHASE — ONE SUPERVISOR, MULTIPLE UNCREWED AIRCRAFT</text>
+
+  <path d="M96 420H1504" stroke="#171614" stroke-opacity="0.16" stroke-width="1"/>
+
+  <!-- ─────────── PANEL 2: the vigilance limit ─────────── -->
+  <text class="ttl" x="96" y="486">THE VIGILANCE LIMIT</text>
+  <path d="M96 508H700" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+  <text class="dim" x="96" y="534">BAINBRIDGE, “IRONIES OF AUTOMATION”, AUTOMATICA, 1983</text>
+
+  <!-- axes -->
+  <path d="M200 800H1440" stroke="#171614" stroke-width="1.6"/>
+  <path d="M200 580V800" stroke="#171614" stroke-width="1.6"/>
+
+  <text class="tick" x="120" y="590">HIGH</text>
+  <text class="tick" x="120" y="796">LOW</text>
+  <text class="dim" x="200" y="836">0 MIN</text>
+  <text class="dim" x="596" y="836">30 MIN</text>
+  <text class="dim" x="1000" y="836">60 MIN</text>
+  <text class="dim" x="1360" y="836">90 MIN</text>
+
+  <text class="dim" x="60" y="700" transform="rotate(-90 60 700)" text-anchor="middle">EFFECTIVE ATTENTION</text>
+  <text class="dim" x="820" y="874" text-anchor="middle">TIME ON AN UNEVENTFUL MONITORING TASK</text>
+
+  <!-- decay curve -->
+  <path d="M200 596 C 330 600, 470 616, 596 664 C 720 712, 900 754, 1100 772 C 1240 784, 1350 788, 1440 790"
+        fill="none" stroke="#171614" stroke-width="2.6"/>
+
+  <!-- ~30 minute threshold -->
+  <path d="M596 580V800" stroke="#b8873f" stroke-width="1.6" stroke-dasharray="7 7"/>
+  <circle cx="596" cy="664" r="7" fill="#b8873f"/>
+  <text class="gold" x="620" y="616">EFFECTIVE MONITORING BREAKS DOWN</text>
+  <text class="dim" x="620" y="640" fill="#a07a3c">BEYOND ROUGHLY HALF AN HOUR, ATTENTION CANNOT BE SUSTAINED</text>
+
+  <!-- annotation -->
+  <text class="dim" x="1080" y="726">THE RARER THE FAILURE,</text>
+  <text class="dim" x="1080" y="748">THE WEAKER THE WATCH</text>
+
+  <!-- plate -->
+  <g>
+    <path d="M1100 62H1504" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+    <text class="ttl" x="1504" y="50" text-anchor="end">OMNIPONDER — FIG. 01</text>
+    <text class="dim" x="1504" y="88" text-anchor="end">AUTHORITY, SUPERVISION, AND THE LIMITS OF ATTENTION</text>
+  </g>
+</svg>
