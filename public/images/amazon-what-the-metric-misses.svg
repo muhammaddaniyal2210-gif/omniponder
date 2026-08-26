@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Diagram showing Brazil's two forest monitoring systems, DETER and PRODES, inside the category of measured clear-cutting, and the forms of forest loss that fall outside measurement">
+  <style>
+    .ttl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 20px; letter-spacing: 4.2px; fill: #171614; }
+    .lbl  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; letter-spacing: 3.2px; fill: #171614; }
+    .gold { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; letter-spacing: 3.0px; fill: #b8873f; }
+    .dim  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 2.0px; fill: #77736a; }
+    .fig  { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 34px; letter-spacing: 1px; fill: #171614; }
+    .figs { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 1.9px; fill: #77736a; }
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <g stroke="#171614" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+
+  <text class="ttl" x="96" y="92">WHAT THE DEFORESTATION NUMBER COUNTS</text>
+  <path d="M96 114H760" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- measured zone -->
+  <rect x="96" y="164" width="820" height="400" fill="#171614" fill-opacity="0.045" stroke="#171614" stroke-width="1.6"/>
+  <text class="lbl" x="130" y="212">MEASURED — CLEAR-CUTTING</text>
+  <text class="dim" x="130" y="238">FOREST REMOVED, GROUND EXPOSED, VISIBLE FROM ORBIT</text>
+
+  <!-- DETER -->
+  <g>
+    <path d="M130 276H490" stroke="#171614" stroke-opacity="0.25" stroke-width="1"/>
+    <text class="gold" x="130" y="312">DETER — ALERTS</text>
+    <text class="dim" x="130" y="336">FAST · LOWER RESOLUTION</text>
+    <text class="fig" x="130" y="392">2,874 km²</text>
+    <text class="figs" x="130" y="418">AUG 2025 – JUL 2026 · DOWN 36%</text>
+    <text class="figs" x="130" y="440">LOWEST SINCE 2013</text>
+  </g>
+
+  <!-- PRODES -->
+  <g>
+    <path d="M540 276H882" stroke="#171614" stroke-opacity="0.25" stroke-width="1"/>
+    <text class="lbl" x="540" y="312">PRODES — ANNUAL SURVEY</text>
+    <text class="dim" x="540" y="336">SLOWER · HIGHER RESOLUTION</text>
+    <text class="fig" x="540" y="392">5,796 km²</text>
+    <text class="figs" x="540" y="418">YEAR TO JUL 2025 · DOWN 11%</text>
+    <text class="figs" x="540" y="440">OFFICIAL SERIES FROM 1988</text>
+  </g>
+
+  <!-- record benchmark -->
+  <path d="M130 478H882" stroke="#171614" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6"/>
+  <text class="dim" x="130" y="508">RECORD LOW TO BEAT — 4,471 km² (2012)</text>
+  <text class="dim" x="130" y="534" fill="#a07a3c">A “LOWEST SINCE 1988” CLAIM MUST CLEAR THAT MARK FIRST</text>
+
+  <!-- unmeasured zone -->
+  <rect x="972" y="164" width="532" height="400" fill="none" stroke="#b8873f" stroke-width="1.6" stroke-dasharray="9 8"/>
+  <text class="gold" x="1006" y="212">NOT MEASURED — DEGRADATION</text>
+  <text class="dim" x="1006" y="238" fill="#a07a3c">CANOPY SURVIVES; THE FOREST DOES NOT</text>
+
+  <g>
+    <text class="lbl" x="1006" y="298">Selective logging</text>
+    <text class="dim" x="1006" y="322">Largest trees removed, canopy reads intact</text>
+
+    <text class="lbl" x="1006" y="368">Fragmentation</text>
+    <text class="dim" x="1006" y="392">Roads cut interior into drying edges</text>
+
+    <text class="lbl" x="1006" y="438">Understory fire</text>
+    <text class="dim" x="1006" y="462">Burns beneath the canopy, leaves no clearing</text>
+
+    <text class="lbl" x="1006" y="508">Drought mortality</text>
+    <text class="dim" x="1006" y="532">Trees die standing where they grew</text>
+  </g>
+
+  <!-- leakage test -->
+  <path d="M96 622H1504" stroke="#171614" stroke-opacity="0.16" stroke-width="1"/>
+  <text class="ttl" x="96" y="682">THE LEAKAGE TEST</text>
+  <path d="M96 704H500" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+  <text class="dim" x="96" y="730">WHEN ENFORCEMENT TIGHTENS IN ONE BIOME, CLEARING USUALLY MOVES TO ANOTHER. THIS TIME IT DID NOT.</text>
+
+  <g>
+    <rect x="96" y="762" width="440" height="72" fill="#171614" fill-opacity="0.045"/>
+    <text class="lbl" x="126" y="796">AMAZON</text>
+    <text class="dim" x="126" y="820">2,874 km² · down 36%</text>
+
+    <rect x="572" y="762" width="440" height="72" fill="#171614" fill-opacity="0.045"/>
+    <text class="lbl" x="602" y="796">CERRADO</text>
+    <text class="dim" x="602" y="820">5,119 km² · down 7.8%</text>
+
+    <text class="gold" x="1060" y="796">BOTH FELL TOGETHER</text>
+    <text class="dim" x="1060" y="820" fill="#a07a3c">HARD TO EXPLAIN AS DISPLACEMENT</text>
+  </g>
+
+  <g>
+    <path d="M1150 62H1504" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+    <text class="ttl" x="1504" y="50" text-anchor="end">OMNIPONDER — FIG. 01</text>
+    <text class="dim" x="1504" y="88" text-anchor="end">SOURCE — INPE (DETER / PRODES)</text>
+  </g>
+</svg>
