@@ -166,6 +166,25 @@ hot takes, no padding to hit a length.
 **Banned:** "delve", "tapestry", "testament", "in conclusion", "vibrant",
 "navigate the complexities", "in today's fast-paced world".
 
+**Openings.** Never open with a dictionary definition or a throat-clearing
+generality. Open on a surprising fact, a live contradiction, a concrete scene, a
+real question, or a specific development. The first hundred words have to earn
+the next hundred.
+
+**Structure follows the argument.** Use only the sections this particular piece
+needs. Do not fit a topic to a template, and do not add headings to break up text
+that is already readable.
+
+**Also banned, as patterns rather than words:** empty motivational filler,
+unsupported claims, invented statistics or quotes, keyword stuffing, conclusions
+that restate the article back to the reader, and the evenly-weighted
+three-clause sentence rhythm that reads as machine-written.
+
+**Promotional copy** — newsletter and social — carries the same voice as the
+essays: intelligent, specific, unhurried. It states what the piece argues and why
+it is worth the time. No hype ("this will change everything", "you can't afford
+to miss this"), no manufactured urgency, no overselling.
+
 ## Architecture
 
 - Next.js App Router, **Next 16**: `params` is a `Promise` and must be awaited.
