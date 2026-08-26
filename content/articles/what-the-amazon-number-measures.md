@@ -3,6 +3,19 @@ title: "The Amazon Just Had Its Best Year in a Decade. Almost Nobody Noticed."
 excerpt: "Brazil's deforestation alerts fell 36% to their lowest level since 2013 — a rare case of a large environmental problem getting substantially better, fast. The harder question is what that number measures, and what it cannot see."
 date: "2026-08-27"
 tags: ["Global Systems", "Environment", "Amazon Deforestation", "Brazil", "Policy", "Measurement", "Climate", "Human Nature", "State Capacity", "Conservation"]
+faq:
+  - question: "Is Amazon deforestation actually decreasing?"
+    answer: "Yes, on the measure being reported. Alerts fell 36% year-on-year to 2,874 square kilometres, the lowest since 2013. The official annual survey has not confirmed the figure yet, and the measure covers clear-cutting only."
+  - question: "What is the difference between DETER and PRODES?"
+    answer: "DETER is Brazil's fast alert system — frequent, lower resolution, built to dispatch enforcement teams. PRODES is the slower, higher-resolution annual survey that forms the official record back to 1988. Headlines routinely treat them as interchangeable."
+  - question: "Is this the lowest Amazon deforestation on record?"
+    answer: "Not yet. The official record low is 4,471 square kilometres, set in 2012. A claim of the lowest since 1988 requires beating that figure, which current alerts make plausible but have not demonstrated."
+  - question: "Why did Amazon deforestation fall?"
+    answer: "Resumed enforcement operations, rebuilt monitoring capacity, restored protection of Indigenous territories, and targeted agreements with the municipalities where clearing concentrates. Nothing technologically new — consistent state enforcement."
+  - question: "Did the clearing simply move to the Cerrado instead?"
+    answer: "Apparently not. Cerrado alerts also fell, by roughly 8%, to a five-year low. Both biomes declining together is difficult to explain as displacement, which is what makes this result more credible than the headline number alone."
+  - question: "Does this mean the Amazon is recovering?"
+    answer: "Not necessarily. Deforestation counts clear-cutting. Selective logging, road fragmentation, understory fire and drought mortality can degrade a forest substantially without appearing in the statistic."
 ---
 
 Between August 2025 and July 2026, Brazil's satellite alert system flagged 2,874 square kilometres of Amazon clearing. That is roughly a third less than the year before, and something over half below the average of the preceding decade. It is the lowest figure the alert system has recorded since 2013.
@@ -86,7 +99,7 @@ So it is entirely possible for Brazil to post its best clear-cutting number sinc
 
 > The metric improving is not the same as the system recovering. Deforestation is what we chose to count, not the whole of what is happening.
 
-This is not an argument for dismissing the achievement. It is an argument for knowing its shape.
+This is not an argument for dismissing the achievement. It is an argument for knowing its shape. The same gap between a reassuring measure and the thing it stands for runs through [the debate over human oversight of autonomous weapons](/article/the-vigilance-problem-autonomous-weapons), where the reassurance is a person in a cockpit rather than a satellite image.
 
 ## Why Good News Is Structurally Invisible
 
@@ -104,7 +117,7 @@ The consequence is a distorted picture in a specific direction. If improvements 
 
 **Measure the thing you actually care about.** If the goal is a functioning forest rather than an unbroken canopy in satellite imagery, then degradation, fire and drought belong in the headline number. What gets counted gets managed, and what escapes counting escapes management.
 
-**Distrust improvements that are not tested for leakage.** The Cerrado holding steady alongside the Amazon is the single most persuasive detail in this data, and it is the one that went almost entirely unmentioned.
+**Distrust improvements that are not tested for leakage.** The Cerrado holding steady alongside the Amazon is the single most persuasive detail in this data, and it is the one that went almost entirely unmentioned. Examining the structure beneath a headline number is [the whole of what we do here](/about).
 
 The number that came out this month is genuinely good news, arrived at by unremarkable means, and it deserves to be known. It is also a partial view of a system under strain from directions the number was never built to detect.
 

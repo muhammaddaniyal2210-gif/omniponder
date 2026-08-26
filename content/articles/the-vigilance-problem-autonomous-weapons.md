@@ -3,6 +3,17 @@ title: "The Vigilance Problem: An AI Flew a Real Fighter Jet, and the Safeguard 
 excerpt: "Autonomy has become a retrofit kit. As the UN reconvenes on lethal autonomous weapons, the reassurance everyone reaches for — a human in the cockpit, ready to take over — rests on an assumption cognitive science abandoned four decades ago."
 date: "2026-08-27"
 tags: ["Global Systems", "Artificial Intelligence", "Autonomous Weapons", "Human Nature", "Psychology", "Technology Ethics", "Defense Policy", "Automation", "Human Oversight", "Future of War"]
+faq:
+  - question: "Did an AI really fly a fighter jet for the first time?"
+    answer: "No. AI agents flew autonomous dogfights aboard DARPA's X-62A VISTA in 2023. What was new in July 2026 is that VENOM used an ordinary operational F-16 fitted with an autonomy kit, rather than a purpose-built experimental aircraft."
+  - question: "Is a human required to approve autonomous weapon strikes?"
+    answer: "Not in the way commonly assumed. The phrase human in the loop does not appear in US Department of Defense policy. Directive 3000.09 requires that systems allow appropriate levels of human judgment over the use of force, which is a context-dependent standard rather than per-engagement approval."
+  - question: "What are the ironies of automation?"
+    answer: "Lisanne Bainbridge's 1983 finding that automation assigns humans a monitoring task they cannot perform well, while simultaneously eroding the manual skills they need at the moment the automation hands control back."
+  - question: "Why can people not monitor automated systems effectively?"
+    answer: "Attention cannot be sustained on a low-event information source much beyond about half an hour. It is a property of human attention rather than a matter of motivation or training, which is why the problem resists being solved by discipline."
+  - question: "Will autonomous weapons be banned?"
+    answer: "Unclear. Roughly 127 states support a binding prohibition, while the United States, United Kingdom, Russia and Israel favour non-binding frameworks. The UN group of governmental experts met from 31 August to 4 September 2026."
 ---
 
 At Eglin Air Force Base in Florida, a pilot sits in the cockpit of an F-16 he is not flying. The aircraft is being flown by software. In front of him is a switch that returns control to human hands, and the existence of that switch is doing an enormous amount of work — technical, legal, political, and moral.
@@ -106,7 +117,7 @@ Three conclusions seem reasonably firm.
 
 **Retrofit is the development that changes timelines.** Governance built around the assumption of long platform cycles is calibrated to a world that no longer exists. The relevant question is no longer how many autonomous aircraft a state has built, but how many of its existing aircraft could be converted, and how fast.
 
-**Verification is the hard problem, not intent.** Most states will agree that meaningful human control matters. Almost none will agree on how to prove it from the outside — and when the difference between a supervised and an unsupervised system is a software load, proof becomes very difficult indeed.
+**Verification is the hard problem, not intent.** The same difficulty appears wherever a headline metric stands in for a system nobody can fully observe — including, in a very different domain, [how we measure the health of a rainforest](/article/what-the-amazon-number-measures). Most states will agree that meaningful human control matters. Almost none will agree on how to prove it from the outside — and when the difference between a supervised and an unsupervised system is a software load, proof becomes very difficult indeed.
 
 The switch in that cockpit at Eglin is real. A pilot can flip it, and control returns. What the switch cannot do is manufacture the attention required to know when to flip it — which was the point Bainbridge made in 1983, about chemical plants, in a paper that keeps being right about technologies she never imagined.
 

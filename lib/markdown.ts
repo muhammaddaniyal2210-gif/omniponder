@@ -9,6 +9,11 @@ import remarkHtml from 'remark-html'
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
 
 /** Frontmatter plus everything we can derive without parsing the body. */
+export type FaqEntry = {
+  question: string
+  answer: string
+}
+
 export type ArticleMeta = {
   slug: string
   title: string
@@ -16,6 +21,7 @@ export type ArticleMeta = {
   excerpt: string
   topic: string
   tags: string[]
+  faq: FaqEntry[]
   wordCount: number
   readingTime: number
 }
@@ -24,7 +30,9 @@ export type Article = ArticleMeta & {
   contentHtml: string
 }
 
-type Frontmatter = Partial<Record<'title' | 'date' | 'excerpt' | 'topic' | 'tags', unknown>>
+type Frontmatter = Partial<
+  Record<'title' | 'date' | 'excerpt' | 'topic' | 'tags' | 'faq', unknown>
+>
 
 const WORDS_PER_MINUTE = 220
 
@@ -48,6 +56,22 @@ function asTags(value: unknown): string[] {
   return value.filter((tag): tag is string => typeof tag === 'string' && tag.trim() !== '')
 }
 
+/**
+ * FAQ pairs from frontmatter. Rendered on the page *and* emitted as FAQPage
+ * structured data — the schema is only legitimate when the questions are
+ * visible to readers too, so the two must come from this one source.
+ */
+function asFaq(value: unknown): FaqEntry[] {
+  if (!Array.isArray(value)) return []
+  return value.flatMap((entry) => {
+    if (typeof entry !== 'object' || entry === null) return []
+    const { question, answer } = entry as Record<string, unknown>
+    if (typeof question !== 'string' || typeof answer !== 'string') return []
+    if (question.trim() === '' || answer.trim() === '') return []
+    return [{ question: question.trim(), answer: answer.trim() }]
+  })
+}
+
 function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
   const tags = asTags(data.tags)
   const wordCount = countWords(body)
@@ -62,6 +86,7 @@ function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
     // a tags-only frontmatter never falls through to "General".
     topic: asString(data.topic, tags[0] ?? 'General'),
     tags,
+    faq: asFaq(data.faq),
     wordCount,
     readingTime: estimateReadingTime(wordCount),
   }

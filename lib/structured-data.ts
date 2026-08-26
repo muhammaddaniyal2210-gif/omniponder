@@ -85,3 +85,22 @@ export function breadcrumbSchema(article: Article) {
     ],
   }
 }
+
+/**
+ * FAQPage markup. Google requires the questions and answers to be visibly
+ * present on the page; this is emitted only when the article actually renders
+ * an FAQ section, never as schema-only decoration.
+ */
+export function faqSchema(article: Article) {
+  if (article.faq.length === 0) return null
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: article.faq.map((entry) => ({
+      '@type': 'Question',
+      name: entry.question,
+      acceptedAnswer: { '@type': 'Answer', text: entry.answer },
+    })),
+  }
+}

@@ -6,7 +6,7 @@ import AdPlaceholder from '@/components/AdPlaceholder'
 import ReadingProgress from '@/components/ReadingProgress'
 import JsonLd from '@/components/JsonLd'
 import ShareButtons from '@/components/ShareButtons'
-import { articleSchema, breadcrumbSchema } from '@/lib/structured-data'
+import { articleSchema, breadcrumbSchema, faqSchema } from '@/lib/structured-data'
 import { formatDate, getArticleBySlug, getArticleSlugs } from '@/lib/markdown'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
@@ -66,7 +66,11 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
 
   return (
     <>
-      <JsonLd data={[articleSchema(article), breadcrumbSchema(article)]} />
+      <JsonLd
+        data={[articleSchema(article), breadcrumbSchema(article), faqSchema(article)].filter(
+          (schema) => schema !== null
+        )}
+      />
       <ReadingProgress targetId={ARTICLE_BODY_ID} />
 
       <div className="mx-auto max-w-[42rem] px-6 py-12 sm:py-16">
@@ -123,6 +127,33 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
             dangerouslySetInnerHTML={{ __html: article.contentHtml }}
           />
         </article>
+
+        {article.faq.length > 0 && (
+          <section
+            aria-labelledby="faq-heading"
+            className="border-rule mt-16 border-t pt-10"
+          >
+            <h2
+              id="faq-heading"
+              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
+            >
+              Common Questions
+            </h2>
+
+            <dl className="divide-rule mt-8 divide-y">
+              {article.faq.map((entry) => (
+                <div key={entry.question} className="py-6 first:pt-0">
+                  <dt className="text-ink font-serif text-xl leading-snug font-medium tracking-[-0.015em]">
+                    {entry.question}
+                  </dt>
+                  <dd className="text-ink-muted mt-3 font-serif leading-relaxed text-pretty">
+                    {entry.answer}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
 
         {article.tags.length > 0 && (
           <div className="border-rule mt-16 border-t pt-8">
