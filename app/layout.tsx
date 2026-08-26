@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Analytics } from "@vercel/analytics/next"
+import Script from 'next/script'
 import { Inter_Tight, Newsreader } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -78,6 +79,14 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Analytics />
+        {/*
+          Beehiiv referral attribution. afterInteractive keeps it off the
+          critical path while still loading on every route.
+        */}
+        <Script
+          src="https://subscribe-forms.beehiiv.com/attribution.js"
+          strategy="afterInteractive"
+        />
         <Footer />
       </body>
     </html>

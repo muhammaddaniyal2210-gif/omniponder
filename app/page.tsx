@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import AdPlaceholder from '@/components/AdPlaceholder'
 import HeroFlowCanvas from '@/components/HeroFlowCanvas'
-import NewsletterForm from '@/components/newsletter-form'
+import NewsletterForm from '@/components/NewsletterForm'
 import { formatDate, getAllArticles, getLatestArticle } from '@/lib/markdown'
 import { siteConfig } from '@/lib/site'
 
@@ -182,10 +182,7 @@ export default async function HomePage() {
       <AdPlaceholder variant="leaderboard" className="my-14" />
 
       <div className="mb-14">
-        <NewsletterForm
-          heading="One piece, every morning"
-          blurb="No noise, purely structural signal."
-        />
+        <NewsletterForm />
       </div>
     </div>
   )
