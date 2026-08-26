@@ -87,11 +87,23 @@ error states.
 
 ## Content
 
-**6–9 minute reads** — roughly **1,300–2,000 words**, sized for a daily cadence
-and written to be complete in one sitting. Reading time is derived, not
-declared: `lib/markdown.ts` divides the body by 220 words per minute, so the
-figure shown on the page follows the prose. Do not pad to reach a number, and
-do not cut an argument short to stay under one. Subjects:
+**The topic sets the length — the length never sets the quality.** Ask what this
+particular piece needs to be complete, and write that.
+
+The usual landing zone is **7–12 minutes**, but it is a guideline, not a target.
+Go shorter when the argument is genuinely finished sooner; go longer when the
+context, history, or evidence demands it. Past roughly **12–13 minutes** you need
+an actual editorial reason, not momentum.
+
+Never trade substance for a number in either direction: no cutting context to hit
+seven minutes, no filler or restatement to reach ten. Reading time is *derived,
+not declared* — `lib/markdown.ts` divides the body by 220 words per minute, so
+the figure on the page follows the prose. Write first, report the time after.
+
+Before finalising, check the length honestly: is every point properly explained,
+is there enough context, was anything valuable cut to hit a number, is anything
+repeated or padded, does it hold interest end to end? It should feel complete
+without being exhausting. Subjects:
 
 - **Human nature** — why people behave as they do.
 - **Science** — what was recently learned, and what it overturns.
