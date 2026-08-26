@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
-import NewsletterForm from '@/components/newsletter-form'
+import NewsletterForm from '@/components/NewsletterForm'
 import ScrollCanvas from '@/components/ScrollCanvas'
 import SocialLinks from '@/components/SocialLinks'
 import { absoluteUrl, siteConfig } from '@/lib/site'
@@ -179,13 +179,9 @@ export default function AboutPage() {
       </section>
 
       {/* Subscribe */}
-      <section className="mx-auto max-w-6xl px-6 pb-28 sm:px-10">
-        <NewsletterForm
-          variant="feature"
-          heading="Read it every morning"
-          blurb="One in-depth piece a day, sent straight to your inbox. No noise, no filler."
-        />
-      </section>
+      <div className="mx-auto max-w-6xl pb-28">
+        <NewsletterForm />
+      </div>
     </div>
   )
 }
