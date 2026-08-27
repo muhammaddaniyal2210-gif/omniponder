@@ -78,7 +78,7 @@ export default function NewsletterForm() {
           form's X-Align setting in the beehiiv builder — this is the mitigation
           for what can be reached from outside a cross-origin iframe.
         */}
-        <div ref={hostRef} className="mt-8 w-full max-w-[30rem]" />
+        <div ref={hostRef} className="mt-8 w-full max-w-[25rem]" />
 
         <p className="text-ink-faint mt-2 text-[0.625rem] tracking-[0.16em] uppercase">
           Free to read. Unsubscribe in one click.
