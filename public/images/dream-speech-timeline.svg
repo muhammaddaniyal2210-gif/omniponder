@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Timeline of the 1963 I Have a Dream speech showing the prepared portion and the improvised dream passage">
+  <style>
+    .ttl  { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:20px; letter-spacing:4px; fill:#171614; }
+    .lbl  { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:17px; letter-spacing:3.2px; fill:#171614; }
+    .gold { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:17px; letter-spacing:3.2px; fill:#b8873f; }
+    .paper{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:15px; letter-spacing:2.6px; fill:#fbfaf7; }
+    .dim  { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:13px; letter-spacing:2px; fill:#77736a; }
+    .tick { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:12px; letter-spacing:1.6px; fill:#77736a; }
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+  <g stroke="#171614" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+
+  <!-- plate -->
+  <text class="ttl" x="120" y="150">ONE SPEECH, TWO HALVES</text>
+  <path d="M120 172H660" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+  <text class="dim" x="120" y="200">MARCH ON WASHINGTON · 28 AUGUST 1963 · ~250,000 PRESENT</text>
+
+  <!-- allotment bracket -->
+  <text class="dim" x="160" y="360">ALLOTTED</text>
+  <path d="M160 378 H408 M160 372 V392 M408 372 V392" stroke="#77736a" stroke-width="1.4" fill="none"/>
+  <text class="dim" x="160" y="420">~5 MINUTES</text>
+
+  <!-- the speech bar -->
+  <!-- prepared (charcoal fill) : x 160 -> 1040 -->
+  <rect x="160" y="452" width="880" height="96" fill="#171614"/>
+  <!-- improvised (ivory with gold rule) : x 1040 -> 1440 -->
+  <rect x="1040" y="452" width="400" height="96" fill="#fbfaf7" stroke="#b8873f" stroke-width="2"/>
+
+  <text class="paper" x="196" y="508">PREPARED TEXT</text>
+  <text class="gold" x="1072" y="508">IMPROVISED</text>
+
+  <!-- pivot marker -->
+  <path d="M1040 420 V580" stroke="#b8873f" stroke-width="1.6" stroke-dasharray="6 6"/>
+  <circle cx="1040" cy="452" r="7" fill="#b8873f"/>
+  <text class="gold" x="1040" y="404" text-anchor="middle">MANUSCRIPT SET ASIDE</text>
+  <text class="dim" x="1040" y="612" text-anchor="middle" fill="#a07a3c">MAHALIA JACKSON: &#8220;TELL &#8217;EM ABOUT THE DREAM, MARTIN&#8221;</text>
+
+  <!-- minute ticks -->
+  <g>
+    <path d="M160 560 V574 M380 560 V574 M600 560 V574 M820 560 V574 M1040 560 V574 M1260 560 V574 M1440 560 V574" stroke="#77736a" stroke-width="1.2"/>
+    <text class="tick" x="160" y="596" text-anchor="middle">0</text>
+    <text class="tick" x="600" y="596" text-anchor="middle">6</text>
+    <text class="tick" x="1040" y="596" text-anchor="middle">12</text>
+    <text class="tick" x="1440" y="596" text-anchor="middle">16 MIN</text>
+  </g>
+
+  <!-- descriptions -->
+  <text class="lbl" x="196" y="686">THE &#8220;BAD CHECK&#8221; METAPHOR</text>
+  <path d="M196 704 H196" stroke="#171614" stroke-opacity="0.28" stroke-width="1"/>
+  <text class="dim" x="196" y="712">A CONTROLLED LEGAL CASE — STRONG, AND FORGETTABLE</text>
+
+  <text class="gold" x="1072" y="686">&#8220;I HAVE A DREAM&#8221;</text>
+  <text class="dim" x="1072" y="712">NOT IN THE SCRIPT — DRAWN FROM EARLIER SERMONS</text>
+
+  <!-- footer stat -->
+  <path d="M120 786 H1480" stroke="#171614" stroke-opacity="0.14" stroke-width="1"/>
+  <text class="dim" x="120" y="824">SPOKE ~16 MINUTES · ~1,600 WORDS · THE PASSAGE THE WORLD REMEMBERS WAS NEVER WRITTEN DOWN</text>
+  <text class="ttl" x="1480" y="824" text-anchor="end" font-size="15" fill="#77736a" letter-spacing="2px">OMNIPONDER — FIG. 01</text>
+</svg>
