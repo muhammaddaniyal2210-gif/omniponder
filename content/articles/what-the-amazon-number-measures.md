@@ -78,7 +78,7 @@ That is not what happened. Cerrado alerts also fell over the same period, down a
 
 Both went down together. That is much harder to explain as displacement, and much easier to explain as a genuine reduction in clearing activity.
 
-![Satellite-style illustration of the deforestation frontier: dense canopy on one side broken by faint thinned patches, a hard boundary line, and rectilinear cleared plots with fishbone roads pushing into the forest on the other](/images/amazon-forest-boundary.jpg) *Caption: The frontier where enforcement is either present or absent — the line that satellite alerts are built to watch.*
+![Aerial-style illustration of the Amazon deforestation frontier: a river winding through dense canopy, and a trunk road with perpendicular side roads carrying irregular cleared plots that advance into the forest in the characteristic fishbone pattern](/images/amazon-forest-boundary.jpg) *Caption: The frontier where enforcement is either present or absent — the line that satellite alerts are built to watch.*
 
 ## What the Number Cannot See
 
