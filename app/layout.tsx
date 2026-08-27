@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Analytics } from "@vercel/analytics/next"
 import Script from 'next/script'
 import { Inter_Tight, Newsreader } from 'next/font/google'
@@ -65,6 +65,20 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: 'default',
+  },
+}
+
+// themeColor lives on the viewport export in Next 16, not in metadata.
+// Ivory matches the page ground so mobile browser chrome blends into the site.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fbfaf7' },
+    { media: '(prefers-color-scheme: dark)', color: '#171614' },
+  ],
 }
 
 export default function RootLayout({

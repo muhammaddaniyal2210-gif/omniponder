@@ -12,12 +12,19 @@ const publisher = {
   '@type': 'Organization',
   name: siteConfig.name,
   url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: absoluteUrl('/icon-512.png'),
+    width: 512,
+    height: 512,
+  },
 } as const
 
 const author = {
   '@type': 'Person',
   name: siteConfig.author,
   url: absoluteUrl('/about'),
+  sameAs: ['https://x.com/RedactLocal', 'https://www.linkedin.com/in/muhammad-daniyal-3139a23b2/'],
 } as const
 
 export function organizationSchema() {
