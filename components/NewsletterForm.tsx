@@ -70,7 +70,15 @@ export default function NewsletterForm() {
           and sizes its iframe by script; as a flex item it collapsed to zero
           height. A plain block lets its own auto margins do the centring.
         */}
-        <div ref={hostRef} className="mt-8 w-full" />
+        {/*
+          Beehiiv left-pins its form inside the iframe, which is itself centred.
+          Capping the host to roughly the form's own width removes the dead space
+          on the right, so a left-aligned form reads as centred. The parent's
+          items-center keeps the capped box in the middle. The real fix is the
+          form's X-Align setting in the beehiiv builder — this is the mitigation
+          for what can be reached from outside a cross-origin iframe.
+        */}
+        <div ref={hostRef} className="mt-8 w-full max-w-[30rem]" />
 
         <p className="text-ink-faint mt-2 text-[0.625rem] tracking-[0.16em] uppercase">
           Free to read. Unsubscribe in one click.
