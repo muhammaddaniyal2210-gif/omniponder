@@ -137,22 +137,43 @@ first tag, which is a convenience, not the intended path.
 
 ### DUAL-IMAGE PROTOCOL
 
-Every new article generated must include exactly TWO visual elements:
+Every article ships with exactly TWO visual elements, **both present at publish
+time**. Never commit an image reference without its file — the reserved-frame
+fallback in `lib/markdown.ts` is a safety net against mistakes, not a licence to
+publish a gap and fill it later.
 
-1. **Primary (Top):** A hand-coded, minimalist SVG infographic (map, data, or
-   conceptual diagram) placed directly below the intro.
-2. **Secondary (Mid-article):** A `.jpg` placed deeper in the article body that
-   grounds the essay visually. A properly licensed photograph is ideal. Absent
-   one — there is no image-generation tool here, and unlicensed stock is not an
-   option on a commercial site — author a second illustration instead and render
-   it to `.jpg`, keeping it tonally distinct from the FIG. 01 infographic so the
-   two do not read as a matched pair. Never ship the reference without the file.
+1. **Primary (Top):** A hand-coded, minimalist SVG infographic — map, data, or
+   conceptual diagram — directly below the intro. Authored in-repo, in the ivory
+   / charcoal / copper palette. This one is always drawn, because it carries the
+   article's specific argument and no stock image can.
 
-The SVG is authored in-repo and ships working. The `.jpg` is sourced manually
-afterwards, so it is normally absent at publish time — `lib/markdown.ts` checks
-every local image at build time and renders a reserved frame for any file that
-is missing, rather than a broken image. The build log names them. Both images
-still need real, descriptive alt text.
+2. **Secondary (Mid-article):** A `.jpg` deeper in the body that grounds the
+   essay in a real place or object.
+
+   **Reach for a real photograph first.** There is no image-generation tool
+   here, but there are deep public-domain archives, and a genuine photograph
+   beats hand-drawn vector art every time — it looks real because it is:
+
+   - **NASA Earth Observatory** and **NASA Visible Earth** — earth systems,
+     climate, geography, weather, land use
+   - **USGS EROS / Landsat** — satellite and aerial imagery
+   - **NASA image galleries** — space, aviation, instrumentation
+   - Government and agency archives generally: usually public domain, though
+     confirm rather than assume
+
+   Verify the frame actually matches the subject — a Peruvian river in an
+   article about Brazil is quietly misleading — and carry the required credit
+   line in the caption.
+
+   **Only illustrate when no photograph of the thing can exist** — an abstract
+   mechanism, a hypothetical, a diagrammatic concept. Then render it to `.jpg`
+   and keep it tonally distinct from the FIG. 01 infographic so the two do not
+   read as a matched pair. Do not iterate on vector art hoping it will start
+   looking photographic. It will not.
+
+Unlicensed stock is never an option: this is a commercial site running ad
+placements. Both images need real, descriptive alt text — describing what the
+image *actually shows*, including whether it is a photograph or an illustration.
 
 ### SEO requirements
 
