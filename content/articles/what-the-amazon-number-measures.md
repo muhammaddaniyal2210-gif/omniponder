@@ -99,7 +99,7 @@ So it is entirely possible for Brazil to post its best clear-cutting number sinc
 
 > The metric improving is not the same as the system recovering. Deforestation is what we chose to count, not the whole of what is happening.
 
-This is not an argument for dismissing the achievement. It is an argument for knowing its shape. The same gap between a reassuring measure and the thing it stands for runs through [the debate over human oversight of autonomous weapons](/article/the-vigilance-problem-autonomous-weapons), where the reassurance is a person in a cockpit rather than a satellite image.
+This is not an argument for dismissing the achievement. It is an argument for knowing its shape.
 
 ## Why Good News Is Structurally Invisible
 
