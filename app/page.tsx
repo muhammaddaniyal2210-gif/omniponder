@@ -181,7 +181,12 @@ export default async function HomePage() {
 
       <AdPlaceholder variant="leaderboard" className="my-14" />
 
-      <div className="mb-14">
+      {/*
+        The page container already pads by px-6; cancel it here on phones so
+        the Beehiiv embed is not double-padded down to ~279px, which is too
+        narrow for its field-and-button row.
+      */}
+      <div className="-mx-6 mb-14 sm:mx-0">
         <NewsletterForm />
       </div>
     </div>

@@ -45,7 +45,7 @@ export default function NewsletterForm() {
   return (
     <section
       aria-labelledby="newsletter-heading"
-      className="border-rule border-y px-6 py-16 sm:px-10"
+      className="border-rule border-y px-4 py-16 sm:px-10"
     >
       <div className="mx-auto flex max-w-xl flex-col items-center text-center">
         <Mail className="text-ink-faint h-6 w-6" aria-hidden="true" />
