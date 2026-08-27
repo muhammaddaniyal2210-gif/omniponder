@@ -78,7 +78,7 @@ That is not what happened. Cerrado alerts also fell over the same period, down a
 
 Both went down together. That is much harder to explain as displacement, and much easier to explain as a genuine reduction in clearing activity.
 
-![Aerial-style illustration of the Amazon deforestation frontier: a river winding through dense canopy, and a trunk road with perpendicular side roads carrying irregular cleared plots that advance into the forest in the characteristic fishbone pattern](/images/amazon-forest-boundary.jpg) *Caption: The frontier where enforcement is either present or absent — the line that satellite alerts are built to watch.*
+![Satellite photograph of northwest Rondônia in the Brazilian Amazon: intact dark-green forest broken by the fishbone pattern of deforestation, where clearings advance in ranks along roads cut at right angles to a main highway, with smoke from fires drifting across the scene](/images/amazon-forest-boundary.jpg) *Caption: Clearing advances along roads in northwest Rondônia, Brazil — the fishbone pattern satellite alerts are built to detect. NASA Earth Observatory image by Jesse Allen and Robert Simmon, using MODIS data from the Terra satellite, 2007.*
 
 ## What the Number Cannot See
 

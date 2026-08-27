@@ -53,3 +53,17 @@ Same 1600x1600 letterbox trick as the seabed figure: the composition sits at
 
 Replace it freely with a properly licensed photograph — the alt text and caption
 should then be updated to describe the photograph instead.
+
+## amazon-forest-boundary.jpg — real satellite imagery
+
+Northwest Rondônia, Brazilian Amazon. **NASA Earth Observatory image by Jesse
+Allen and Robert Simmon, using MODIS data from the Terra satellite (12 August
+2007).** NASA imagery is public domain; the credit line above must stay with the
+image and is carried in the article caption.
+
+Source page:
+https://science.nasa.gov/earth/earth-observatory/fires-and-deforestation-on-the-amazon-frontier-rondonia-brazil-38782
+
+Prefer real public-domain imagery over hand-authored illustration wherever it
+exists. NASA Earth Observatory, NASA Visible Earth and USGS EROS are all public
+domain and cover most earth-systems subjects.
