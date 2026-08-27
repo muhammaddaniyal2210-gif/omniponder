@@ -30,10 +30,13 @@ export default async function HomePage() {
       </div>
 
       {latest ? (
-        <section aria-labelledby="todays-essay" className="border-rule border-b">
+        <section
+          aria-labelledby="todays-essay"
+          className="border-rule relative overflow-hidden border-b"
+        >
           {/* Broadsheet hero: story left, generative field right. */}
           <div className="lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-14">
-            <div className="py-14 sm:py-18 lg:py-24">
+            <div className="relative z-10 py-14 sm:py-18 lg:py-24">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
                 <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
                   Today&rsquo;s Essay
@@ -85,12 +88,17 @@ export default async function HomePage() {
             </div>
 
             {/*
-              Withheld from phones, where the density costs battery rather than
-              buying beauty. On tablet it sits as a band beneath the text; at
-              desktop it moves into the right column of the broadsheet grid.
+              One instance, two roles. Below lg it is lifted out of flow and
+              becomes a full-bleed backdrop behind the headline — a horizon the
+              text sits on, rather than a shrunken panel competing with it. From
+              lg it returns to the grid as the right column of the broadsheet.
+              Never interactive, and never above the type.
             */}
-            <div className="hidden md:block md:pb-14 lg:pb-0">
-              <HeroFlowCanvas className="h-[17rem] w-full lg:h-full lg:min-h-[30rem]" />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] sm:h-[58%] lg:relative lg:inset-auto lg:z-auto lg:h-auto lg:self-stretch"
+            >
+              <HeroFlowCanvas className="h-full w-full opacity-[0.34] sm:opacity-[0.4] lg:min-h-[30rem] lg:opacity-100" />
             </div>
           </div>
         </section>

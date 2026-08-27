@@ -69,9 +69,9 @@ export default function AboutPage() {
         Masthead and mission share one grid so the canvas rail has a long scroll
         runway to react to, rather than leaving the page after one screen.
       */}
-      <section className="mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="md:grid md:grid-cols-[minmax(0,1fr)_15rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-20">
-          <div>
+      <section className="relative mx-auto max-w-6xl overflow-hidden px-6 sm:px-10">
+        <div className="relative md:grid md:grid-cols-[minmax(0,1fr)_15rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-20">
+          <div className="relative z-10">
             <div className="border-rule border-b pt-16 pb-14 sm:pt-20 sm:pb-16">
               <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
                 About the Publication
@@ -100,10 +100,22 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Decorative rail — withheld from phones, where it would only crowd. */}
-          <div className="hidden md:block">
-            <div className="sticky top-32">
-              <ScrollCanvas className="aspect-square w-full" />
+          {/*
+            Below md the lattice leaves the flow and is pushed off the right
+            edge, so it frames the column of type instead of sitting behind the
+            middle of it. From md it returns as the sticky rail.
+          */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-10 -right-32 z-0 sm:-right-24 md:relative md:inset-auto"
+          >
+            <div className="md:sticky md:top-32">
+              {/*
+                Explicit dimensions below md: the canvas sizes from its own box,
+                so leaving it to `h-full` inside an auto-height parent makes the
+                result incidental rather than designed.
+              */}
+              <ScrollCanvas className="h-[15rem] w-[26rem] opacity-[0.3] sm:h-[18rem] sm:w-[32rem] sm:opacity-[0.34] md:aspect-square md:h-auto md:w-full md:opacity-100" />
             </div>
           </div>
         </div>

@@ -45,13 +45,19 @@ export default function HeroFlowCanvas({ className = '' }: HeroFlowCanvasProps) 
     let pointerTargetX = 0
     let pointerTargetY = 0
 
-    // Node density drops sharply on phones to conserve GPU and battery.
+    // Fill cost is the whole budget on a phone: fewer vertices, fewer strokes,
+    // and a lower backing-store multiplier. A retina phone at dpr 3 would other-
+    // wise paint ~9x the pixels of a laptop for a decorative layer.
     function grid() {
-      const scale = coarse.matches ? 0.3 : 1
+      const scale = coarse.matches ? 0.46 : 1
       return {
-        cols: Math.max(14, Math.round(COLS_DESKTOP * scale)),
-        rows: Math.max(9, Math.round(ROWS_DESKTOP * scale)),
+        cols: Math.max(16, Math.round(COLS_DESKTOP * scale)),
+        rows: Math.max(11, Math.round(ROWS_DESKTOP * scale)),
       }
+    }
+
+    function dprCap() {
+      return coarse.matches ? 1.5 : 2
     }
 
     function readScroll() {
@@ -68,7 +74,7 @@ export default function HeroFlowCanvas({ className = '' }: HeroFlowCanvasProps) 
     function resize() {
       const rect = canvas!.getBoundingClientRect()
       if (rect.width === 0 || rect.height === 0) return
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const dpr = Math.min(window.devicePixelRatio || 1, dprCap())
       width = rect.width
       height = rect.height
       canvas!.width = Math.round(width * dpr)
@@ -232,5 +238,17 @@ export default function HeroFlowCanvas({ className = '' }: HeroFlowCanvasProps) 
   }, [])
 
   // Purely decorative: it restates nothing, so it stays out of the a11y tree.
-  return <canvas ref={canvasRef} aria-hidden="true" className={className} />
+  return (
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className={className}
+      /*
+       * Promote to its own compositing layer. The canvas repaints every
+       * frame; without this the browser may repaint the content sitting
+       * above it too, which is what makes scroll stutter on phones.
+       */
+      style={{ transform: 'translateZ(0)' }}
+    />
+  )
 }

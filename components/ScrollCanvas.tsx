@@ -56,8 +56,13 @@ export default function ScrollCanvas({ className = '' }: ScrollCanvasProps) {
     if (!ctx) return
 
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const points = buildSphere(150)
-    const edges = buildEdges(points, 0.36)
+    const coarse = window.matchMedia('(max-width: 767px)')
+
+    // Halving the node count on phones roughly quarters the edge count, which
+    // is where the per-frame stroke cost actually lives.
+    const nodeCount = coarse.matches ? 76 : 150
+    const points = buildSphere(nodeCount)
+    const edges = buildEdges(points, coarse.matches ? 0.46 : 0.36)
 
     let width = 0
     let height = 0
@@ -74,7 +79,7 @@ export default function ScrollCanvas({ className = '' }: ScrollCanvasProps) {
     function resize() {
       const rect = canvas!.getBoundingClientRect()
       if (rect.width === 0 || rect.height === 0) return
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const dpr = Math.min(window.devicePixelRatio || 1, coarse.matches ? 1.5 : 2)
       width = rect.width
       height = rect.height
       canvas!.width = Math.round(width * dpr)
@@ -202,6 +207,16 @@ export default function ScrollCanvas({ className = '' }: ScrollCanvasProps) {
 
   return (
     // Purely decorative: it restates nothing, so it stays out of the a11y tree.
-    <canvas ref={canvasRef} aria-hidden="true" className={className} />
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      className={className}
+      /*
+       * Promote to its own compositing layer. The canvas repaints every
+       * frame; without this the browser may repaint the content sitting
+       * above it too, which is what makes scroll stutter on phones.
+       */
+      style={{ transform: 'translateZ(0)' }}
+    />
   )
 }
