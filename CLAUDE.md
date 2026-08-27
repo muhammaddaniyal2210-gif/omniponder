@@ -141,10 +141,12 @@ Every new article generated must include exactly TWO visual elements:
 
 1. **Primary (Top):** A hand-coded, minimalist SVG infographic (map, data, or
    conceptual diagram) placed directly below the intro.
-2. **Secondary (Mid-article):** A markdown image link pointing to a `.jpg`
-   placeholder (e.g. `/images/[topic-name]-photo.jpg`) placed deeper in the
-   article body. This placeholder is reserved for a highly relevant, beautiful
-   photograph that grounds the essay and engages the reader.
+2. **Secondary (Mid-article):** A `.jpg` placed deeper in the article body that
+   grounds the essay visually. A properly licensed photograph is ideal. Absent
+   one — there is no image-generation tool here, and unlicensed stock is not an
+   option on a commercial site — author a second illustration instead and render
+   it to `.jpg`, keeping it tonally distinct from the FIG. 01 infographic so the
+   two do not read as a matched pair. Never ship the reference without the file.
 
 The SVG is authored in-repo and ships working. The `.jpg` is sourced manually
 afterwards, so it is normally absent at publish time — `lib/markdown.ts` checks

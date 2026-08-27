@@ -75,7 +75,7 @@ Automation, Bainbridge noted, tends to take the easy parts of a task and leave t
 
 Aviation has spent decades absorbing this lesson expensively. It is the shape behind a long line of accident reports in which crews were handed a degraded aircraft in an unfamiliar state and had seconds to build a mental model the automation had been maintaining for them.
 
-![An F-16 cockpit interior showing flight controls and instrumentation](/images/autonomous-weapons-cockpit.jpg) *Caption: The cockpit remains occupied. What is contested is what occupying it now means.*
+![Illustration of a fighter cockpit panel at night: the head-up display reads AUTO, and a flight-control-authority toggle is thrown to the AUTO position and lit, with the control stick unattended below](/images/autonomous-weapons-cockpit.jpg) *Caption: The cockpit remains occupied. What is contested is what occupying it now means.*
 
 ## The Phrase That Is Not in the Policy
 
