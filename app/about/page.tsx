@@ -72,11 +72,18 @@ export default function AboutPage() {
         reader and keeps turning as they scroll — the rotation is driven by
         document scroll progress inside the component.
       */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+      {/*
+        Bounded to end at the newsletter's bottom border (pb-28 = 7rem above the
+        page end), so the lattice cannot cross that line. The bound is via
+        positioning only — overflow-hidden must NOT go here, or it becomes a
+        scroll container and kills the child's `sticky`. The clip stays on the
+        sticky element itself.
+      */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 bottom-28 z-0" aria-hidden="true">
         <div className="sticky top-0 h-screen overflow-hidden">
           <div className="mx-auto h-full max-w-6xl px-6 sm:px-10">
             <ScrollCanvas
-              className="absolute top-1/2 -right-[22%] h-[26rem] w-[26rem] -translate-y-1/2 opacity-[0.26] sm:-right-[14%] sm:h-[34rem] sm:w-[34rem] sm:opacity-[0.3] md:-right-[6%] md:h-[42rem] md:w-[42rem] md:opacity-[0.45] lg:right-[-2%] lg:h-[52rem] lg:w-[52rem] lg:opacity-[0.55] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] [mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] md:[-webkit-mask-image:linear-gradient(to_left,black_30%,transparent_82%)] md:[mask-image:linear-gradient(to_left,black_30%,transparent_82%)]"
+              className="absolute top-1/2 -right-[22%] h-[21rem] w-[21rem] -translate-y-1/2 opacity-[0.26] sm:-right-[14%] sm:h-[27rem] sm:w-[27rem] sm:opacity-[0.3] md:-right-[6%] md:h-[34rem] md:w-[34rem] md:opacity-[0.42] lg:right-[-2%] lg:h-[43rem] lg:w-[43rem] lg:opacity-[0.5] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] [mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] md:[-webkit-mask-image:linear-gradient(to_left,black_30%,transparent_82%)] md:[mask-image:linear-gradient(to_left,black_30%,transparent_82%)]"
             />
           </div>
         </div>
