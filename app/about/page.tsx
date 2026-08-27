@@ -64,14 +64,27 @@ function protectEmDashes(text: string) {
 
 export default function AboutPage() {
   return (
-    <div>
+    // `isolate` keeps the background layer's stacking context local to the page.
+    <div className="relative isolate overflow-x-clip">
       {/*
-        Masthead and mission share one grid so the canvas rail has a long scroll
-        runway to react to, rather than leaving the page after one screen.
+        The lattice is page-wide background, not a panel in a rail. It is pinned
+        to the viewport for the full height of the article, so it stays with the
+        reader and keeps turning as they scroll — the rotation is driven by
+        document scroll progress inside the component.
       */}
-      <section className="relative mx-auto max-w-6xl overflow-hidden px-6 sm:px-10">
-        <div className="relative md:grid md:grid-cols-[minmax(0,1fr)_15rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-20">
-          <div className="relative z-10">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <div className="mx-auto h-full max-w-6xl px-6 sm:px-10">
+            <ScrollCanvas
+              className="absolute top-1/2 -right-[22%] h-[26rem] w-[26rem] -translate-y-1/2 opacity-[0.26] sm:-right-[14%] sm:h-[34rem] sm:w-[34rem] sm:opacity-[0.3] md:-right-[6%] md:h-[42rem] md:w-[42rem] md:opacity-[0.45] lg:right-[-2%] lg:h-[52rem] lg:w-[52rem] lg:opacity-[0.55] [-webkit-mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] [mask-image:radial-gradient(circle_at_center,black_45%,transparent_78%)] md:[-webkit-mask-image:linear-gradient(to_left,black_30%,transparent_82%)] md:[mask-image:linear-gradient(to_left,black_30%,transparent_82%)]"
+            />
+          </div>
+        </div>
+      </div>
+
+      <section className="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
+        <div>
+          <div>
             <div className="border-rule border-b pt-16 pb-14 sm:pt-20 sm:pb-16">
               <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
                 About the Publication
@@ -100,29 +113,11 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/*
-            Below md the lattice leaves the flow and is pushed off the right
-            edge, so it frames the column of type instead of sitting behind the
-            middle of it. From md it returns as the sticky rail.
-          */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-10 -right-32 z-0 sm:-right-24 md:relative md:inset-auto"
-          >
-            <div className="md:sticky md:top-32">
-              {/*
-                Explicit dimensions below md: the canvas sizes from its own box,
-                so leaving it to `h-full` inside an auto-height parent makes the
-                result incidental rather than designed.
-              */}
-              <ScrollCanvas className="h-[15rem] w-[26rem] opacity-[0.3] sm:h-[18rem] sm:w-[32rem] sm:opacity-[0.34] md:aspect-square md:h-auto md:w-full md:opacity-100" />
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Who writes it */}
-      <section className="border-rule mx-auto max-w-6xl border-t px-6 py-20 sm:px-10 sm:py-24">
+      <section className="border-rule relative z-10 mx-auto max-w-6xl border-t px-6 py-20 sm:px-10 sm:py-24">
         <h2 className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
           Who Writes It
         </h2>
@@ -191,7 +186,7 @@ export default function AboutPage() {
       </section>
 
       {/* Subscribe */}
-      <div className="mx-auto max-w-6xl pb-28">
+      <div className="relative z-10 mx-auto max-w-6xl pb-28">
         <NewsletterForm />
       </div>
     </div>
