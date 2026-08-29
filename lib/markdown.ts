@@ -17,6 +17,7 @@ export type FaqEntry = {
 export type ArticleMeta = {
   slug: string
   title: string
+  seoTitle: string
   date: string
   excerpt: string
   topic: string
@@ -31,7 +32,7 @@ export type Article = ArticleMeta & {
 }
 
 type Frontmatter = Partial<
-  Record<'title' | 'date' | 'excerpt' | 'topic' | 'tags' | 'faq', unknown>
+  Record<'title' | 'seoTitle' | 'date' | 'excerpt' | 'topic' | 'tags' | 'faq', unknown>
 >
 
 const WORDS_PER_MINUTE = 220
@@ -79,6 +80,8 @@ function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
   return {
     slug,
     title: asString(data.title, slug),
+    // Optional: a shorter, keyword-first <title>/SERP headline. Empty = use title.
+    seoTitle: asString(data.seoTitle),
     date: asString(data.date),
     excerpt: asString(data.excerpt),
     // `topic` drives the homepage rail and the archive grouping. Posts may

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="The composition of the universe: about 5 percent ordinary matter, 27 percent dark matter, 68 percent dark energy">
+  <style>
+    .ttl {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:20px;letter-spacing:4px;fill:#171614;}
+    .big {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:34px;letter-spacing:1px;fill:#171614;font-weight:600;}
+    .biglt{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:34px;letter-spacing:1px;fill:#fbfaf7;font-weight:600;}
+    .lbl {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:2.6px;fill:#171614;}
+    .lblp{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:2.6px;fill:#fbfaf7;}
+    .dim {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:2px;fill:#77736a;}
+    .dimp{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:2px;fill:#c8c2b4;}
+    .gold{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:2.6px;fill:#b8873f;}
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+  <g stroke="#171614" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+  </g>
+
+  <text class="ttl" x="120" y="150">WHAT THE UNIVERSE IS MADE OF</text>
+  <path d="M120 172H720" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+  <text class="dim" x="120" y="200">SHARE OF TOTAL ENERGY DENSITY · PLANCK MISSION</text>
+
+  <!-- the bar: 1360 wide from x=120 to x=1480 -->
+  <!-- ordinary 4.9% -> ~67px ; dark matter 26.8% -> ~364px ; dark energy 68.3% -> ~929px -->
+  <g>
+    <rect x="120" y="360" width="67"  height="150" fill="#b8873f"/>
+    <rect x="187" y="360" width="364" height="150" fill="#171614" fill-opacity="0.5"/>
+    <rect x="551" y="360" width="929" height="150" fill="#171614"/>
+  </g>
+
+  <!-- dark energy label (inside, on charcoal) -->
+  <text class="biglt" x="1015" y="432" text-anchor="middle">68%</text>
+  <text class="lblp"  x="1015" y="464" text-anchor="middle">DARK ENERGY</text>
+  <text class="dimp"  x="1015" y="490" text-anchor="middle">DRIVES THE ACCELERATING EXPANSION — UNEXPLAINED</text>
+
+  <!-- dark matter label (inside, on grey) -->
+  <text class="big"  x="369" y="432" text-anchor="middle">27%</text>
+  <text class="lbl"  x="369" y="464" text-anchor="middle">DARK MATTER</text>
+  <text class="dim"  x="369" y="490" text-anchor="middle">UNSEEN · HOLDS GALAXIES TOGETHER</text>
+
+  <!-- ordinary matter: too thin to label inside; call it out below with a leader -->
+  <path d="M153 510 V612" stroke="#b8873f" stroke-width="1.4"/>
+  <text class="gold" x="153" y="648" text-anchor="middle">5%</text>
+  <text class="dim"  x="120" y="676">ORDINARY MATTER — STARS, PLANETS, ATOMS, YOU:</text>
+  <text class="lbl"  x="120" y="704">EVERYTHING HUMANITY HAS EVER OBSERVED</text>
+
+  <!-- footer -->
+  <path d="M120 786H1480" stroke="#171614" stroke-opacity="0.14" stroke-width="1"/>
+  <text class="dim" x="120" y="824">WE KNOW WITH PRECISION HOW MUCH OF THE UNIVERSE WE CANNOT EXPLAIN</text>
+  <text class="dim" x="1480" y="824" text-anchor="end" letter-spacing="2px">OMNIPONDER — FIG. 01</text>
+</svg>

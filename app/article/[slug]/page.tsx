@@ -28,7 +28,8 @@ export async function generateMetadata(props: PageProps<'/article/[slug]'>): Pro
   const url = absoluteUrl(`/article/${article.slug}`)
 
   return {
-    title: article.title,
+    // SERP title prefers the keyword-first seoTitle; social keeps the display title.
+    title: article.seoTitle || article.title,
     description: article.excerpt,
     authors: [{ name: siteConfig.author }],
     keywords: article.tags,
