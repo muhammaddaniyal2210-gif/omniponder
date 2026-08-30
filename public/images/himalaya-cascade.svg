@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Cross-section of a Himalayan valley showing how warming triggers a cascading hazard from slope collapse to valley flood">
+  <style>
+    .ttl {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:20px;letter-spacing:4px;fill:#171614;}
+    .lbl {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;letter-spacing:2.6px;fill:#171614;}
+    .gold{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;letter-spacing:2.6px;fill:#b8873f;}
+    .dim {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:1.8px;fill:#77736a;}
+    .step{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:2px;fill:#171614;font-weight:600;}
+  </style>
+
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+  <g stroke="#171614" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+  </g>
+
+  <text class="ttl" x="120" y="146">ANATOMY OF A CLEAR-SKY FLOOD</text>
+  <path d="M120 168H640" stroke="#171614" stroke-opacity="0.3" stroke-width="1"/>
+  <text class="dim" x="120" y="196">A CASCADING HAZARD — NO STORM REQUIRED</text>
+
+  <!-- mountain profile: high peak left, descending valley to villages right -->
+  <path d="M120 760 L360 300 L520 420 L720 560 L1040 660 L1480 720 L1480 760 Z"
+        fill="#171614" fill-opacity="0.06" stroke="#171614" stroke-width="2"/>
+
+  <!-- glacier + permafrost zone near the peak -->
+  <path d="M300 372 L360 300 L430 352 L392 392 Z" fill="#171614" fill-opacity="0.16"/>
+  <text class="lbl" x="360" y="262" text-anchor="middle">FROZEN SCAFFOLDING</text>
+  <text class="dim" x="360" y="284" text-anchor="middle">GLACIER + PERMAFROST BIND THE SLOPE</text>
+
+  <!-- warming arrows over the peak -->
+  <g stroke="#b8873f" stroke-width="1.6" fill="none">
+    <path d="M470 250 q 14 -18 28 0" marker-end="url(#g)"/>
+    <path d="M510 240 q 14 -18 28 0"/>
+  </g>
+  <text class="gold" x="560" y="238">WARMING · THE COLD IS LEAVING</text>
+
+  <!-- STEP 1: collapse -->
+  <circle cx="392" cy="392" r="9" fill="#b8873f"/>
+  <text class="step" x="412" y="386">1 · SLOPE COLLAPSE</text>
+  <text class="dim"  x="412" y="406">ROCK + ICE BREAK FREE — REGISTERS AS A QUAKE</text>
+
+  <!-- avalanche path arrow down the valley -->
+  <path d="M400 404 C 520 470, 700 560, 1000 648" fill="none" stroke="#b8873f" stroke-width="3" stroke-linecap="round" marker-end="url(#gg)"/>
+
+  <!-- glacial lake mid-valley -->
+  <ellipse cx="720" cy="566" rx="46" ry="10" fill="#171614" fill-opacity="0.28"/>
+  <text class="step" x="720" y="614" text-anchor="middle">2 · DAMS + BURSTS A LAKE</text>
+  <text class="dim"  x="720" y="633" text-anchor="middle">DEBRIS BLOCKS THE RIVER, THEN GIVES WAY</text>
+
+  <!-- villages at valley floor -->
+  <g fill="#171614" fill-opacity="0.5">
+    <rect x="1120" y="646" width="16" height="14"/><rect x="1142" y="650" width="14" height="10"/>
+    <rect x="1162" y="648" width="16" height="12"/>
+  </g>
+  <text class="step" x="1180" y="628" text-anchor="start">3 · WALL OF WATER HITS VILLAGES</text>
+  <text class="dim"  x="1180" y="648" text-anchor="start">MINUTES OF WARNING — OFTEN NONE</text>
+
+  <!-- markers -->
+  <defs>
+    <marker id="gg" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#b8873f"/>
+    </marker>
+  </defs>
+
+  <!-- footer -->
+  <path d="M120 786H1480" stroke="#171614" stroke-opacity="0.14" stroke-width="1"/>
+  <text class="dim" x="120" y="824">SINCE 1950, GLACIAL-ORIGIN FLOODS IN THE REGION HAVE RISEN ROUGHLY FIVEFOLD</text>
+  <text class="dim" x="1480" y="824" text-anchor="end" letter-spacing="2px">OMNIPONDER — FIG. 01</text>
+</svg>
