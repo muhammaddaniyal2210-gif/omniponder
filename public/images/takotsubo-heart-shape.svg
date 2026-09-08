@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Three panels: a healthy heart contracting evenly, a heart in takotsubo syndrome with its apex ballooned outward, and the outline of a Japanese octopus pot matching that shape">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="92" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">The Shape That Names It</text>
+  <line x1="100" y1="120" x2="1500" y2="120" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="150" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">THE LEFT VENTRICLE IN STRESS CARDIOMYOPATHY, AND THE POT IT RESEMBLES</text>
+
+  <!-- ===== PANEL 1: HEALTHY ===== -->
+  <text x="290" y="238" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600">HEALTHY</text>
+  <text x="290" y="264" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1" fill="#77736a">even, full contraction</text>
+
+  <path d="M 222 312 C 210 380, 205 470, 290 588 C 375 470, 370 380, 358 312 Z"
+        fill="none" stroke="#171614" stroke-width="3"/>
+  <!-- inward contraction arrows -->
+  <g stroke="#66625a" stroke-width="2" fill="#66625a">
+    <path d="M 168 430 L 196 430"/><path d="M 190 425 L 200 430 L 190 435 Z"/>
+    <path d="M 412 430 L 384 430"/><path d="M 390 425 L 380 430 L 390 435 Z"/>
+    <path d="M 230 520 L 252 505"/><path d="M 246 512 L 256 502 L 252 514 Z"/>
+    <path d="M 350 520 L 328 505"/><path d="M 334 512 L 324 502 L 328 514 Z"/>
+  </g>
+  <text x="290" y="640" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#66625a">the apex squeezes in</text>
+
+  <!-- ===== PANEL 2: TAKOTSUBO ===== -->
+  <text x="770" y="238" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="2" fill="#b8873f" font-weight="600">TAKOTSUBO</text>
+  <text x="770" y="264" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1" fill="#77736a">the tip balloons and stalls</text>
+
+  <!-- ballooned apex fill (copper tint) -->
+  <path d="M 742 312 C 738 360, 740 388, 716 432 C 668 505, 688 566, 770 606 C 852 566, 872 505, 824 432 C 800 388, 802 360, 798 312 Z"
+        fill="#f3f0e9" stroke="#171614" stroke-width="3"/>
+  <!-- copper dashed line marking the akinetic balloon -->
+  <path d="M 700 452 C 706 545, 700 575, 770 600 C 840 575, 834 545, 840 452"
+        fill="none" stroke="#b8873f" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <!-- neck still contracts: small inward arrows at the neck -->
+  <g stroke="#66625a" stroke-width="2" fill="#66625a">
+    <path d="M 690 350 L 716 356"/><path d="M 710 351 L 720 357 L 709 361 Z"/>
+    <path d="M 850 350 L 824 356"/><path d="M 830 351 L 820 357 L 831 361 Z"/>
+  </g>
+  <!-- outward balloon arrows -->
+  <g stroke="#b8873f" stroke-width="2.5" fill="#b8873f">
+    <path d="M 706 512 L 684 520"/><path d="M 692 512 L 681 521 L 694 522 Z"/>
+    <path d="M 834 512 L 856 520"/><path d="M 848 512 L 859 521 L 846 522 Z"/>
+  </g>
+  <text x="770" y="648" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#8a6a2f">the apex balloons out, motionless</text>
+
+  <!-- resemblance mark -->
+  <text x="1055" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="70" fill="#b8873f">&#8776;</text>
+
+  <!-- ===== PANEL 3: OCTOPUS POT ===== -->
+  <text x="1300" y="238" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600">THE OCTOPUS POT</text>
+  <text x="1300" y="264" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1" fill="#77736a">Japanese &#8220;takotsubo&#8221; trap</text>
+
+  <path d="M 1278 316 C 1274 356, 1268 372, 1244 410 C 1196 486, 1200 566, 1300 606 C 1400 566, 1404 486, 1356 410 C 1332 372, 1326 356, 1322 316 Z"
+        fill="#171614" stroke="#171614" stroke-width="3"/>
+  <!-- pot mouth opening -->
+  <ellipse cx="1300" cy="316" rx="24" ry="8" fill="#fbfaf7"/>
+  <!-- rope loop hint -->
+  <path d="M 1300 316 C 1250 296, 1230 300, 1226 318" fill="none" stroke="#a89f8c" stroke-width="2"/>
+  <text x="1300" y="648" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#66625a">round bottom, narrow neck</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">NAMED BY HIKARU SATO, JAPAN, 1990</text>
+</svg>
