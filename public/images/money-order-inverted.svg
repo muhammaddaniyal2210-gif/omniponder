@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="The textbook order of money's invention compared with the historical record, which reverses it">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">Which Came First</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">THE STORY WE ARE TAUGHT, AND THE ORDER THE RECORD SHOWS</text>
+
+  <!-- ROW 1: THE TEXTBOOK STORY -->
+  <text x="100" y="232" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#77736a" font-weight="600">THE TEXTBOOK STORY</text>
+
+  <g font-family="Georgia,'Times New Roman',serif">
+    <!-- box 1 -->
+    <rect x="100" y="256" width="360" height="96" fill="none" stroke="#a89f8c" stroke-width="1.5"/>
+    <text x="128" y="300" font-size="27" fill="#66625a">Barter</text>
+    <text x="128" y="330" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#77736a">swapping goods directly</text>
+    <!-- arrow -->
+    <path d="M 478 304 L 548 304" stroke="#a89f8c" stroke-width="2"/><path d="M 540 296 L 552 304 L 540 312 Z" fill="#a89f8c"/>
+    <!-- box 2 -->
+    <rect x="570" y="256" width="360" height="96" fill="none" stroke="#a89f8c" stroke-width="1.5"/>
+    <text x="598" y="300" font-size="27" fill="#66625a">Coined money</text>
+    <text x="598" y="330" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#77736a">invented to ease trade</text>
+    <path d="M 948 304 L 1018 304" stroke="#a89f8c" stroke-width="2"/><path d="M 1010 296 L 1022 304 L 1010 312 Z" fill="#a89f8c"/>
+    <!-- box 3 -->
+    <rect x="1040" y="256" width="360" height="96" fill="none" stroke="#a89f8c" stroke-width="1.5"/>
+    <text x="1068" y="300" font-size="27" fill="#66625a">Credit &amp; debt</text>
+    <text x="1068" y="330" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#77736a">a later refinement</text>
+  </g>
+
+  <!-- divider with verdict -->
+  <line x1="100" y1="430" x2="1400" y2="430" stroke="#e2ded4" stroke-width="1"/>
+  <text x="750" y="470" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="24" fill="#8a6a2f">No society has ever been found that worked this way.</text>
+
+  <!-- ROW 2: THE HISTORICAL RECORD -->
+  <text x="100" y="548" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#b8873f" font-weight="600">THE HISTORICAL RECORD</text>
+
+  <g font-family="Georgia,'Times New Roman',serif">
+    <!-- box 1 -->
+    <rect x="100" y="572" width="360" height="110" fill="#171614"/>
+    <text x="128" y="618" font-size="27" fill="#fbfaf7">Credit &amp; debt</text>
+    <text x="128" y="650" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#c8c2b4">obligations, remembered</text>
+    <text x="128" y="672" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1.5" fill="#b8873f">BEFORE 3000 BCE</text>
+    <path d="M 478 627 L 548 627" stroke="#171614" stroke-width="2.5"/><path d="M 540 618 L 553 627 L 540 636 Z" fill="#171614"/>
+    <!-- box 2 -->
+    <rect x="570" y="572" width="360" height="110" fill="#171614"/>
+    <text x="598" y="618" font-size="27" fill="#fbfaf7">Unit of account</text>
+    <text x="598" y="650" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#c8c2b4">shekel &amp; barley, on clay</text>
+    <text x="598" y="672" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1.5" fill="#b8873f">c. 3000 BCE</text>
+    <path d="M 948 627 L 1018 627" stroke="#171614" stroke-width="2.5"/><path d="M 1010 618 L 1023 627 L 1010 636 Z" fill="#171614"/>
+    <!-- box 3 -->
+    <rect x="1040" y="572" width="360" height="110" fill="none" stroke="#171614" stroke-width="2.5"/>
+    <text x="1068" y="618" font-size="27" fill="#171614">Coined money</text>
+    <text x="1068" y="650" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#66625a">Lydia, electrum discs</text>
+    <text x="1068" y="672" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1.5" fill="#8a6a2f">c. 600 BCE — LAST</text>
+  </g>
+
+  <text x="100" y="742" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="16" letter-spacing="1.5" fill="#8a6a2f">MONEY BEGAN AS A RECORD OF WHO OWED WHAT — THE COIN CAME 2,400 YEARS LATER.</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="858" x2="1500" y2="858" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="888" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="888" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">CREDIT FIRST · COINS LAST</text>
+</svg>
