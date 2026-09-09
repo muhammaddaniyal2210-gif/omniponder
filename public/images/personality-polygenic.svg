@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Left: the myth of a single gene for extraversion, crossed out. Right: what a million genomes show, over a thousand tiny variants each nudging a dial slightly toward outgoing">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">How a Personality Is (Not) Written</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">THE HEADLINE, AND WHAT A MILLION GENOMES ACTUALLY SHOW</text>
+
+  <!-- divider between panels -->
+  <line x1="640" y1="200" x2="640" y2="800" stroke="#e2ded4" stroke-width="1"/>
+
+  <!-- ===== LEFT: THE MYTH ===== -->
+  <text x="100" y="238" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#77736a" font-weight="600">THE HEADLINE VERSION</text>
+
+  <g font-family="Georgia,'Times New Roman',serif">
+    <!-- single gene box -->
+    <rect x="120" y="300" width="360" height="120" fill="#171614"/>
+    <text x="300" y="352" text-anchor="middle" font-size="24" fill="#fbfaf7">One &#8220;gene for</text>
+    <text x="300" y="386" text-anchor="middle" font-size="24" fill="#fbfaf7">extraversion&#8221;</text>
+    <!-- big arrow -->
+    <path d="M 300 430 L 300 486" stroke="#171614" stroke-width="4"/>
+    <path d="M 288 476 L 300 492 L 312 476 Z" fill="#171614"/>
+    <!-- outcome -->
+    <rect x="120" y="500" width="360" height="96" fill="none" stroke="#171614" stroke-width="2"/>
+    <text x="300" y="556" text-anchor="middle" font-size="26" fill="#171614">An outgoing person</text>
+  </g>
+  <!-- crossed out -->
+  <line x1="150" y1="600" x2="450" y2="300" stroke="#b8873f" stroke-width="4" opacity="0.85"/>
+  <text x="300" y="662" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" fill="#8a6a2f">Not how it works.</text>
+
+  <!-- ===== RIGHT: THE REALITY ===== -->
+  <text x="700" y="238" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#b8873f" font-weight="600">WHAT A MILLION GENOMES SHOW</text>
+
+  <!-- field of ~1200 tiny variant marks -->
+  <g fill="#b8873f" opacity="0.85">
+    <!-- generated grid of tiny ticks: 40 cols x 14 rows ~ 560 marks (representative haze) -->
+    <!-- Row band from y=300 to y=520, x=700 to x=1460 -->
+    <g id="dots">
+      <!-- We draw many small rects; each ~ a variant -->
+    </g>
+  </g>
+
+  <!-- Since we can't loop, draw dense representative rows of small ticks -->
+  <g fill="#b8873f">
+    <!-- row generator emulated by many rects; opacity varied for texture -->
+    <g opacity="0.8">
+      <rect x="700" y="300" width="6" height="6"/><rect x="724" y="300" width="6" height="6"/><rect x="748" y="300" width="6" height="6"/><rect x="772" y="300" width="6" height="6"/><rect x="796" y="300" width="6" height="6"/><rect x="820" y="300" width="6" height="6"/><rect x="844" y="300" width="6" height="6"/><rect x="868" y="300" width="6" height="6"/><rect x="892" y="300" width="6" height="6"/><rect x="916" y="300" width="6" height="6"/><rect x="940" y="300" width="6" height="6"/><rect x="964" y="300" width="6" height="6"/><rect x="988" y="300" width="6" height="6"/><rect x="1012" y="300" width="6" height="6"/><rect x="1036" y="300" width="6" height="6"/><rect x="1060" y="300" width="6" height="6"/><rect x="1084" y="300" width="6" height="6"/><rect x="1108" y="300" width="6" height="6"/><rect x="1132" y="300" width="6" height="6"/><rect x="1156" y="300" width="6" height="6"/><rect x="1180" y="300" width="6" height="6"/><rect x="1204" y="300" width="6" height="6"/><rect x="1228" y="300" width="6" height="6"/><rect x="1252" y="300" width="6" height="6"/><rect x="1276" y="300" width="6" height="6"/><rect x="1300" y="300" width="6" height="6"/><rect x="1324" y="300" width="6" height="6"/><rect x="1348" y="300" width="6" height="6"/><rect x="1372" y="300" width="6" height="6"/><rect x="1396" y="300" width="6" height="6"/><rect x="1420" y="300" width="6" height="6"/><rect x="1444" y="300" width="6" height="6"/>
+    </g>
+    <g opacity="0.62">
+      <rect x="712" y="324" width="6" height="6"/><rect x="736" y="324" width="6" height="6"/><rect x="760" y="324" width="6" height="6"/><rect x="784" y="324" width="6" height="6"/><rect x="808" y="324" width="6" height="6"/><rect x="832" y="324" width="6" height="6"/><rect x="856" y="324" width="6" height="6"/><rect x="880" y="324" width="6" height="6"/><rect x="904" y="324" width="6" height="6"/><rect x="928" y="324" width="6" height="6"/><rect x="952" y="324" width="6" height="6"/><rect x="976" y="324" width="6" height="6"/><rect x="1000" y="324" width="6" height="6"/><rect x="1024" y="324" width="6" height="6"/><rect x="1048" y="324" width="6" height="6"/><rect x="1072" y="324" width="6" height="6"/><rect x="1096" y="324" width="6" height="6"/><rect x="1120" y="324" width="6" height="6"/><rect x="1144" y="324" width="6" height="6"/><rect x="1168" y="324" width="6" height="6"/><rect x="1192" y="324" width="6" height="6"/><rect x="1216" y="324" width="6" height="6"/><rect x="1240" y="324" width="6" height="6"/><rect x="1264" y="324" width="6" height="6"/><rect x="1288" y="324" width="6" height="6"/><rect x="1312" y="324" width="6" height="6"/><rect x="1336" y="324" width="6" height="6"/><rect x="1360" y="324" width="6" height="6"/><rect x="1384" y="324" width="6" height="6"/><rect x="1408" y="324" width="6" height="6"/><rect x="1432" y="324" width="6" height="6"/>
+    </g>
+    <g opacity="0.8">
+      <rect x="700" y="348" width="6" height="6"/><rect x="724" y="348" width="6" height="6"/><rect x="748" y="348" width="6" height="6"/><rect x="772" y="348" width="6" height="6"/><rect x="796" y="348" width="6" height="6"/><rect x="820" y="348" width="6" height="6"/><rect x="844" y="348" width="6" height="6"/><rect x="868" y="348" width="6" height="6"/><rect x="892" y="348" width="6" height="6"/><rect x="916" y="348" width="6" height="6"/><rect x="940" y="348" width="6" height="6"/><rect x="964" y="348" width="6" height="6"/><rect x="988" y="348" width="6" height="6"/><rect x="1012" y="348" width="6" height="6"/><rect x="1036" y="348" width="6" height="6"/><rect x="1060" y="348" width="6" height="6"/><rect x="1084" y="348" width="6" height="6"/><rect x="1108" y="348" width="6" height="6"/><rect x="1132" y="348" width="6" height="6"/><rect x="1156" y="348" width="6" height="6"/><rect x="1180" y="348" width="6" height="6"/><rect x="1204" y="348" width="6" height="6"/><rect x="1228" y="348" width="6" height="6"/><rect x="1252" y="348" width="6" height="6"/><rect x="1276" y="348" width="6" height="6"/><rect x="1300" y="348" width="6" height="6"/><rect x="1324" y="348" width="6" height="6"/><rect x="1348" y="348" width="6" height="6"/><rect x="1372" y="348" width="6" height="6"/><rect x="1396" y="348" width="6" height="6"/><rect x="1420" y="348" width="6" height="6"/><rect x="1444" y="348" width="6" height="6"/>
+    </g>
+    <g opacity="0.62">
+      <rect x="712" y="372" width="6" height="6"/><rect x="736" y="372" width="6" height="6"/><rect x="760" y="372" width="6" height="6"/><rect x="784" y="372" width="6" height="6"/><rect x="808" y="372" width="6" height="6"/><rect x="832" y="372" width="6" height="6"/><rect x="856" y="372" width="6" height="6"/><rect x="880" y="372" width="6" height="6"/><rect x="904" y="372" width="6" height="6"/><rect x="928" y="372" width="6" height="6"/><rect x="952" y="372" width="6" height="6"/><rect x="976" y="372" width="6" height="6"/><rect x="1000" y="372" width="6" height="6"/><rect x="1024" y="372" width="6" height="6"/><rect x="1048" y="372" width="6" height="6"/><rect x="1072" y="372" width="6" height="6"/><rect x="1096" y="372" width="6" height="6"/><rect x="1120" y="372" width="6" height="6"/><rect x="1144" y="372" width="6" height="6"/><rect x="1168" y="372" width="6" height="6"/><rect x="1192" y="372" width="6" height="6"/><rect x="1216" y="372" width="6" height="6"/><rect x="1240" y="372" width="6" height="6"/><rect x="1264" y="372" width="6" height="6"/><rect x="1288" y="372" width="6" height="6"/><rect x="1312" y="372" width="6" height="6"/><rect x="1336" y="372" width="6" height="6"/><rect x="1360" y="372" width="6" height="6"/><rect x="1384" y="372" width="6" height="6"/><rect x="1408" y="372" width="6" height="6"/><rect x="1432" y="372" width="6" height="6"/>
+    </g>
+    <g opacity="0.8">
+      <rect x="700" y="396" width="6" height="6"/><rect x="724" y="396" width="6" height="6"/><rect x="748" y="396" width="6" height="6"/><rect x="772" y="396" width="6" height="6"/><rect x="796" y="396" width="6" height="6"/><rect x="820" y="396" width="6" height="6"/><rect x="844" y="396" width="6" height="6"/><rect x="868" y="396" width="6" height="6"/><rect x="892" y="396" width="6" height="6"/><rect x="916" y="396" width="6" height="6"/><rect x="940" y="396" width="6" height="6"/><rect x="964" y="396" width="6" height="6"/><rect x="988" y="396" width="6" height="6"/><rect x="1012" y="396" width="6" height="6"/><rect x="1036" y="396" width="6" height="6"/><rect x="1060" y="396" width="6" height="6"/><rect x="1084" y="396" width="6" height="6"/><rect x="1108" y="396" width="6" height="6"/><rect x="1132" y="396" width="6" height="6"/><rect x="1156" y="396" width="6" height="6"/><rect x="1180" y="396" width="6" height="6"/><rect x="1204" y="396" width="6" height="6"/><rect x="1228" y="396" width="6" height="6"/><rect x="1252" y="396" width="6" height="6"/><rect x="1276" y="396" width="6" height="6"/><rect x="1300" y="396" width="6" height="6"/><rect x="1324" y="396" width="6" height="6"/><rect x="1348" y="396" width="6" height="6"/><rect x="1372" y="396" width="6" height="6"/><rect x="1396" y="396" width="6" height="6"/><rect x="1420" y="396" width="6" height="6"/><rect x="1444" y="396" width="6" height="6"/>
+    </g>
+    <g opacity="0.62">
+      <rect x="712" y="420" width="6" height="6"/><rect x="736" y="420" width="6" height="6"/><rect x="760" y="420" width="6" height="6"/><rect x="784" y="420" width="6" height="6"/><rect x="808" y="420" width="6" height="6"/><rect x="832" y="420" width="6" height="6"/><rect x="856" y="420" width="6" height="6"/><rect x="880" y="420" width="6" height="6"/><rect x="904" y="420" width="6" height="6"/><rect x="928" y="420" width="6" height="6"/><rect x="952" y="420" width="6" height="6"/><rect x="976" y="420" width="6" height="6"/><rect x="1000" y="420" width="6" height="6"/><rect x="1024" y="420" width="6" height="6"/><rect x="1048" y="420" width="6" height="6"/><rect x="1072" y="420" width="6" height="6"/><rect x="1096" y="420" width="6" height="6"/><rect x="1120" y="420" width="6" height="6"/><rect x="1144" y="420" width="6" height="6"/><rect x="1168" y="420" width="6" height="6"/><rect x="1192" y="420" width="6" height="6"/><rect x="1216" y="420" width="6" height="6"/><rect x="1240" y="420" width="6" height="6"/><rect x="1264" y="420" width="6" height="6"/><rect x="1288" y="420" width="6" height="6"/><rect x="1312" y="420" width="6" height="6"/><rect x="1336" y="420" width="6" height="6"/><rect x="1360" y="420" width="6" height="6"/><rect x="1384" y="420" width="6" height="6"/><rect x="1408" y="420" width="6" height="6"/><rect x="1432" y="420" width="6" height="6"/>
+    </g>
+    <g opacity="0.8">
+      <rect x="700" y="444" width="6" height="6"/><rect x="724" y="444" width="6" height="6"/><rect x="748" y="444" width="6" height="6"/><rect x="772" y="444" width="6" height="6"/><rect x="796" y="444" width="6" height="6"/><rect x="820" y="444" width="6" height="6"/><rect x="844" y="444" width="6" height="6"/><rect x="868" y="444" width="6" height="6"/><rect x="892" y="444" width="6" height="6"/><rect x="916" y="444" width="6" height="6"/><rect x="940" y="444" width="6" height="6"/><rect x="964" y="444" width="6" height="6"/><rect x="988" y="444" width="6" height="6"/><rect x="1012" y="444" width="6" height="6"/><rect x="1036" y="444" width="6" height="6"/><rect x="1060" y="444" width="6" height="6"/><rect x="1084" y="444" width="6" height="6"/><rect x="1108" y="444" width="6" height="6"/><rect x="1132" y="444" width="6" height="6"/><rect x="1156" y="444" width="6" height="6"/><rect x="1180" y="444" width="6" height="6"/><rect x="1204" y="444" width="6" height="6"/><rect x="1228" y="444" width="6" height="6"/><rect x="1252" y="444" width="6" height="6"/><rect x="1276" y="444" width="6" height="6"/><rect x="1300" y="444" width="6" height="6"/><rect x="1324" y="444" width="6" height="6"/><rect x="1348" y="444" width="6" height="6"/><rect x="1372" y="444" width="6" height="6"/><rect x="1396" y="444" width="6" height="6"/><rect x="1420" y="444" width="6" height="6"/><rect x="1444" y="444" width="6" height="6"/>
+    </g>
+    <g opacity="0.62">
+      <rect x="712" y="468" width="6" height="6"/><rect x="736" y="468" width="6" height="6"/><rect x="760" y="468" width="6" height="6"/><rect x="784" y="468" width="6" height="6"/><rect x="808" y="468" width="6" height="6"/><rect x="832" y="468" width="6" height="6"/><rect x="856" y="468" width="6" height="6"/><rect x="880" y="468" width="6" height="6"/><rect x="904" y="468" width="6" height="6"/><rect x="928" y="468" width="6" height="6"/><rect x="952" y="468" width="6" height="6"/><rect x="976" y="468" width="6" height="6"/><rect x="1000" y="468" width="6" height="6"/><rect x="1024" y="468" width="6" height="6"/><rect x="1048" y="468" width="6" height="6"/><rect x="1072" y="468" width="6" height="6"/><rect x="1096" y="468" width="6" height="6"/><rect x="1120" y="468" width="6" height="6"/><rect x="1144" y="468" width="6" height="6"/><rect x="1168" y="468" width="6" height="6"/><rect x="1192" y="468" width="6" height="6"/><rect x="1216" y="468" width="6" height="6"/><rect x="1240" y="468" width="6" height="6"/><rect x="1264" y="468" width="6" height="6"/><rect x="1288" y="468" width="6" height="6"/><rect x="1312" y="468" width="6" height="6"/><rect x="1336" y="468" width="6" height="6"/><rect x="1360" y="468" width="6" height="6"/><rect x="1384" y="468" width="6" height="6"/><rect x="1408" y="468" width="6" height="6"/><rect x="1432" y="468" width="6" height="6"/>
+    </g>
+    <g opacity="0.8">
+      <rect x="700" y="492" width="6" height="6"/><rect x="724" y="492" width="6" height="6"/><rect x="748" y="492" width="6" height="6"/><rect x="772" y="492" width="6" height="6"/><rect x="796" y="492" width="6" height="6"/><rect x="820" y="492" width="6" height="6"/><rect x="844" y="492" width="6" height="6"/><rect x="868" y="492" width="6" height="6"/><rect x="892" y="492" width="6" height="6"/><rect x="916" y="492" width="6" height="6"/><rect x="940" y="492" width="6" height="6"/><rect x="964" y="492" width="6" height="6"/><rect x="988" y="492" width="6" height="6"/><rect x="1012" y="492" width="6" height="6"/><rect x="1036" y="492" width="6" height="6"/><rect x="1060" y="492" width="6" height="6"/><rect x="1084" y="492" width="6" height="6"/><rect x="1108" y="492" width="6" height="6"/><rect x="1132" y="492" width="6" height="6"/><rect x="1156" y="492" width="6" height="6"/><rect x="1180" y="492" width="6" height="6"/><rect x="1204" y="492" width="6" height="6"/><rect x="1228" y="492" width="6" height="6"/><rect x="1252" y="492" width="6" height="6"/><rect x="1276" y="492" width="6" height="6"/><rect x="1300" y="492" width="6" height="6"/><rect x="1324" y="492" width="6" height="6"/><rect x="1348" y="492" width="6" height="6"/><rect x="1372" y="492" width="6" height="6"/><rect x="1396" y="492" width="6" height="6"/><rect x="1420" y="492" width="6" height="6"/><rect x="1444" y="492" width="6" height="6"/>
+    </g>
+  </g>
+  <text x="700" y="540" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="1" fill="#8a6a2f">each mark: one variant &#183; each shifts you a whisper</text>
+
+  <!-- the dial they sum to -->
+  <g font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif">
+    <line x1="700" y1="640" x2="1460" y2="640" stroke="#171614" stroke-width="2"/>
+    <text x="700" y="676" font-size="16" letter-spacing="2" fill="#66625a">RESERVED</text>
+    <text x="1460" y="676" text-anchor="end" font-size="16" letter-spacing="2" fill="#66625a">OUTGOING</text>
+    <!-- centre tick -->
+    <line x1="1080" y1="628" x2="1080" y2="652" stroke="#a89f8c" stroke-width="1.5"/>
+    <!-- needle slightly off centre -->
+    <line x1="1148" y1="612" x2="1148" y2="668" stroke="#b8873f" stroke-width="4"/>
+    <path d="M 1136 616 L 1148 606 L 1160 616 Z" fill="#b8873f"/>
+    <text x="1148" y="596" text-anchor="middle" font-size="14" letter-spacing="1" fill="#8a6a2f">the sum: a slight lean</text>
+  </g>
+  <text x="700" y="726" font-family="Georgia,serif" font-style="italic" font-size="20" fill="#66625a">a barely weighted die — the rest of a life plays it out</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">1,200+ VARIANTS ACROSS THE BIG FIVE, 2026</text>
+</svg>
