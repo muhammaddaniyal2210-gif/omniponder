@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="A diagram showing the benefit of complexity rising then falling while the cost of complexity rises steadily, with the widening gap marked as the zone where collapse becomes likely">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">The Price of Complexity</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">WHY ADDING COMPLEXITY STOPS PAYING — AFTER JOSEPH TAINTER, 1988</text>
+
+  <!-- Axes -->
+  <line x1="200" y1="210" x2="200" y2="720" stroke="#171614" stroke-width="2"/>
+  <line x1="200" y1="720" x2="1440" y2="720" stroke="#171614" stroke-width="2"/>
+  <text x="150" y="470" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="2" fill="#66625a" transform="rotate(-90 150 470)">RETURN / COST</text>
+  <text x="820" y="762" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="2" fill="#66625a">LEVEL OF COMPLEXITY  &#8594;  (BUREAUCRACY, ARMY, INFRASTRUCTURE)</text>
+
+  <!-- COST line: steadily rising straight-ish line -->
+  <path d="M 200 660 L 1440 300" fill="none" stroke="#171614" stroke-width="3"/>
+  <text x="470" y="560" font-family="Georgia,'Times New Roman',serif" font-size="24" fill="#171614">Cost to maintain</text>
+  <text x="470" y="586" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#66625a">every layer, fed forever</text>
+
+  <!-- BENEFIT curve: rises steeply, flattens, bends down -->
+  <path d="M 200 640 C 360 300, 560 250, 760 270 C 980 292, 1180 420, 1440 620"
+        fill="none" stroke="#b8873f" stroke-width="4"/>
+  <text x="470" y="250" font-family="Georgia,'Times New Roman',serif" font-size="24" fill="#8a6a2f">Benefit of complexity</text>
+  <text x="470" y="276" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#8a6a2f">easy problems solved first</text>
+
+  <!-- crossover point where cost line meets benefit curve (approx x=1150) -->
+  <!-- cost at x: from (200,660)->(1440,300): slope=(300-660)/1240=-0.2903; y=660-0.2903*(x-200) -->
+  <!-- benefit near x=1150 ~ y=400ish; crossover ~ x=1150,y=384 -->
+  <circle cx="1152" cy="384" r="8" fill="#171614"/>
+  <line x1="1152" y1="384" x2="1152" y2="720" stroke="#c8c2b4" stroke-width="1.5" stroke-dasharray="5 6"/>
+  <text x="1152" y="360" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#171614">cost overtakes benefit</text>
+
+  <!-- shaded collapse zone to the right of crossover -->
+  <rect x="1152" y="210" width="288" height="510" fill="#f3f0e9" opacity="0.55"/>
+  <text x="1296" y="470" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" fill="#8a6a2f">collapse</text>
+  <text x="1296" y="500" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" fill="#8a6a2f">becomes likely</text>
+
+  <!-- annotation: running to stand still -->
+  <text x="230" y="700" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="1" fill="#66625a">early returns are enormous</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">THE DIMINISHING RETURNS OF COMPLEXITY</text>
+</svg>
