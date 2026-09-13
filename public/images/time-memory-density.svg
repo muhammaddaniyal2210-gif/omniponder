@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Two years compared as fields of memory. A childhood year is dense with many first-time memories; a routine adult year is nearly empty. We judge how long a year was by how much of it we remember.">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">Two Years, Remembered</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">EACH MARK IS A MEMORY ENCODED — THE SAME 365 DAYS, TWICE</text>
+
+  <!-- divider -->
+  <line x1="800" y1="200" x2="800" y2="740" stroke="#e2ded4" stroke-width="1"/>
+
+  <!-- LEFT: childhood year, dense -->
+  <text x="130" y="238" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#b8873f" font-weight="600">AGE 8 — A YEAR OF FIRSTS</text>
+  <rect x="130" y="262" width="560" height="360" fill="none" stroke="#c8c2b4" stroke-width="1"/>
+  <!-- dense field of copper marks (many memories) -->
+  <g fill="#b8873f">
+    <g opacity="0.85">
+      <circle cx="168" cy="300" r="4"/><circle cx="212" cy="300" r="4"/><circle cx="256" cy="300" r="4"/><circle cx="300" cy="300" r="4"/><circle cx="344" cy="300" r="4"/><circle cx="388" cy="300" r="4"/><circle cx="432" cy="300" r="4"/><circle cx="476" cy="300" r="4"/><circle cx="520" cy="300" r="4"/><circle cx="564" cy="300" r="4"/><circle cx="608" cy="300" r="4"/><circle cx="652" cy="300" r="4"/>
+    </g>
+    <g opacity="0.7">
+      <circle cx="190" cy="336" r="4"/><circle cx="234" cy="336" r="4"/><circle cx="278" cy="336" r="4"/><circle cx="322" cy="336" r="4"/><circle cx="366" cy="336" r="4"/><circle cx="410" cy="336" r="4"/><circle cx="454" cy="336" r="4"/><circle cx="498" cy="336" r="4"/><circle cx="542" cy="336" r="4"/><circle cx="586" cy="336" r="4"/><circle cx="630" cy="336" r="4"/><circle cx="168" cy="336" r="4"/>
+    </g>
+    <g opacity="0.85">
+      <circle cx="168" cy="372" r="4"/><circle cx="212" cy="372" r="4"/><circle cx="256" cy="372" r="4"/><circle cx="300" cy="372" r="4"/><circle cx="344" cy="372" r="4"/><circle cx="388" cy="372" r="4"/><circle cx="432" cy="372" r="4"/><circle cx="476" cy="372" r="4"/><circle cx="520" cy="372" r="4"/><circle cx="564" cy="372" r="4"/><circle cx="608" cy="372" r="4"/><circle cx="652" cy="372" r="4"/>
+    </g>
+    <g opacity="0.7">
+      <circle cx="190" cy="408" r="4"/><circle cx="234" cy="408" r="4"/><circle cx="278" cy="408" r="4"/><circle cx="322" cy="408" r="4"/><circle cx="366" cy="408" r="4"/><circle cx="410" cy="408" r="4"/><circle cx="454" cy="408" r="4"/><circle cx="498" cy="408" r="4"/><circle cx="542" cy="408" r="4"/><circle cx="586" cy="408" r="4"/><circle cx="630" cy="408" r="4"/><circle cx="168" cy="408" r="4"/>
+    </g>
+    <g opacity="0.85">
+      <circle cx="168" cy="444" r="4"/><circle cx="212" cy="444" r="4"/><circle cx="256" cy="444" r="4"/><circle cx="300" cy="444" r="4"/><circle cx="344" cy="444" r="4"/><circle cx="388" cy="444" r="4"/><circle cx="432" cy="444" r="4"/><circle cx="476" cy="444" r="4"/><circle cx="520" cy="444" r="4"/><circle cx="564" cy="444" r="4"/><circle cx="608" cy="444" r="4"/><circle cx="652" cy="444" r="4"/>
+    </g>
+    <g opacity="0.7">
+      <circle cx="190" cy="480" r="4"/><circle cx="234" cy="480" r="4"/><circle cx="278" cy="480" r="4"/><circle cx="322" cy="480" r="4"/><circle cx="366" cy="480" r="4"/><circle cx="410" cy="480" r="4"/><circle cx="454" cy="480" r="4"/><circle cx="498" cy="480" r="4"/><circle cx="542" cy="480" r="4"/><circle cx="586" cy="480" r="4"/><circle cx="630" cy="480" r="4"/><circle cx="168" cy="480" r="4"/>
+    </g>
+    <g opacity="0.85">
+      <circle cx="168" cy="516" r="4"/><circle cx="212" cy="516" r="4"/><circle cx="256" cy="516" r="4"/><circle cx="300" cy="516" r="4"/><circle cx="344" cy="516" r="4"/><circle cx="388" cy="516" r="4"/><circle cx="432" cy="516" r="4"/><circle cx="476" cy="516" r="4"/><circle cx="520" cy="516" r="4"/><circle cx="564" cy="516" r="4"/><circle cx="608" cy="516" r="4"/><circle cx="652" cy="516" r="4"/>
+    </g>
+    <g opacity="0.7">
+      <circle cx="190" cy="552" r="4"/><circle cx="234" cy="552" r="4"/><circle cx="278" cy="552" r="4"/><circle cx="322" cy="552" r="4"/><circle cx="366" cy="552" r="4"/><circle cx="410" cy="552" r="4"/><circle cx="454" cy="552" r="4"/><circle cx="498" cy="552" r="4"/><circle cx="542" cy="552" r="4"/><circle cx="586" cy="552" r="4"/><circle cx="630" cy="552" r="4"/><circle cx="168" cy="552" r="4"/>
+    </g>
+    <g opacity="0.85">
+      <circle cx="168" cy="588" r="4"/><circle cx="212" cy="588" r="4"/><circle cx="256" cy="588" r="4"/><circle cx="300" cy="588" r="4"/><circle cx="344" cy="588" r="4"/><circle cx="388" cy="588" r="4"/><circle cx="432" cy="588" r="4"/><circle cx="476" cy="588" r="4"/><circle cx="520" cy="588" r="4"/><circle cx="564" cy="588" r="4"/><circle cx="608" cy="588" r="4"/><circle cx="652" cy="588" r="4"/>
+    </g>
+  </g>
+  <text x="130" y="664" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" fill="#66625a">dense with firsts — feels long in memory</text>
+
+  <!-- RIGHT: adult year, sparse -->
+  <text x="870" y="238" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="19" letter-spacing="2" fill="#171614" font-weight="600">AGE 44 — A YEAR OF ROUTINE</text>
+  <rect x="870" y="262" width="560" height="360" fill="none" stroke="#c8c2b4" stroke-width="1"/>
+  <g fill="#171614">
+    <circle cx="960" cy="330" r="4"/>
+    <circle cx="1230" cy="360" r="4"/>
+    <circle cx="1080" cy="430" r="4"/>
+    <circle cx="1330" cy="470" r="4"/>
+    <circle cx="980" cy="540" r="4"/>
+    <circle cx="1180" cy="560" r="4"/>
+  </g>
+  <text x="870" y="664" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" fill="#66625a">barely recorded — vanishes in recollection</text>
+
+  <!-- bottom principle -->
+  <line x1="100" y1="716" x2="1500" y2="716" stroke="#e2ded4" stroke-width="1"/>
+  <text x="800" y="762" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="26" fill="#171614">We judge how long a year was by how much of it we remember.</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">SUBJECTIVE TIME &#183; THE MEMORY-DENSITY EFFECT</text>
+</svg>
