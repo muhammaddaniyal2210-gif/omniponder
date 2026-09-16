@@ -7,7 +7,14 @@ import ReadingProgress from '@/components/ReadingProgress'
 import JsonLd from '@/components/JsonLd'
 import ShareButtons from '@/components/ShareButtons'
 import { articleSchema, breadcrumbSchema, faqSchema } from '@/lib/structured-data'
-import { formatDate, getArticleBySlug, getArticleSlugs } from '@/lib/markdown'
+import {
+  formatDate,
+  getAllArticles,
+  getArticleBySlug,
+  getArticleSlugs,
+  getRelatedArticles,
+  topicSlug,
+} from '@/lib/markdown'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const ARTICLE_BODY_ID = 'article-body'
@@ -64,6 +71,7 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
   }
 
   const url = absoluteUrl(`/article/${article.slug}`)
+  const related = getRelatedArticles(article, await getAllArticles())
 
   return (
     <>
@@ -83,14 +91,17 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
             className="h-4 w-4 transition-transform group-hover:-translate-x-0.5"
             aria-hidden="true"
           />
-          Back to today
+          Back to latest
         </Link>
 
         <article className="mt-10">
           <header className="border-b border-rule pb-10">
-            <p className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase">
+            <Link
+              href={`/archive#${topicSlug(article.topic)}`}
+              className="text-ink-faint hover:text-ink inline-block text-[0.625rem] tracking-[0.2em] uppercase transition-colors"
+            >
               {article.topic}
-            </p>
+            </Link>
 
             <h1 className="text-ink mt-7 font-serif text-[2.5rem] leading-[1.06] font-medium tracking-[-0.025em] text-balance sm:text-[3.25rem]">
               {article.title}
@@ -177,6 +188,35 @@ export default async function ArticlePage(props: PageProps<'/article/[slug]'>) {
         <div className="border-rule mt-12 border-t pt-10">
           <ShareButtons url={url} title={article.title} />
         </div>
+
+        {related.length > 0 && (
+          <section aria-labelledby="related-heading" className="border-rule mt-16 border-t pt-10">
+            <h2
+              id="related-heading"
+              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
+            >
+              Related Essays
+            </h2>
+            <ul className="divide-rule mt-6 divide-y">
+              {related.map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/article/${item.slug}`} className="group block py-5 first:pt-0">
+                    <div className="text-ink-faint flex items-baseline gap-2 text-[0.625rem] tracking-[0.18em] uppercase">
+                      <span>{item.topic}</span>
+                      <span aria-hidden="true" className="text-rule-strong">
+                        /
+                      </span>
+                      <time dateTime={item.date}>{formatDate(item.date)}</time>
+                    </div>
+                    <h3 className="text-ink mt-2 font-serif text-xl leading-snug font-medium tracking-[-0.015em] text-pretty transition-opacity group-hover:opacity-60">
+                      {item.title}
+                    </h3>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <AdPlaceholder variant="leaderboard" className="mt-16" />
 

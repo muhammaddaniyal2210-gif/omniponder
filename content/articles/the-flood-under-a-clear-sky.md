@@ -3,7 +3,7 @@ title: "The Flood That Came Under a Clear Sky"
 seoTitle: "Why the Warming Himalaya Is Flooding: Nepal, Glaciers, Ice"
 excerpt: "Nepal's flood killed hundreds under an open sky — because it was not weather. It was the frozen architecture of the Himalaya beginning to fail."
 date: "2026-08-30"
-topic: "Global Systems"
+topic: "Power & Systems"
 tags: ["Himalayas", "Nepal Floods", "Glacial Lake Outburst Flood", "Climate Change", "Glaciers", "Permafrost", "Water Towers of Asia", "Cryosphere"]
 faq:
   - question: "What caused the August 2026 Nepal flood?"

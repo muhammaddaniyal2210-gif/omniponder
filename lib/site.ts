@@ -20,9 +20,9 @@ export const siteUrl = resolveSiteUrl()
 export const siteConfig = {
   name: 'Omniponder',
   author: 'Muhammad Daniyal',
-  title: 'Omniponder | Daily Education',
+  title: 'OmniPonder — Essays on Power, History and Human Nature',
   description:
-    'One rigorous piece every day on how the world actually works — global systems, economic history, science, and philosophy.',
+    'Original essays explaining the systems, histories and human behaviours shaping the modern world.',
   url: siteUrl,
 } as const
 

@@ -5,6 +5,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
 import remarkHtml from 'remark-html'
+import { categoryOrder } from '@/lib/categories'
 
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
 
@@ -226,8 +227,11 @@ export function topicSlug(topic: string) {
 }
 
 /**
- * Groups articles by topic for the archive index. Topics are ordered by volume
- * (then alphabetically), and each group keeps the newest-first ordering.
+ * Groups articles by category (the `topic` field) for the archive index.
+ * Groups follow the canonical pillar order from lib/categories; any topic
+ * outside the three pillars sorts after them by volume, then alphabetically.
+ * Each group keeps the newest-first ordering. Empty categories never appear —
+ * a pillar with no articles simply produces no group.
  */
 export function groupByTopic(articles: ArticleMeta[]): TopicGroup[] {
   const groups = new Map<string, ArticleMeta[]>()
@@ -240,5 +244,41 @@ export function groupByTopic(articles: ArticleMeta[]): TopicGroup[] {
 
   return [...groups.entries()]
     .map(([topic, items]) => ({ topic, slug: topicSlug(topic), articles: items }))
-    .sort((a, b) => b.articles.length - a.articles.length || a.topic.localeCompare(b.topic))
+    .sort(
+      (a, b) =>
+        categoryOrder(a.topic) - categoryOrder(b.topic) ||
+        b.articles.length - a.articles.length ||
+        a.topic.localeCompare(b.topic)
+    )
+}
+
+/**
+ * Essays related to `current`, ranked by: shared primary category first, then
+ * number of shared tags, then recency. Used by the article page's "Related
+ * Essays" rail. Purely derived from existing metadata — no manual curation.
+ */
+export function getRelatedArticles(
+  current: ArticleMeta,
+  all: ArticleMeta[],
+  limit = 3
+): ArticleMeta[] {
+  const currentTags = new Set(current.tags.map((tag) => tag.toLowerCase()))
+
+  return all
+    .filter((article) => article.slug !== current.slug)
+    .map((article) => ({
+      article,
+      sameCategory: article.topic === current.topic ? 1 : 0,
+      sharedTags: article.tags.filter((tag) => currentTags.has(tag.toLowerCase())).length,
+      time: Date.parse(article.date) || 0,
+    }))
+    .sort(
+      (a, b) =>
+        b.sameCategory - a.sameCategory ||
+        b.sharedTags - a.sharedTags ||
+        b.time - a.time ||
+        a.article.slug.localeCompare(b.article.slug)
+    )
+    .slice(0, limit)
+    .map((entry) => entry.article)
 }

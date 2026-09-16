@@ -3,7 +3,7 @@ title: "Everyone Wants to Slow Down AI. No One Can"
 seoTitle: "Should We Slow Down AI? The Case For and Against"
 excerpt: "Even the people building AI say it should slow down. It hasn't, and it won't — not because they don't mean it, but because of a trap no one can escape alone."
 date: "2026-09-16"
-topic: "Global Systems"
+topic: "Power & Systems"
 tags: ["Artificial Intelligence", "AI Safety", "Slow Down AI", "AI Race", "Collective Action", "AI Regulation", "Existential Risk", "AI Pause Letter"]
 faq:
   - question: "Should we slow down AI development?"

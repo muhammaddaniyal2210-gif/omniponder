@@ -3,7 +3,7 @@ title: "The Broken Heart Is Not a Metaphor"
 seoTitle: "Broken Heart Syndrome: The Science of Takotsubo"
 excerpt: "Dying of a broken heart was dismissed as sentiment — until doctors photographed a healthy heart, stunned by grief, collapsing into the shape of an octopus trap."
 date: "2026-09-09"
-topic: "Human Nature"
+topic: "Human Nature & Ideas"
 tags: ["Broken Heart Syndrome", "Takotsubo Cardiomyopathy", "Stress Cardiomyopathy", "Grief", "Mind-Body Connection", "Catecholamines", "Happy Heart Syndrome", "Heart Health"]
 faq:
   - question: "What is broken heart syndrome?"

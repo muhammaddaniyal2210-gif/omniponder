@@ -3,7 +3,7 @@ title: "The Machine Can Read for You. That's the Problem"
 seoTitle: "Deep Reading vs. AI: What a Post-Literate Society Loses"
 excerpt: "On the 60th International Literacy Day, the danger isn't people who can't read. It's a machine that offers to read for them — and a mind that forgets how."
 date: "2026-09-08"
-topic: "Human Nature"
+topic: "Human Nature & Ideas"
 tags: ["Deep Reading", "International Literacy Day", "Artificial Intelligence", "Attention", "Maryanne Wolf", "Literacy", "Reading Brain", "Post-Literate Society"]
 faq:
   - question: "What is deep reading?"

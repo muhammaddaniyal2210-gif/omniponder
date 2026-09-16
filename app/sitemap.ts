@@ -11,13 +11,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: siteUrl,
       // The homepage reprints the newest piece, so it changes when that does.
       lastModified: newest,
-      changeFrequency: 'daily',
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: absoluteUrl('/archive'),
       lastModified: newest,
-      changeFrequency: 'daily',
+      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {

@@ -43,7 +43,7 @@ export default function Image() {
             letterSpacing: 7,
           }}
         >
-          DAILY EDITION
+          INDEPENDENT ESSAYS
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -51,7 +51,7 @@ export default function Image() {
             {siteConfig.name}
           </div>
           <div style={{ display: 'flex', marginTop: 20, fontSize: 40, color: '#3a3833' }}>
-            Daily analysis of global systems.
+            The forces shaping the modern world.
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export default function Image() {
             paddingTop: 30,
           }}
         >
-          SCIENCE · PHILOSOPHY · HUMAN NATURE · GLOBAL SYSTEMS
+          POWER &amp; SYSTEMS · HISTORY &amp; ECONOMY · HUMAN NATURE &amp; IDEAS
         </div>
       </div>
     ),

@@ -3,8 +3,8 @@ title: "The Universe Is 95% Missing. Tomorrow, NASA Launches a Telescope to Find
 seoTitle: "Dark Energy: What NASA's Roman Telescope Is Hunting"
 excerpt: "Tomorrow a Falcon Heavy carries NASA's Roman telescope toward dark energy — the force driving the cosmos apart that we cannot see, detect, or explain."
 date: "2026-08-29"
-topic: "Science"
-tags: ["Roman Space Telescope", "Dark Energy", "NASA", "Cosmology", "Dark Matter", "Nancy Grace Roman", "Astrophysics", "Universe Expansion"]
+topic: "Human Nature & Ideas"
+tags: ["Roman Space Telescope", "Dark Energy", "NASA", "Cosmology", "Dark Matter", "Nancy Grace Roman", "Astrophysics", "Universe Expansion", "Science"]
 faq:
   - question: "What is dark energy?"
     answer: "Dark energy is the name given to whatever is driving the accelerating expansion of the universe. It is not a form of matter but appears to be a property of space itself, and it makes up roughly 68 percent of the total energy of the cosmos. Its underlying nature is unknown."

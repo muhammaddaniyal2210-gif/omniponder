@@ -29,7 +29,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const article = await getArticleBySlug(slug)
 
   const title = article?.title ?? siteConfig.name
-  const topic = article?.topic ?? 'Daily Education'
+  const topic = article?.topic ?? 'Essay'
 
   return new ImageResponse(
     (

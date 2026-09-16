@@ -8,7 +8,7 @@ import SocialLinks from '@/components/SocialLinks'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const description =
-  'Most media is built for reaction. Omniponder is built for understanding — one in-depth piece every day on how the world actually works.'
+  'Omniponder is an independent publication explaining the systems, histories and human behaviours shaping the modern world — for readers who want to understand events rather than merely keep up with them.'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -42,11 +42,11 @@ const hasAuthorPhoto = existsSync(join(process.cwd(), 'public', 'images', 'autho
  * substitution, no reflow drift when the file is reformatted.
  */
 const mission = [
-  'Most media is built for reaction. Omniponder is built for understanding.',
-  'The forces that decide how you live are rarely the ones making the most sound. They are the invisible infrastructure of the world—the cables, corridors, treaties, balance sheets, and inherited assumptions that quietly set the boundaries of what is possible. Our work is to map that infrastructure, and to cut through the daily noise to deliver signal.',
-  'Every single day, we publish one in-depth piece examining how the world actually works. We don’t chase breaking news headlines or superficial summaries. Instead, we look at the structural realities, historical patterns, and ideas shaping our societies—from major global events and historical precedents to science, philosophy, and human nature.',
+  'Omniponder is an independent publication explaining the systems, histories and human behaviours shaping the modern world. It is written for readers who want to understand events rather than merely keep up with them.',
+  'The forces that decide how you live are rarely the ones making the most sound. They are the invisible infrastructure of the world—the cables, corridors, treaties, balance sheets, and inherited assumptions that quietly set the boundaries of what is possible. Our work is to map that infrastructure, and to cut through the noise to deliver signal.',
+  'The subjects range widely—geopolitics and technology, empires and money, psychology, philosophy and science—but they are connected through a single editorial lens: the search for the structures, incentives, historical forces and ideas beneath visible events. A piece on a flood, a currency, a personality trait or an arms race is, underneath, the same investigation—what is really driving this, and why.',
   'The method is subtraction. Everything that survives the edit has to earn its place: one argument, built from evidence, followed to its conclusion, with the uncertainties stated rather than smoothed over. We do not manufacture urgency, and we do not mistake confidence for rigour.',
-  'No noise, no filler. Just one rigorous piece, every single day, built to give you absolute clarity.',
+  'No noise, no filler. Original, deeply researched essays, published throughout the week, built to give you absolute clarity.',
   'Read it for a month and the change is difficult to miss. Fewer opinions held loudly. More things genuinely understood.',
 ]
 
@@ -98,12 +98,13 @@ export default function AboutPage() {
               </p>
 
               <h1 className="text-ink mt-8 max-w-3xl font-serif text-[1.75rem] leading-[1.22] font-medium tracking-[-0.018em] text-balance sm:text-[2.125rem] lg:text-[2.5rem]">
-                An independent daily study of the forces that shape the world.
+                An independent publication explaining the forces that shape the modern world.
               </h1>
 
               <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty sm:text-xl">
-                Written and edited by Muhammad Daniyal. Published every morning, for
-                readers who would rather understand a thing than keep up with it.
+                Written and edited by Muhammad Daniyal. Original, deeply researched essays
+                published throughout the week, for readers who would rather understand a thing
+                than keep up with it.
               </p>
             </div>
 
@@ -173,8 +174,8 @@ export default function AboutPage() {
                 As the author of comprehensive intelligence reports, he built Omniponder
                 to bridge the gap between rigorous academic analysis and everyday
                 intellectual curiosity. His mission is to distill the complexities of
-                human nature, philosophy, and shifting global trends into one clear,
-                authoritative daily read.
+                human nature, philosophy, and shifting global trends into clear,
+                authoritative essays.
               </p>
             </div>
 

@@ -19,8 +19,8 @@ export default function Footer() {
               Omniponder
             </Link>
             <p className="text-ink-muted mt-5 max-w-sm font-serif text-lg leading-relaxed text-pretty">
-              One in-depth piece every day on how the world actually works &mdash;
-              global events, history, science, philosophy, and human nature.
+              Original, deeply researched essays published throughout the week on power,
+              history, economics, human behaviour and consequential ideas.
             </p>
           </div>
 

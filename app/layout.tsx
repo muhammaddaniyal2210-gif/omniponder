@@ -34,18 +34,21 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    'science',
-    'philosophy',
+    'power and systems',
+    'geopolitics',
+    'history',
+    'economics',
     'human nature',
-    'global festivals',
-    'current trends',
-    'daily reading',
+    'philosophy',
+    'science',
+    'ideas',
+    'essays',
   ],
   authors: [{ name: siteConfig.name }],
   alternates: {
     canonical: siteUrl,
     types: {
-      'application/rss+xml': [{ url: '/feed.xml', title: `${siteConfig.name} — daily` }],
+      'application/rss+xml': [{ url: '/feed.xml', title: `${siteConfig.name} — Essays` }],
     },
   },
   openGraph: {

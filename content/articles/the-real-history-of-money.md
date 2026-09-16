@@ -3,7 +3,7 @@ title: "Money Was Never a Thing. It Was Always a Promise"
 seoTitle: "The Real History of Money: Why Barter Is a Myth"
 excerpt: "Economists searched for the original barter economy for over a century and never found one. The real history of money begins not with trade, but with debt."
 date: "2026-09-07"
-topic: "Economic History"
+topic: "History & Economy"
 tags: ["History of Money", "Barter Myth", "David Graeber", "Debt", "Mesopotamia", "Fiat Currency", "Cuneiform", "Chartalism"]
 faq:
   - question: "Did money really evolve from barter?"

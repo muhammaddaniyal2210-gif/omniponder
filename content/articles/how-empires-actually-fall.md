@@ -3,8 +3,8 @@ title: "No Empire Falls in a Day"
 seoTitle: "How Empires Fall: The Real Mechanics of Collapse"
 excerpt: "Empires don't fall in a day, or to a barbarian at the gate. They fall the way the fall of Rome actually happened — gradually, and then all at once."
 date: "2026-09-11"
-topic: "Global Systems"
-tags: ["Fall of Rome", "Joseph Tainter", "Collapse of Complex Societies", "Why Empires Fall", "Edward Gibbon", "Late Antiquity", "Roman Empire", "Societal Collapse"]
+topic: "History & Economy"
+tags: ["Fall of Rome", "Joseph Tainter", "Collapse of Complex Societies", "Why Empires Fall", "Edward Gibbon", "Late Antiquity", "Roman Empire", "Societal Collapse", "History"]
 faq:
   - question: "Why do empires fall?"
     answer: "Empires rarely fall from a single cause. They fall when the compounding costs of holding a large, complex state — its armies, bureaucracy, borders, and infrastructure — outrun the resources and legitimacy available to sustain them, so that a shock an earlier, healthier state would have absorbed becomes fatal. The dramatic triggers, such as invasion or plague, usually strike a structure already hollowed by slow internal erosion."

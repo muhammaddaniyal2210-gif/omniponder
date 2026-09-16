@@ -4,30 +4,42 @@ import AdPlaceholder from '@/components/AdPlaceholder'
 import HeroFlowCanvas from '@/components/HeroFlowCanvas'
 import NewsletterForm from '@/components/NewsletterForm'
 import { formatDate, getAllArticles, getLatestArticle } from '@/lib/markdown'
+import { CATEGORIES } from '@/lib/categories'
 import { siteConfig } from '@/lib/site'
-
-const disciplines = [
-  ['Human Nature', 'Why people behave as they do'],
-  ['Philosophy', 'Old questions, treated as live ones'],
-  ['Global Systems', 'The structural forces shaping the decades ahead'],
-  ['Economic History', 'How wealth was made, moved, and captured'],
-  ['Science', 'What we learned, and what it overturns'],
-]
 
 export default async function HomePage() {
   const [latest, all] = await Promise.all([getLatestArticle(), getAllArticles()])
   const dispatches = all.filter((article) => article.slug !== latest?.slug)
 
+  // Data-driven pillars: each carries its live count and newest essay as the
+  // "start here" entry, so the section maintains itself as articles publish.
+  // `all` is already newest-first, so the first match is the latest in a pillar.
+  const pillars = CATEGORIES.map((category) => {
+    const essays = all.filter((article) => article.topic === category.name)
+    return { ...category, count: essays.length, featured: essays[0] ?? null }
+  }).filter((pillar) => pillar.count > 0)
+
   return (
     <div className="mx-auto max-w-6xl px-6 sm:px-10">
       {/* Dateline — the strip under a printed masthead. */}
       <div className="border-rule text-ink-faint flex items-center justify-between border-b py-4 text-[0.625rem] tracking-[0.2em] uppercase">
-        <span>Daily Edition</span>
+        <span>Independent Essays</span>
         <span className="hidden md:inline">
-          Science · Philosophy · Human Nature · Global Systems
+          Power &amp; Systems · History &amp; Economy · Human Nature &amp; Ideas
         </span>
         {latest && <time dateTime={latest.date}>{formatDate(latest.date)}</time>}
       </div>
+
+      {/* Positioning — the publication's standing promise, stated immediately. */}
+      <section aria-labelledby="positioning-heading" className="border-rule border-b py-12 sm:py-14">
+        <p id="positioning-heading" className="text-ink font-serif text-2xl leading-[1.25] font-medium tracking-[-0.02em] text-balance sm:text-[1.75rem]">
+          Understand the forces shaping the modern world.
+        </p>
+        <p className="text-ink-muted mt-4 max-w-2xl font-serif text-lg leading-[1.55] text-pretty">
+          Original essays on power, history, economics, human behaviour and consequential
+          ideas&mdash;written to reveal what exists beneath the headlines.
+        </p>
+      </section>
 
       {latest ? (
         <section
@@ -39,7 +51,7 @@ export default async function HomePage() {
             <div className="relative z-10 py-14 sm:py-18 lg:py-24">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
                 <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
-                  Today&rsquo;s Essay
+                  Featured Essay
                 </span>
                 <span
                   id="todays-essay"
@@ -115,25 +127,69 @@ export default async function HomePage() {
         </div>
       )}
 
-      {/* Taxonomy bridge */}
-      <section aria-labelledby="disciplines-heading" className="border-rule border-b py-14">
-        <h2
-          id="disciplines-heading"
-          className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
-        >
-          The Disciplines
-        </h2>
-        <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
-          {disciplines.map(([name, framing]) => (
-            <li key={name}>
-              <span className="text-ink block font-serif text-xl leading-tight">{name}</span>
-              <span className="text-ink-faint mt-2 block text-sm leading-snug text-pretty">
-                {framing}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Start here — the three editorial pillars, each with its newest essay. */}
+      {pillars.length > 0 && (
+        <section aria-labelledby="pillars-heading" className="border-rule border-b py-14">
+          <div className="border-rule flex items-baseline justify-between border-b pb-5">
+            <h2
+              id="pillars-heading"
+              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
+            >
+              Start Here
+            </h2>
+            <Link
+              href="/archive"
+              className="text-ink-muted hover:text-ink text-[0.6875rem] tracking-[0.18em] uppercase transition-colors"
+            >
+              All Essays
+            </Link>
+          </div>
+
+          <ul className="grid gap-x-10 gap-y-12 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+            {pillars.map((pillar) => (
+              <li key={pillar.slug} className="flex flex-col">
+                <Link
+                  href={`/archive#${pillar.slug}`}
+                  className="group inline-flex items-baseline gap-2"
+                >
+                  <span className="text-ink font-serif text-2xl leading-tight font-medium tracking-[-0.015em] transition-opacity group-hover:opacity-60">
+                    {pillar.name}
+                  </span>
+                  <span className="text-ink-faint text-[0.625rem] tabular-nums">
+                    {pillar.count}
+                  </span>
+                </Link>
+                <span className="text-ink-faint mt-3 block text-sm leading-snug text-pretty">
+                  {pillar.description}
+                </span>
+
+                {pillar.featured && (
+                  <Link
+                    href={`/article/${pillar.featured.slug}`}
+                    className="group border-rule mt-6 flex flex-col border-t pt-6"
+                  >
+                    <span className="text-ink-faint text-[0.5625rem] tracking-[0.18em] uppercase">
+                      Start with
+                    </span>
+                    <span className="text-ink mt-2 font-serif text-lg leading-[1.25] font-medium text-pretty transition-opacity group-hover:opacity-60">
+                      {pillar.featured.title}
+                    </span>
+                    <span className="text-ink-faint mt-auto flex items-center gap-2 pt-3 text-[0.625rem] tracking-[0.18em] uppercase">
+                      <time dateTime={pillar.featured.date}>
+                        {formatDate(pillar.featured.date)}
+                      </time>
+                      <span aria-hidden="true" className="text-rule-strong">
+                        /
+                      </span>
+                      {pillar.featured.readingTime} min
+                    </span>
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Editorial dispatch grid */}
       {dispatches.length > 0 && (

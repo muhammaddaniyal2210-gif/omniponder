@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { formatDate, getAllArticles, groupByTopic } from '@/lib/markdown'
+import { categoryDescription } from '@/lib/categories'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
-const description = 'The complete Omniponder index — every published analysis, arranged by subject.'
+const description =
+  'The complete Omniponder index — every essay, organized into three editorial pillars.'
 
 export const metadata: Metadata = {
   title: 'Archive',
@@ -36,9 +38,9 @@ export default async function ArchivePage() {
           Archive
         </h1>
         <p className="text-ink-muted mt-7 font-serif text-xl leading-[1.6] text-pretty">
-          Every piece published to date, arranged by discipline. {articles.length}{' '}
-          {articles.length === 1 ? 'essay' : 'essays'} across {groups.length}{' '}
-          {groups.length === 1 ? 'subject' : 'subjects'}.
+          Every essay published to date, organized into three editorial pillars.{' '}
+          {articles.length} {articles.length === 1 ? 'essay' : 'essays'} across {groups.length}{' '}
+          {groups.length === 1 ? 'pillar' : 'pillars'}.
         </p>
       </header>
 
@@ -86,6 +88,11 @@ export default async function ArchivePage() {
                 >
                   {group.topic}
                 </h2>
+                {categoryDescription(group.topic) && (
+                  <p className="text-ink-muted mt-3 text-sm leading-snug text-pretty">
+                    {categoryDescription(group.topic)}
+                  </p>
+                )}
                 <p className="text-ink-faint mt-3 text-[0.625rem] tracking-[0.18em] uppercase">
                   {group.articles.length} {group.articles.length === 1 ? 'essay' : 'essays'}
                 </p>
