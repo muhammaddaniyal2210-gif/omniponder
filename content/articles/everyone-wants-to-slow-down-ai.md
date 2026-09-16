@@ -1,0 +1,81 @@
+---
+title: "Everyone Wants to Slow Down AI. No One Can"
+seoTitle: "Should We Slow Down AI? The Case For and Against"
+excerpt: "Even the people building AI say it should slow down. It hasn't, and it won't — not because they don't mean it, but because of a trap no one can escape alone."
+date: "2026-09-16"
+topic: "Global Systems"
+tags: ["Artificial Intelligence", "AI Safety", "Slow Down AI", "AI Race", "Collective Action", "AI Regulation", "Existential Risk", "AI Pause Letter"]
+faq:
+  - question: "Should we slow down AI development?"
+    answer: "There is a serious case for it — many leading researchers argue that our ability to make AI systems safe and interpretable is lagging behind our ability to make them powerful. But there is also a strong case against a unilateral slowdown, chiefly that it could simply hand the lead to less cautious developers or nations. Most of the disagreement is less about whether more caution would help than about whether coordinated caution is achievable at all."
+  - question: "Why can't we just pause AI development?"
+    answer: "Because no single company or country can afford to pause while its rivals continue. Whoever slows down risks ceding the frontier — and the economic, military, and standard-setting advantages that come with it — to whoever does not. This is a classic collective-action problem: a pause only works if everyone does it together, and there is currently no mechanism to guarantee that."
+  - question: "What was the 2023 AI pause letter?"
+    answer: "In March 2023, the Future of Life Institute published an open letter calling on all AI labs to pause for at least six months the training of systems more powerful than GPT-4. It gathered more than 30,000 signatures, including researchers such as Yoshua Bengio and Stuart Russell and figures like Elon Musk and Yuval Noah Harari. No pause occurred; development accelerated, though the letter helped intensify public debate and regulatory efforts such as the EU AI Act."
+  - question: "What are the arguments against slowing down AI?"
+    answer: "The main arguments are that slowing forfeits enormous benefits in medicine, science, and productivity; that safety may be better achieved by learning from real deployed systems than by pausing; and, most decisively, that a slowdown by responsible actors could cede the frontier to less careful competitors or rival states, leaving the world less safe and the cautious with less influence over the standards that emerge."
+  - question: "Is AI development an arms race?"
+    answer: "In structure, it strongly resembles one. Competing companies and nations each face pressure to move fast for fear that rivals will gain a decisive advantage, even when many participants would privately prefer a more cautious pace. This mirrors historical arms races and the game theory of the prisoner's dilemma, where individually rational choices produce a collectively worse outcome."
+  - question: "Can AI development be paced or regulated internationally?"
+    answer: "It is difficult but not obviously impossible. The chief obstacle is verification — confirming that others are honoring limits is far harder for AI training than for, say, nuclear tests. However, advanced AI depends on physical resources, especially specialized computing chips, that are trackable and concentrated, which some experts argue offers a potential lever for international monitoring and coordination."
+---
+
+Here is a fact strange enough to stop you: some of the loudest warnings that artificial intelligence is moving too fast now come from the very people building it. The leaders of major AI labs have signed statements putting the risk of human extinction from AI alongside pandemics and nuclear war. Researchers who spent their careers making these systems more capable have pivoted to pleading for caution. And still, month after month, the systems get bigger, the capabilities grow, and the pace does not slacken. The builders say slow down, and the building speeds up.
+
+It would be easy to read this as simple hypocrisy — safety as a public-relations costume worn over naked ambition. That reading is too cheap, and it misses the far more unsettling truth. Many of the people sounding the alarm mean it entirely. They would genuinely prefer a more careful pace. And they cannot produce one, for a reason that has almost nothing to do with sincerity and almost everything to do with the shape of the situation they are trapped inside. Understanding that shape is the key to the whole debate — and it turns "should we slow down AI?" into a much harder and more interesting question than it first appears.
+
+## The Pause That Wasn't
+
+The clearest evidence that good intentions are not the missing ingredient is what happened the last time they were tried at scale.
+
+In March 2023, the Future of Life Institute published an open letter calling on all AI labs to pause, for at least six months, the training of any system more powerful than the state of the art at the time. It was not a fringe document. It gathered more than thirty thousand signatures, among them some of the most decorated names in the field — the computer scientists Yoshua Bengio and Stuart Russell — alongside public figures like Elon Musk and the historian Yuval Noah Harari. It made a specific, modest, reasonable request: not stop, just pause, just six months, just to let safety catch up.
+
+Nothing paused. If anything, the following two years saw the greatest acceleration in the technology's history, with tens of billions of dollars poured into ever-larger training runs. The letter's practical effect on the pace was approximately zero. It did shift the conversation — it helped make public fear of AI speakable, and fed into regulatory efforts like the European Union's AI Act — but the machines it asked to slow only got faster.
+
+This is the fact that should reframe the entire discussion. Thirty thousand people, including several who could in principle influence the direction of the field, asked for a brief and sensible pause, and the pause did not come. Not because they were ignored out of malice, but because no individual signatory could act on it without a guarantee that the others would too. The failure was not one of will. It was structural. And a structural problem cannot be solved by better intentions, however many you gather.
+
+## The Case for Slowing Down
+
+To see why the trap is so tight, you have to grant that both sides of the argument are strong. Start with the case for caution, which deserves to be stated at its full strength rather than caricatured.
+
+The core worry is a mismatch of speeds. Our ability to make AI systems *powerful* is racing ahead of our ability to make them *understood*. Modern AI models are, to a striking degree, black boxes even to their creators; the field of interpretability — the science of reading why a model does what it does — lags well behind the engineering of raw capability. We are, on this view, deploying systems of growing influence over the economy, information, and eventually physical infrastructure, while our capacity to predict or control their behavior improves far more slowly. A newer version of the worry is sharper still: as AI begins to assist in AI research itself, the fear is that improvement could accelerate faster than any human oversight can track, a loop that tightens on its own.
+
+Layer onto that the more familiar concerns — the potential for large-scale job displacement, the concentration of enormous power in a few firms, the flood of synthetic media into the information ecosystem — and the precautionary logic is genuinely compelling. You cannot un-deploy a technology once it is loose in the world. When the downside risk includes possibilities that are irreversible, the argument runs, the burden of proof should sit with speed, not caution. Slowing down buys time — for the safety science to mature, for institutions to adapt, for society to decide what it actually wants. It is not an unreasonable thing to ask.
+
+## The Case for Not Slowing Down
+
+And yet the opposite case is also strong, and it too deserves its steel version.
+
+Begin with the benefits foregone, because a slowdown is not a cost-free act of prudence. The same technology under suspicion is also accelerating drug discovery, materials science, medical diagnosis, and the productivity of hundreds of millions of workers. Every year of delay is, potentially, a year of treatments not found and problems not solved. Caution has a body count too; it is simply harder to see, because it is made of things that did not happen.
+
+There is also a serious argument that safety is achieved *through* deployment rather than despite it — that you learn to align and control these systems by working with real ones at scale, catching failures in the open where they can be studied and fixed, not by pausing in a lab and hoping to reason your way to safety in the abstract. On this view, a moratorium could leave us *less* prepared, not more, when development inevitably resumes.
+
+But the decisive argument, the one that ends most real-world discussions, is the race. Suppose the most safety-conscious developers — the ones most likely to build carefully — agree to slow down. What happens? The frontier does not stop; it simply passes to those who did not agree: rival companies with fewer scruples, or rival nations that see a decisive strategic advantage and no reason to accept limits written in Washington or Brussels. The cautious actor, by slowing, does not make the world safer. It makes itself irrelevant, and hands the future to whoever cared least about safety in the first place. This is why calls for a unilateral pause so often collapse on contact with geopolitics — and why the political spectrum scrambles the usual alliances, with figures on both the left and right split over whether the greater danger is moving too fast or falling behind.
+
+## The Trap Underneath
+
+Notice what has happened. The case for slowing is strong. The case against slowing is strong. And both can be true at once — which is the signature of a particular and well-understood kind of problem.
+
+This is a collective-action problem, the same structure that game theorists call the prisoner's dilemma and that the rest of us know as an arms race. Every participant might genuinely prefer the world in which everyone moves carefully. But no participant can afford to move carefully alone, because unilateral caution is simply a gift to your competitors. So each rationally chooses speed, defensively, and the sum of all those individually reasonable choices is the outcome almost no one wanted: a headlong race that continues precisely because everyone is afraid of what happens if they are the only one to stop. The tragedy is not that the players are foolish or wicked. It is that they are trapped in a structure that punishes the very caution most of them would choose if they could trust the others to choose it too.
+
+![A two-by-two payoff grid titled The Race Nobody Can Quit. The rows are your two options, slow down or race ahead; the columns are the same two options for your rival. The mutual-slowdown cell is marked as the safest outcome for everyone, but arrows show that whichever choice the rival makes, each player is individually better off racing, so both end up in the mutual-race cell — the worst outcome for safety](/images/ai-race-dilemma.svg) *Caption: Both players would prefer the top-left world, where everyone slows. But whatever the other does, each is individually better off racing — so both race. Individually rational, collectively worse. That is the trap.*
+
+Humanity has been here before, and the precedent is sobering and slightly hopeful at once. The last time we built a technology whose builders feared it might end us, we did not stop building it. Through the middle of the twentieth century, physicists who understood the bomb's horror built it anyway, because the other side might build it first, and the same logic drove the arms race that followed for decades. We did not escape that trap by everyone suddenly deciding to be virtuous. We escaped it — partially, imperfectly, and only after some terrifyingly close calls — by slowly constructing something else: treaties, inspections, hotlines, and the elaborate machinery of arms control, which made mutual restraint safe by making it *verifiable*. The lesson is not that coordination is easy. It is that coordination, not conscience, is the thing that actually changes the outcome.
+
+## Is Coordinated Pacing Even Possible?
+
+Which is why the most serious recent proposals have stopped asking any single actor to pause and started asking a harder question: can the pace be managed collectively? The 2026 push among some researchers and officials for internationally coordinated "pacing" of frontier AI is really an attempt to change the geometry — to build the kind of mutual, enforceable agreement that would let everyone slow at once without anyone falling behind.
+
+![A black-and-white photograph of the Trinity nuclear test: a glowing, near-hemispherical dome of light rising from the desert floor in the first instant after the first atomic detonation in 1945](/images/trinity-nuclear-test.jpg) *Caption: The first 16 milliseconds of the nuclear age — the Trinity test, 16 July 1945. Its builders feared it and built it anyway, because rivals might build it first; only later, and only partially, did the world learn to coordinate its restraint. Berlyn Brixner / Los Alamos National Laboratory; public domain.*
+
+The obstacle is brutal, and it is worth being honest about. Arms control worked, to the extent it did, because you can verify it: a nuclear test shakes the earth, a missile silo can be counted from orbit. How do you verify that a rival is honoring a limit on training an AI model? A training run is just computation happening quietly in a building; there is no flash, no seismic signature, nothing to photograph from space. Trust without verification is not a treaty, it is a wish.
+
+But there is one thread of genuine hope, and it is physical. Advanced AI is not conjured from pure thought; it depends on vast quantities of specialized computing chips, and those chips are manufactured through a supply chain so concentrated it runs, at its most critical points, through a mere handful of facilities on earth. Compute is a physical resource. It can, in principle, be tracked, counted, and controlled at the chokepoints — which is exactly why export controls on chips have become such a central instrument of policy. Whether that lever is enough to build real international coordination is unknown. But it is the reason the situation is not simply hopeless, and it is where the serious effort now concentrates.
+
+## The Real Question
+
+So the honest answer to "should we slow down AI?" is not a slogan in either direction. Almost everyone who has thought hard about it agrees that more care would, in the abstract, be better. The reflexive accelerationist who insists it will all be fine and the reflexive alarmist who insists we simply stop are both dodging the same difficulty: that we have built the most consequential technology of the age inside an incentive structure that punishes caution and rewards speed, and that no amount of individual good intention can overcome a bad structure.
+
+The task, then, is not really to decide between speed and safety, as though it were a matter of choosing the correct opinion. It is to change the geometry — to do the slow, unglamorous, deeply difficult work of coordination that makes caution something other than a competitive suicide. That is a problem of institutions, verification, and trust between rivals who have every reason to distrust each other. It has been solved before, barely, and never permanently.
+
+The question that matters, in the end, is not whether AI should slow down. On that there is more agreement than the shouting suggests. The question is whether a civilization of competitors — companies against companies, nations against nations — can learn to be careful *together*, against every incentive pulling them apart. That is not a test of our technology. It is a test of us, and we have not yet passed it.

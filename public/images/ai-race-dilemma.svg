@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="A two-by-two payoff matrix of the AI race. Mutual slowdown is safest for everyone, but each player is individually better off racing whatever the other does, so both race — the worst outcome for safety.">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">The Race Nobody Can Quit</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">WHY MUTUAL CAUTION IS EVERYONE'S SECOND CHOICE — AND NO ONE'S MOVE</text>
+
+  <!-- Column header: THE OTHER LAB / NATION -->
+  <text x="985" y="212" text-anchor="middle" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600">THE OTHER LAB / NATION</text>
+  <text x="770" y="250" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">they slow down</text>
+  <text x="1200" y="250" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">they race ahead</text>
+
+  <!-- Row header: YOU -->
+  <text x="150" y="470" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600" transform="rotate(-90 150 470)">YOU</text>
+  <text x="300" y="360" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">you</text>
+  <text x="300" y="380" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">slow down</text>
+  <text x="300" y="590" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">you</text>
+  <text x="300" y="610" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="16" letter-spacing="1" fill="#66625a">race ahead</text>
+
+  <!-- Grid cells -->
+  <!-- top-left: both slow (best for safety) -->
+  <rect x="555" y="285" width="430" height="190" fill="#f3f0e9" stroke="#b8873f" stroke-width="3"/>
+  <text x="770" y="360" text-anchor="middle" font-family="Georgia,serif" font-size="25" fill="#171614">Everyone slows</text>
+  <text x="770" y="394" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="1" fill="#8a6a2f">SAFEST FOR ALL — but fragile</text>
+  <text x="770" y="440" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="18" fill="#66625a">what most builders say they want</text>
+
+  <!-- top-right: you slow, they race (worst for you) -->
+  <rect x="985" y="285" width="430" height="190" fill="none" stroke="#c8c2b4" stroke-width="1.5"/>
+  <text x="1200" y="360" text-anchor="middle" font-family="Georgia,serif" font-size="25" fill="#171614">You fall behind</text>
+  <text x="1200" y="394" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="1" fill="#66625a">WORST FOR YOU</text>
+  <text x="1200" y="440" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="18" fill="#66625a">the frontier passes to them</text>
+
+  <!-- bottom-left: you race, they slow (best for you) -->
+  <rect x="555" y="475" width="430" height="190" fill="none" stroke="#c8c2b4" stroke-width="1.5"/>
+  <text x="770" y="550" text-anchor="middle" font-family="Georgia,serif" font-size="25" fill="#171614">You pull ahead</text>
+  <text x="770" y="584" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="1" fill="#66625a">BEST FOR YOU</text>
+  <text x="770" y="630" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="18" fill="#66625a">the advantage is yours alone</text>
+
+  <!-- bottom-right: both race (worst for safety, where everyone ends up) -->
+  <rect x="985" y="475" width="430" height="190" fill="#171614" stroke="#171614" stroke-width="3"/>
+  <text x="1200" y="550" text-anchor="middle" font-family="Georgia,serif" font-size="25" fill="#fbfaf7">Everyone races</text>
+  <text x="1200" y="584" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="1" fill="#e0b877">WORST FOR SAFETY</text>
+  <text x="1200" y="630" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="18" fill="#c8c2b4">where the logic lands everyone</text>
+
+  <!-- arrows showing dominant strategy: down in each column (racing beats slowing) -->
+  <g stroke="#b8873f" stroke-width="3" fill="#b8873f">
+    <path d="M 520 380 L 520 570"/><path d="M 511 558 L 520 574 L 529 558 Z"/>
+    <path d="M 1450 380 L 1450 570"/><path d="M 1441 558 L 1450 574 L 1459 558 Z"/>
+  </g>
+  <text x="497" y="480" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1" fill="#8a6a2f" transform="rotate(-90 497 480)">racing wins</text>
+  <text x="1477" y="480" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1" fill="#8a6a2f" transform="rotate(-90 1477 480)">racing wins</text>
+
+  <text x="800" y="726" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="24" fill="#171614">Whatever the other does, each is better off racing — so both race.</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">A COLLECTIVE-ACTION TRAP · THE PRISONER'S DILEMMA</text>
+</svg>
