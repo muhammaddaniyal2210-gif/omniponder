@@ -5,7 +5,7 @@ import { categoryDescription } from '@/lib/categories'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const description =
-  'The complete Omniponder index — every essay, organized into three editorial pillars.'
+  'The complete OmniPonder index — every essay, organized into three editorial pillars.'
 
 export const metadata: Metadata = {
   title: 'Archive',

@@ -4,7 +4,7 @@ import { join } from 'node:path'
 import { formatDate, getArticleBySlug, getArticleSlugs } from '@/lib/markdown'
 import { siteConfig } from '@/lib/site'
 
-export const alt = 'Omniponder article'
+export const alt = 'OmniPonder article'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

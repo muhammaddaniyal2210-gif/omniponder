@@ -83,4 +83,4 @@ Both conditions have expired. The blockade did not disappear. It submerged.
 
 ---
 
-*Omniponder examines the structural realities beneath the headlines — the arrangements of capability, incentive, and geography that make outcomes likely. [Read more about our approach](/about).*
+*OmniPonder examines the structural realities beneath the headlines — the arrangements of capability, incentive, and geography that make outcomes likely. [Read more about our approach](/about).*

@@ -8,7 +8,7 @@ import SocialLinks from '@/components/SocialLinks'
 import { absoluteUrl, siteConfig } from '@/lib/site'
 
 const description =
-  'Omniponder is an independent publication explaining the systems, histories and human behaviours shaping the modern world — for readers who want to understand events rather than merely keep up with them.'
+  'OmniPonder is an independent publication explaining the systems, histories and human behaviours shaping the modern world — for readers who want to understand events rather than merely keep up with them.'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -42,7 +42,7 @@ const hasAuthorPhoto = existsSync(join(process.cwd(), 'public', 'images', 'autho
  * substitution, no reflow drift when the file is reformatted.
  */
 const mission = [
-  'Omniponder is an independent publication explaining the systems, histories and human behaviours shaping the modern world. It is written for readers who want to understand events rather than merely keep up with them.',
+  'OmniPonder is an independent publication explaining the systems, histories and human behaviours shaping the modern world. It is written for readers who want to understand events rather than merely keep up with them.',
   'The forces that decide how you live are rarely the ones making the most sound. They are the invisible infrastructure of the world—the cables, corridors, treaties, balance sheets, and inherited assumptions that quietly set the boundaries of what is possible. Our work is to map that infrastructure, and to cut through the noise to deliver signal.',
   'The subjects range widely—geopolitics and technology, empires and money, psychology, philosophy and science—but they are connected through a single editorial lens: the search for the structures, incentives, historical forces and ideas beneath visible events. A piece on a flood, a currency, a personality trait or an arms race is, underneath, the same investigation—what is really driving this, and why.',
   'The method is subtraction. Everything that survives the edit has to earn its place: one argument, built from evidence, followed to its conclusion, with the uncertainties stated rather than smoothed over. We do not manufacture urgency, and we do not mistake confidence for rigour.',
@@ -137,7 +137,7 @@ export default function AboutPage() {
               {hasAuthorPhoto ? (
                 <Image
                   src={AUTHOR_PHOTO}
-                  alt="Muhammad Daniyal, Founder and Editor of Omniponder"
+                  alt="Muhammad Daniyal, Founder and Editor of OmniPonder"
                   fill
                   sizes="(min-width: 1024px) 224px, (min-width: 640px) 160px, 120px"
                   className="object-cover"
@@ -171,7 +171,7 @@ export default function AboutPage() {
                 communication shape modern geopolitics.
               </p>
               <p>
-                As the author of comprehensive intelligence reports, he built Omniponder
+                As the author of comprehensive intelligence reports, he built OmniPonder
                 to bridge the gap between rigorous academic analysis and everyday
                 intellectual curiosity. His mission is to distill the complexities of
                 human nature, philosophy, and shifting global trends into clear,

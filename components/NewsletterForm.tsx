@@ -7,7 +7,7 @@ const FORM_ID = '22284ce1-fca1-425e-a9f5-c8fd95f588e8'
 const LOADER_SRC = 'https://subscribe-forms.beehiiv.com/v3/loader.js'
 
 const copy = {
-  heading: 'The Omniponder Dispatch',
+  heading: 'The OmniPonder Dispatch',
   blurb:
     'Three original essays each week on power, history, economics and human behaviour—written to help you understand the world beneath the headlines.',
 }

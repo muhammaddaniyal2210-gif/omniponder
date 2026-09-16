@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Omniponder
+# OmniPonder
 
 A daily editorial publication. One long-form piece per day, published to be read
 once, carefully — not skimmed, not fed to an algorithm.

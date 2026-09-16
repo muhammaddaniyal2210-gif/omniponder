@@ -16,7 +16,7 @@ export default function Footer() {
               href="/"
               className="text-ink font-serif text-3xl font-medium tracking-[-0.02em] transition-opacity hover:opacity-60"
             >
-              Omniponder
+              OmniPonder
             </Link>
             <p className="text-ink-muted mt-5 max-w-sm font-serif text-lg leading-relaxed text-pretty">
               Original, deeply researched essays published throughout the week on power,
@@ -34,12 +34,12 @@ export default function Footer() {
               </Link>
             </nav>
 
-            <SocialLinks label="Omniponder social accounts" />
+            <SocialLinks label="OmniPonder social accounts" />
           </div>
         </div>
 
         <p className="text-ink-faint py-8 text-[0.6875rem] tracking-[0.16em] uppercase">
-          &copy; {year} Omniponder
+          &copy; {year} OmniPonder
         </p>
       </div>
     </footer>

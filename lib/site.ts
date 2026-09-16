@@ -18,7 +18,7 @@ function resolveSiteUrl() {
 export const siteUrl = resolveSiteUrl()
 
 export const siteConfig = {
-  name: 'Omniponder',
+  name: 'OmniPonder',
   author: 'Muhammad Daniyal',
   title: 'OmniPonder — Essays on Power, History and Human Nature',
   description:

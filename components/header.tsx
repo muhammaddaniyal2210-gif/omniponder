@@ -19,10 +19,10 @@ export default function Header() {
 
         <Link
           href="/"
-          aria-label="Omniponder — home"
+          aria-label="OmniPonder — home"
           className="text-ink focus-visible:outline-ink justify-self-center font-serif text-[1.6rem] leading-none font-medium tracking-[-0.02em] transition-opacity hover:opacity-60 focus-visible:outline-1 focus-visible:outline-offset-4 sm:text-[2.1rem]"
         >
-          Omniponder
+          OmniPonder
         </Link>
 
         <nav aria-label="Publication" className="justify-self-end">

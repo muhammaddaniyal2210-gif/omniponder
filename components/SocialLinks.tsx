@@ -4,7 +4,7 @@ type SocialLinksProps = {
   /** `sm` (18px) for the footer rail, `md` (20px) for the author block. */
   size?: 'sm' | 'md'
   className?: string
-  /** Screen-reader name for the list, e.g. "Omniponder social accounts". */
+  /** Screen-reader name for the list, e.g. "OmniPonder social accounts". */
   label?: string
 }
 
