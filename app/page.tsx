@@ -129,13 +129,15 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 sm:px-10">
-      {/* Positioning — one restrained line, minimal vertical weight. */}
-      <section aria-label="About OmniPonder" className="border-rule border-b py-6 sm:py-7">
-        <p className="text-ink-muted font-serif text-[1.0625rem] leading-[1.5] text-pretty sm:text-lg">
-          Original essays revealing the systems, histories and human behaviours shaping the
-          modern world.
+      {/* Editorial signature — the manifesto line, mirroring the three pillars.
+          One serif italic statement, aligned to the content grid, on a hairline. */}
+      <div className="border-rule border-b py-5 sm:py-7">
+        <p className="text-ink font-serif text-xl leading-snug tracking-[0.01em] text-pretty italic sm:text-[1.5rem]">
+          <span className="whitespace-nowrap">Power moves.</span>{' '}
+          <span className="whitespace-nowrap">History echoes.</span>{' '}
+          <span className="whitespace-nowrap">Human nature endures.</span>
         </p>
-      </section>
+      </div>
 
       {feature ? (
         <section aria-label="Featured essays" className="border-rule border-b py-12 sm:py-16">
