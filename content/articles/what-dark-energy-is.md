@@ -3,6 +3,8 @@ title: "The Universe Is 95% Missing. Tomorrow, NASA Launches a Telescope to Find
 seoTitle: "Dark Energy: What NASA's Roman Telescope Is Hunting"
 excerpt: "Tomorrow a Falcon Heavy carries NASA's Roman telescope toward dark energy — the force driving the cosmos apart that we cannot see, detect, or explain."
 date: "2026-08-29"
+image: "/images/dark-energy-roman-telescope.jpg"
+imageAlt: "NASA's Nancy Grace Roman Space Telescope during assembly."
 topic: "Human Nature & Ideas"
 tags: ["Roman Space Telescope", "Dark Energy", "NASA", "Cosmology", "Dark Matter", "Nancy Grace Roman", "Astrophysics", "Universe Expansion", "Science"]
 faq:

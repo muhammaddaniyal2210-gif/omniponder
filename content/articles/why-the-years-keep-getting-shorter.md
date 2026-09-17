@@ -3,6 +3,8 @@ title: "Why the Years Keep Getting Shorter"
 seoTitle: "Why Time Speeds Up as You Age — and How to Slow It"
 excerpt: "Childhood summers felt endless; now decades vanish. Time isn't speeding up — you're recording less of it. The science of why, and how to bring the years back."
 date: "2026-09-14"
+image: "/images/endless-summer-1940.jpg"
+imageAlt: "Swimmers' clothes on a pole by a lake, 1940."
 topic: "Human Nature & Ideas"
 tags: ["Time Perception", "Why Time Speeds Up", "Memory", "Aging", "Psychology of Time", "Reminiscence Bump", "Novelty", "Attention"]
 faq:

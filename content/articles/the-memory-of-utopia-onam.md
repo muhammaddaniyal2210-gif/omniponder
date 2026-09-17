@@ -2,6 +2,8 @@
 title: "The Memory of Utopia: The Economic and Philosophical Roots of Onam"
 excerpt: "Beyond the floral carpets and harvest feasts, Kerala's greatest festival is a profound reflection on agrarian surplus, the mechanics of the monsoon, and the enduring human myth of an egalitarian state."
 date: "2026-08-25"
+image: "/images/onam-celebration.jpg"
+imageAlt: "A traditional Onam Sadya feast served on a banana leaf."
 topic: "History & Economy"
 tags: ["Onam", "King Mahabali", "Onam Sadya", "Kerala History", "Economic History", "Indian Ocean Trade", "Political Philosophy"]
 ---

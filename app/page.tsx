@@ -1,118 +1,209 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import AdPlaceholder from '@/components/AdPlaceholder'
-import HeroFlowCanvas from '@/components/HeroFlowCanvas'
 import NewsletterForm from '@/components/NewsletterForm'
-import { formatDate, getAllArticles, getLatestArticle } from '@/lib/markdown'
+import { formatDate, getAllArticles, pickHomeFeature, topicSlug, type ArticleMeta } from '@/lib/markdown'
 import { CATEGORIES } from '@/lib/categories'
 import { siteConfig } from '@/lib/site'
 
-export default async function HomePage() {
-  const [latest, all] = await Promise.all([getLatestArticle(), getAllArticles()])
-  const dispatches = all.filter((article) => article.slug !== latest?.slug)
+/**
+ * Representative 16:9 image for a card. Falls back to a paper-deep frame with
+ * the monogram (never a broken image), preserving the ratio so nothing shifts.
+ * Only the lead image is `priority`; everything below lazy-loads.
+ */
+function CardImage({
+  article,
+  sizes,
+  priority = false,
+}: {
+  article: ArticleMeta
+  sizes: string
+  priority?: boolean
+}) {
+  if (!article.image) {
+    return (
+      <div
+        aria-hidden="true"
+        className="bg-paper-deep text-ink-faint flex aspect-[16/9] w-full items-center justify-center font-serif text-5xl select-none"
+      >
+        O
+      </div>
+    )
+  }
+  return (
+    <div className="bg-paper-deep relative aspect-[16/9] w-full overflow-hidden">
+      <Image
+        src={article.image}
+        alt={article.imageAlt || article.title}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className="object-cover"
+      />
+    </div>
+  )
+}
 
-  // Data-driven pillars: each carries its live count and newest essay as the
-  // "start here" entry, so the section maintains itself as articles publish.
-  // `all` is already newest-first, so the first match is the latest in a pillar.
-  const pillars = CATEGORIES.map((category) => {
-    const essays = all.filter((article) => article.topic === category.name)
-    return { ...category, count: essays.length, featured: essays[0] ?? null }
-  }).filter((pillar) => pillar.count > 0)
+function CategoryLink({ topic, className = '' }: { topic: string; className?: string }) {
+  return (
+    <Link
+      href={`/archive#${topicSlug(topic)}`}
+      className={`text-ink-muted hover:text-ink text-[0.6875rem] font-medium tracking-[0.16em] uppercase transition-colors ${className}`}
+    >
+      {topic}
+    </Link>
+  )
+}
+
+function CardMeta({ article }: { article: ArticleMeta }) {
+  return (
+    <p className="text-ink-muted mt-3 flex flex-wrap items-center gap-x-2.5 text-[0.75rem] tracking-wide">
+      <time dateTime={article.date}>{formatDate(article.date)}</time>
+      <span aria-hidden="true" className="text-rule-strong">
+        /
+      </span>
+      <span>{article.readingTime} min read</span>
+    </p>
+  )
+}
+
+/** A supporting or latest-grid card. `variant` sets the headline hierarchy. */
+function ArticleCard({
+  article,
+  variant,
+  sizes,
+}: {
+  article: ArticleMeta
+  variant: 'support' | 'latest'
+  sizes: string
+}) {
+  const headingSize =
+    variant === 'support'
+      ? 'text-2xl sm:text-[1.75rem]'
+      : 'text-xl'
+  return (
+    <article className="group flex flex-col">
+      <Link
+        href={`/article/${article.slug}`}
+        tabIndex={-1}
+        aria-hidden="true"
+        className="block"
+      >
+        <CardImage article={article} sizes={sizes} />
+      </Link>
+      <div className="mt-5 flex flex-1 flex-col">
+        <CategoryLink topic={article.topic} />
+        <h3
+          className={`text-ink mt-2.5 font-serif ${headingSize} leading-[1.18] font-medium tracking-[-0.015em] text-pretty`}
+        >
+          <Link
+            href={`/article/${article.slug}`}
+            className="focus-visible:outline-ink transition-opacity hover:opacity-60 focus-visible:outline-1 focus-visible:outline-offset-4"
+          >
+            {article.title}
+          </Link>
+        </h3>
+        <p className="text-ink-muted mt-3 line-clamp-3 font-serif leading-relaxed text-pretty">
+          {article.excerpt}
+        </p>
+        <CardMeta article={article} />
+      </div>
+    </article>
+  )
+}
+
+export default async function HomePage() {
+  const all = await getAllArticles()
+  const feature = pickHomeFeature(all)
+  const rest = feature ? all.filter((article) => article.slug !== feature.slug) : all
+
+  // Strict, non-repeating hierarchy: 1 lead, 2 supporting, then 6 latest.
+  const supporting = rest.slice(0, 2)
+  const latest = rest.slice(2, 8)
+
+  const pillars = CATEGORIES.map((category) => ({
+    ...category,
+    count: all.filter((article) => article.topic === category.name).length,
+  })).filter((pillar) => pillar.count > 0)
 
   return (
     <div className="mx-auto max-w-6xl px-6 sm:px-10">
-      {/* Dateline — the strip under a printed masthead. */}
-      <div className="border-rule text-ink-faint flex items-center justify-between border-b py-4 text-[0.625rem] tracking-[0.2em] uppercase">
-        <span>Independent Essays</span>
-        <span className="hidden md:inline">
-          Power &amp; Systems · History &amp; Economy · Human Nature &amp; Ideas
-        </span>
-        {latest && <time dateTime={latest.date}>{formatDate(latest.date)}</time>}
-      </div>
-
-      {/* Positioning — the publication's standing promise, stated immediately. */}
-      <section aria-labelledby="positioning-heading" className="border-rule border-b py-12 sm:py-14">
-        <p id="positioning-heading" className="text-ink font-serif text-2xl leading-[1.25] font-medium tracking-[-0.02em] text-balance sm:text-[1.75rem]">
-          Understand the forces shaping the modern world.
-        </p>
-        <p className="text-ink-muted mt-4 max-w-2xl font-serif text-lg leading-[1.55] text-pretty">
-          Original essays on power, history, economics, human behaviour and consequential
-          ideas&mdash;written to reveal what exists beneath the headlines.
+      {/* Positioning — one restrained line, minimal vertical weight. */}
+      <section aria-label="About OmniPonder" className="border-rule border-b py-6 sm:py-7">
+        <p className="text-ink-muted font-serif text-[1.0625rem] leading-[1.5] text-pretty sm:text-lg">
+          Original essays revealing the systems, histories and human behaviours shaping the
+          modern world.
         </p>
       </section>
 
-      {latest ? (
-        <section
-          aria-labelledby="todays-essay"
-          className="border-rule relative overflow-hidden border-b"
-        >
-          {/* Broadsheet hero: story left, generative field right. */}
-          <div className="lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-14">
-            <div className="relative z-10 py-14 sm:py-18 lg:py-24">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-                <span className="bg-ink text-paper px-2.5 py-1 text-[0.625rem] font-medium tracking-[0.2em] uppercase">
-                  Featured Essay
-                </span>
-                <span
-                  id="todays-essay"
-                  className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
-                >
-                  {latest.topic}
-                </span>
-              </div>
+      {feature ? (
+        <section aria-label="Featured essays" className="border-rule border-b py-12 sm:py-16">
+          {/* Lead — asymmetric: image ~62%, story ~38%. */}
+          <div className="lg:grid lg:grid-cols-[minmax(0,1.62fr)_minmax(0,1fr)] lg:items-center lg:gap-14">
+            <Link
+              href={`/article/${feature.slug}`}
+              tabIndex={-1}
+              aria-hidden="true"
+              className="block"
+            >
+              <CardImage article={feature} sizes="(min-width: 1024px) 46rem, 100vw" priority />
+            </Link>
 
-              <h1 className="text-ink mt-8 font-serif text-[2.25rem] leading-[1.05] font-medium tracking-[-0.025em] text-balance sm:text-[3.25rem] lg:text-[4rem]">
+            <div className="mt-7 lg:mt-0">
+              <CategoryLink topic={feature.topic} />
+              <h1 className="text-ink mt-4 font-serif text-[2.25rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance sm:text-[3rem] lg:text-[3.25rem]">
                 <Link
-                  href={`/article/${latest.slug}`}
-                  className="transition-opacity hover:opacity-70"
+                  href={`/article/${feature.slug}`}
+                  className="focus-visible:outline-ink transition-opacity hover:opacity-70 focus-visible:outline-1 focus-visible:outline-offset-4"
                 >
-                  {latest.title}
+                  {feature.title}
                 </Link>
               </h1>
-
-              <p className="text-ink-muted mt-7 max-w-2xl font-serif text-lg leading-[1.6] text-pretty sm:text-xl">
-                {latest.excerpt}
+              <p className="text-ink-muted mt-6 font-serif text-lg leading-[1.55] text-pretty">
+                {feature.excerpt}
               </p>
-
-              {/* Metadata compressed to a single rule-separated line. */}
-              <p className="text-ink-muted mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.6875rem] tracking-[0.14em] uppercase">
+              <p className="text-ink-muted mt-6 flex flex-wrap items-center gap-x-2.5 text-[0.8125rem] tracking-wide">
                 <span className="text-ink font-medium">{siteConfig.author}</span>
                 <span aria-hidden="true" className="text-rule-strong">
                   /
                 </span>
-                <time dateTime={latest.date}>{formatDate(latest.date)}</time>
+                <time dateTime={feature.date}>{formatDate(feature.date)}</time>
                 <span aria-hidden="true" className="text-rule-strong">
                   /
                 </span>
-                <span>{latest.readingTime} min read</span>
+                <span>{feature.readingTime} min read</span>
               </p>
-
               <Link
-                href={`/article/${latest.slug}`}
-                className="group border-ink text-ink hover:bg-ink hover:text-paper focus-visible:outline-ink mt-10 inline-flex items-center gap-3 border px-7 py-3.5 text-[0.6875rem] font-medium tracking-[0.18em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-4"
+                href={`/article/${feature.slug}`}
+                className="group border-ink text-ink hover:bg-ink hover:text-paper focus-visible:outline-ink mt-8 inline-flex items-center gap-3 border px-7 py-3.5 text-[0.6875rem] font-medium tracking-[0.16em] uppercase transition-colors focus-visible:outline-1 focus-visible:outline-offset-4"
               >
-                Read Essay
+                Read essay
                 <ArrowRight
                   className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
                 />
               </Link>
             </div>
-
-            {/*
-              One instance, two roles. Below lg it is lifted out of flow and
-              becomes a full-bleed backdrop behind the headline — a horizon the
-              text sits on, rather than a shrunken panel competing with it. From
-              lg it returns to the grid as the right column of the broadsheet.
-              Never interactive, and never above the type.
-            */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] sm:h-[58%] lg:relative lg:inset-auto lg:z-auto lg:h-auto lg:self-stretch"
-            >
-              <HeroFlowCanvas className="h-full w-full opacity-[0.34] sm:opacity-[0.4] lg:min-h-[30rem] lg:opacity-100" />
-            </div>
           </div>
+
+          {/* Supporting — the next two strongest, larger than the latest grid. */}
+          {supporting.length > 0 && (
+            <>
+              <h2 className="sr-only">More featured essays</h2>
+              <ul className="border-rule mt-14 grid gap-x-12 gap-y-12 border-t pt-14 sm:grid-cols-2">
+                {supporting.map((article) => (
+                  <li key={article.slug}>
+                    <ArticleCard
+                      article={article}
+                      variant="support"
+                      sizes="(min-width: 1024px) 34rem, (min-width: 640px) 50vw, 100vw"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </section>
       ) : (
         <div className="border-rule border-b py-32 text-center">
@@ -122,121 +213,33 @@ export default async function HomePage() {
           <p className="text-ink-muted mt-4 font-serif text-lg">
             Add a Markdown file to{' '}
             <code className="bg-paper-deep px-1.5 py-0.5 text-sm">content/articles</code> to
-            publish the first edition.
+            publish the first essay.
           </p>
         </div>
       )}
 
-      {/* Start here — the three editorial pillars, each with its newest essay. */}
-      {pillars.length > 0 && (
-        <section aria-labelledby="pillars-heading" className="border-rule border-b py-14">
+      {/* Latest Essays — six cards, then a route to the full library. */}
+      {latest.length > 0 && (
+        <section aria-labelledby="latest-heading" className="border-rule border-b py-14 sm:py-16">
           <div className="border-rule flex items-baseline justify-between border-b pb-5">
-            <h2
-              id="pillars-heading"
-              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
-            >
-              Start Here
+            <h2 id="latest-heading" className="text-ink font-serif text-2xl font-medium tracking-[-0.02em]">
+              Latest Essays
             </h2>
             <Link
               href="/archive"
-              className="text-ink-muted hover:text-ink text-[0.6875rem] tracking-[0.18em] uppercase transition-colors"
+              className="text-ink-muted hover:text-ink text-[0.75rem] font-medium tracking-[0.14em] uppercase transition-colors"
             >
-              All Essays
+              View all essays
             </Link>
           </div>
-
-          <ul className="grid gap-x-10 gap-y-12 pt-12 sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((pillar) => (
-              <li key={pillar.slug} className="flex flex-col">
-                <Link
-                  href={`/archive#${pillar.slug}`}
-                  className="group inline-flex items-baseline gap-2"
-                >
-                  <span className="text-ink font-serif text-2xl leading-tight font-medium tracking-[-0.015em] transition-opacity group-hover:opacity-60">
-                    {pillar.name}
-                  </span>
-                  <span className="text-ink-faint text-[0.625rem] tabular-nums">
-                    {pillar.count}
-                  </span>
-                </Link>
-                <span className="text-ink-faint mt-3 block text-sm leading-snug text-pretty">
-                  {pillar.description}
-                </span>
-
-                {pillar.featured && (
-                  <Link
-                    href={`/article/${pillar.featured.slug}`}
-                    className="group border-rule mt-6 flex flex-col border-t pt-6"
-                  >
-                    <span className="text-ink-faint text-[0.5625rem] tracking-[0.18em] uppercase">
-                      Start with
-                    </span>
-                    <span className="text-ink mt-2 font-serif text-lg leading-[1.25] font-medium text-pretty transition-opacity group-hover:opacity-60">
-                      {pillar.featured.title}
-                    </span>
-                    <span className="text-ink-faint mt-auto flex items-center gap-2 pt-3 text-[0.625rem] tracking-[0.18em] uppercase">
-                      <time dateTime={pillar.featured.date}>
-                        {formatDate(pillar.featured.date)}
-                      </time>
-                      <span aria-hidden="true" className="text-rule-strong">
-                        /
-                      </span>
-                      {pillar.featured.readingTime} min
-                    </span>
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Editorial dispatch grid */}
-      {dispatches.length > 0 && (
-        <section aria-labelledby="dispatch-heading" className="border-rule border-b py-14">
-          <div className="border-rule flex items-baseline justify-between border-b pb-5">
-            <h2
-              id="dispatch-heading"
-              className="text-ink-faint text-[0.625rem] tracking-[0.2em] uppercase"
-            >
-              Editorial Dispatch
-            </h2>
-            <Link
-              href="/archive"
-              className="text-ink-muted hover:text-ink text-[0.6875rem] tracking-[0.18em] uppercase transition-colors"
-            >
-              All Essays
-            </Link>
-          </div>
-
-          {/* Newspaper columns: hairlines between, reset at each row start. */}
-          <ul className="grid gap-y-12 pt-12 sm:grid-cols-2 lg:grid-cols-3">
-            {dispatches.map((article) => (
-              <li
-                key={article.slug}
-                className="border-rule sm:border-l sm:pl-10 sm:[&:nth-child(2n+1)]:border-l-0 sm:[&:nth-child(2n+1)]:pl-0 lg:[&:nth-child(2n+1)]:border-l lg:[&:nth-child(2n+1)]:pl-10 lg:[&:nth-child(3n+1)]:border-l-0 lg:[&:nth-child(3n+1)]:pl-0"
-              >
-                <Link href={`/article/${article.slug}`} className="group flex h-full flex-col">
-                  <span className="text-ink-faint text-[0.625rem] tracking-[0.18em] uppercase">
-                    {article.topic}
-                  </span>
-
-                  <h3 className="text-ink mt-3 font-serif text-2xl leading-[1.2] font-medium tracking-[-0.015em] text-balance transition-opacity group-hover:opacity-60">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-ink-muted mt-3 line-clamp-2 font-serif leading-relaxed text-pretty">
-                    {article.excerpt}
-                  </p>
-
-                  <span className="text-ink-faint mt-auto flex items-center gap-2 pt-5 text-[0.625rem] tracking-[0.18em] uppercase">
-                    <time dateTime={article.date}>{formatDate(article.date)}</time>
-                    <span aria-hidden="true" className="text-rule-strong">
-                      /
-                    </span>
-                    {article.readingTime} min
-                  </span>
-                </Link>
+          <ul className="grid gap-x-10 gap-y-14 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+            {latest.map((article) => (
+              <li key={article.slug}>
+                <ArticleCard
+                  article={article}
+                  variant="latest"
+                  sizes="(min-width: 1024px) 22rem, (min-width: 640px) 50vw, 100vw"
+                />
               </li>
             ))}
           </ul>
@@ -245,12 +248,50 @@ export default async function HomePage() {
 
       <AdPlaceholder variant="leaderboard" className="my-14" />
 
+      {/* Explore the pillars — compact navigation, well down the page. */}
+      {pillars.length > 0 && (
+        <section aria-labelledby="pillars-heading" className="border-rule border-b py-14 sm:py-16">
+          <h2 id="pillars-heading" className="text-ink font-serif text-2xl font-medium tracking-[-0.02em]">
+            Explore the pillars
+          </h2>
+          <ul className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-3">
+            {pillars.map((pillar) => (
+              <li key={pillar.slug} className="border-rule flex flex-col border-t pt-6">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-ink font-serif text-xl leading-tight font-medium tracking-[-0.015em]">
+                    <Link
+                      href={`/archive#${pillar.slug}`}
+                      className="focus-visible:outline-ink transition-opacity hover:opacity-60 focus-visible:outline-1 focus-visible:outline-offset-4"
+                    >
+                      {pillar.name}
+                    </Link>
+                  </h3>
+                  <span className="text-ink-muted text-[0.75rem] tabular-nums">{pillar.count}</span>
+                </div>
+                <p className="text-ink-muted mt-3 text-sm leading-snug text-pretty">
+                  {pillar.description}
+                </p>
+                <Link
+                  href={`/archive#${pillar.slug}`}
+                  className="group text-ink hover:text-ink-muted mt-5 inline-flex items-center gap-2 text-[0.75rem] font-medium tracking-[0.14em] uppercase transition-colors"
+                >
+                  Explore
+                  <ArrowRight
+                    className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/*
         The page container already pads by px-6; cancel it here on phones so
-        the Beehiiv embed is not double-padded down to ~279px, which is too
-        narrow for its field-and-button row.
+        the Beehiiv embed is not double-padded down to a too-narrow field row.
       */}
-      <div className="-mx-6 mb-14 sm:mx-0">
+      <div className="-mx-6 my-14 sm:mx-0">
         <NewsletterForm />
       </div>
     </div>

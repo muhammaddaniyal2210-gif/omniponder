@@ -3,6 +3,8 @@ title: "There Is No Gene for the Person You Are"
 seoTitle: "Is Personality Genetic? What 1,200 Gene Variants Show"
 excerpt: "A study of a million people tied 1,200 genetic variants to your personality. Read closely, it dismantles the idea that your character is written in your DNA."
 date: "2026-09-10"
+image: "/images/reading-the-genome.jpg"
+imageAlt: "A scientist reading DNA sequencing film, 1989."
 topic: "Human Nature & Ideas"
 tags: ["Personality Genetics", "Big Five Personality", "Nature vs Nurture", "Heritability", "Behavioral Genetics", "Free Will", "Polygenic Scores", "Twin Studies"]
 faq:

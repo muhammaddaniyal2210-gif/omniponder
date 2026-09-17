@@ -26,6 +26,12 @@ export type ArticleMeta = {
   faq: FaqEntry[]
   wordCount: number
   readingTime: number
+  /** Representative 16:9 image for homepage/cards (site-relative path). '' = none. */
+  image: string
+  /** Alt text for `image`. Falls back to the title when empty. */
+  imageAlt: string
+  /** Manual homepage-feature opt-in. At most one article is used as the lead. */
+  featured: boolean
 }
 
 export type Article = ArticleMeta & {
@@ -33,7 +39,19 @@ export type Article = ArticleMeta & {
 }
 
 type Frontmatter = Partial<
-  Record<'title' | 'seoTitle' | 'date' | 'excerpt' | 'topic' | 'tags' | 'faq', unknown>
+  Record<
+    | 'title'
+    | 'seoTitle'
+    | 'date'
+    | 'excerpt'
+    | 'topic'
+    | 'tags'
+    | 'faq'
+    | 'image'
+    | 'imageAlt'
+    | 'featured',
+    unknown
+  >
 >
 
 const WORDS_PER_MINUTE = 220
@@ -93,6 +111,9 @@ function toMeta(slug: string, data: Frontmatter, body: string): ArticleMeta {
     faq: asFaq(data.faq),
     wordCount,
     readingTime: estimateReadingTime(wordCount),
+    image: asString(data.image),
+    imageAlt: asString(data.imageAlt),
+    featured: data.featured === true,
   }
 }
 
@@ -199,6 +220,15 @@ export async function getAllArticles(): Promise<ArticleMeta[]> {
 export async function getLatestArticle(): Promise<Article | null> {
   const [latest] = await getAllArticles()
   return latest ? getArticleBySlug(latest.slug) : null
+}
+
+/**
+ * The single homepage lead. An article may opt in with `featured: true` in its
+ * frontmatter; if several do, the newest wins, so exactly one is ever returned.
+ * With no opt-in, the newest article leads. `articles` is expected newest-first.
+ */
+export function pickHomeFeature(articles: ArticleMeta[]): ArticleMeta | null {
+  return articles.find((article) => article.featured) ?? articles[0] ?? null
 }
 
 export function formatDate(date: string) {

@@ -2,6 +2,8 @@
 title: "'I Have a Dream' Was Never in the Script"
 excerpt: "Sixty-three years ago today, Martin Luther King set aside his prepared text and improvised the words that made history. What that moment really reveals."
 date: "2026-08-28"
+image: "/images/dream-march-on-washington.jpg"
+imageAlt: "Martin Luther King Jr. at the 1963 March on Washington."
 topic: "Human Nature & Ideas"
 tags: ["I Have a Dream", "Martin Luther King", "March on Washington", "Rhetoric", "Improvisation", "Civil Rights", "Public Speaking", "1963"]
 faq:

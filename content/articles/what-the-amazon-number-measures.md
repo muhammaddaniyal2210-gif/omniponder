@@ -3,6 +3,8 @@ title: "The Amazon Just Had Its Best Year in a Decade. Almost Nobody Noticed."
 excerpt: "Brazil's deforestation alerts fell 36% to their lowest level since 2013 — a rare case of a large environmental problem getting substantially better, fast. The harder question is what that number measures, and what it cannot see."
 topic: "Power & Systems"
 date: "2026-08-27"
+image: "/images/amazon-forest-boundary.jpg"
+imageAlt: "A satellite view of the forest boundary in the Brazilian Amazon."
 tags: ["Global Systems", "Environment", "Amazon Deforestation", "Brazil", "Policy", "Measurement", "Climate", "Human Nature", "State Capacity", "Conservation"]
 faq:
   - question: "Is Amazon deforestation actually decreasing?"
