@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="A bar chart of the share of US high-school students reporting persistent sadness or hopelessness. Among girls it rose from 36 percent in 2011 to 57 percent in 2021; among boys from 21 to 29 percent.">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="42" font-weight="700" fill="#171614" letter-spacing="-0.5">A Decade of Rising Teenage Sadness</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="16" letter-spacing="2" fill="#77736a">SHARE OF U.S. HIGH-SCHOOL STUDENTS WITH PERSISTENT SADNESS OR HOPELESSNESS</text>
+
+  <!-- baseline -->
+  <line x1="200" y1="720" x2="1440" y2="720" stroke="#171614" stroke-width="2"/>
+  <!-- scale: 0..60% over y 720(0) to 240(60). px per % = 480/60 = 8 -->
+  <!-- gridline 60% -->
+  <line x1="200" y1="240" x2="1440" y2="240" stroke="#e2ded4" stroke-width="1"/>
+  <text x="185" y="245" text-anchor="end" font-family="'Inter Tight',sans-serif" font-size="14" fill="#a89f8c">60%</text>
+  <text x="185" y="485" text-anchor="end" font-family="'Inter Tight',sans-serif" font-size="14" fill="#a89f8c">30%</text>
+  <line x1="200" y1="480" x2="1440" y2="480" stroke="#f0ece3" stroke-width="1"/>
+
+  <!-- GIRLS group -->
+  <text x="500" y="770" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600">GIRLS</text>
+  <!-- 2011: 36% -> height 288, top y=432 -->
+  <rect x="380" y="432" width="110" height="288" fill="#c8c2b4"/>
+  <text x="435" y="418" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#66625a">36%</text>
+  <text x="435" y="742" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" fill="#77736a">2011</text>
+  <!-- 2021: 57% -> height 456, top y=264 -->
+  <rect x="510" y="264" width="110" height="456" fill="#b8873f"/>
+  <text x="565" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#171614">57%</text>
+  <text x="565" y="742" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" fill="#77736a">2021</text>
+
+  <!-- BOYS group -->
+  <text x="1060" y="770" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="18" letter-spacing="2" fill="#171614" font-weight="600">BOYS</text>
+  <!-- 2011: 21% -> height 168, top y=552 -->
+  <rect x="940" y="552" width="110" height="168" fill="#c8c2b4"/>
+  <text x="995" y="538" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#66625a">21%</text>
+  <text x="995" y="742" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" fill="#77736a">2011</text>
+  <!-- 2021: 29% -> height 232, top y=488 -->
+  <rect x="1070" y="488" width="110" height="232" fill="#8a6a2f"/>
+  <text x="1125" y="474" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#171614">29%</text>
+  <text x="1125" y="742" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="13" fill="#77736a">2021</text>
+
+  <text x="200" y="798" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="20" fill="#66625a">The rise is real for both, and steepest among girls.</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="838" x2="1500" y2="838" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="870" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 02</text>
+  <text x="1500" y="870" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">SOURCE: CDC YOUTH RISK BEHAVIOR SURVEY</text>
+</svg>

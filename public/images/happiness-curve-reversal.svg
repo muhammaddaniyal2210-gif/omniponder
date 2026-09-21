@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="A chart of well-being by age. The old curve is a U, high in youth and old age and low in midlife. The new curve starts low among the young and rises steadily with age.">
+  <rect width="1600" height="900" fill="#fbfaf7"/>
+
+  <text x="100" y="90" font-family="Georgia,'Times New Roman',serif" font-size="44" font-weight="700" fill="#171614" letter-spacing="-0.5">The Curve That Broke</text>
+  <line x1="100" y1="118" x2="1500" y2="118" stroke="#c8c2b4" stroke-width="1"/>
+  <text x="100" y="148" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="17" letter-spacing="3" fill="#77736a">WELL-BEING BY AGE — THE OLD U, AND WHAT REPLACED IT</text>
+
+  <!-- Axes -->
+  <line x1="200" y1="210" x2="200" y2="700" stroke="#171614" stroke-width="2"/>
+  <line x1="200" y1="700" x2="1440" y2="700" stroke="#171614" stroke-width="2"/>
+  <text x="150" y="460" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="2" fill="#66625a" transform="rotate(-90 150 460)">WELL-BEING →</text>
+  <text x="820" y="742" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-size="15" letter-spacing="2" fill="#66625a">AGE →</text>
+  <!-- age ticks -->
+  <g font-family="'Inter Tight',sans-serif" font-size="14" fill="#a89f8c">
+    <line x1="200" y1="700" x2="200" y2="712" stroke="#c8c2b4"/><text x="200" y="732" text-anchor="middle">18</text>
+    <line x1="792" y1="700" x2="792" y2="712" stroke="#c8c2b4"/><text x="792" y="732" text-anchor="middle">50</text>
+    <line x1="1347" y1="700" x2="1347" y2="712" stroke="#c8c2b4"/><text x="1347" y="732" text-anchor="middle">80</text>
+  </g>
+
+  <!-- OLD U-curve: dashed charcoal -->
+  <path d="M 210 250 C 420 300, 640 520, 792 522 C 990 524, 1180 320, 1347 288" fill="none" stroke="#171614" stroke-width="3" stroke-dasharray="8 7"/>
+  <text x="300" y="235" font-family="Georgia,serif" font-size="22" fill="#171614">the old curve</text>
+  <text x="300" y="260" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#66625a">happiest young and old</text>
+
+  <!-- NEW curve: solid copper, rises with age -->
+  <path d="M 210 560 C 520 512, 1010 360, 1347 302" fill="none" stroke="#b8873f" stroke-width="4"/>
+  <text x="880" y="470" font-family="Georgia,serif" font-size="22" fill="#8a6a2f">now</text>
+  <text x="880" y="495" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#8a6a2f">well-being rises with age</text>
+
+  <!-- highlight the collapsed corner -->
+  <circle cx="210" cy="560" r="7" fill="#b8873f"/>
+  <text x="228" y="592" font-family="'Inter Tight',sans-serif" font-size="14" letter-spacing="1" fill="#8a6a2f">the young, now the least happy</text>
+  <circle cx="210" cy="250" r="6" fill="none" stroke="#171614" stroke-width="2"/>
+  <text x="228" y="210" font-family="'Inter Tight',sans-serif" font-size="13" letter-spacing="1" fill="#a89f8c">where the young used to be</text>
+
+  <!-- Footer -->
+  <line x1="100" y1="828" x2="1500" y2="828" stroke="#e2ded4" stroke-width="1"/>
+  <text x="100" y="862" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="15" letter-spacing="3" fill="#77736a">OMNIPONDER — FIG. 01</text>
+  <text x="1500" y="862" text-anchor="end" font-family="'Inter Tight','Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="1.5" fill="#77736a">SOURCES: BLANCHFLOWER · WORLD HAPPINESS REPORT 2024</text>
+</svg>
